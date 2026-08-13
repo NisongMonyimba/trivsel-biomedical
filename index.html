@@ -214,6 +214,14 @@
     .step {
       position: relative;
     }
+    .step-icon {
+      width: 44px; height: 44px;
+      background: var(--subtle);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+    .step-icon svg { width: 24px; height: 24px; }
     .step-num {
       font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
       color: var(--blue); margin-bottom: 0.6rem;
@@ -446,18 +454,22 @@
 
   <div class="steps">
     <div class="step">
+      <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="13" width="40" height="43" rx="3"/><rect x="24" y="8" width="16" height="8" rx="3"/><path d="M21 27h22M21 36h22M21 45h14"/></g></svg></div>
       <div class="step-num">01 &mdash; Register</div>
       <div class="step-body"><strong>Device goes into the system</strong>Department, manufacturer, model, serial number, and calibration schedule — entered once during onboarding.</div>
     </div>
     <div class="step">
+      <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="13" width="44" height="30" rx="3"/><path d="M19 35h8l4-12 5 17 5-10 4 5h6"/><path d="M25 52h14M32 43v9"/></g></svg></div>
       <div class="step-num">02 &mdash; Label</div>
       <div class="step-body"><strong>QR code affixed to the device</strong>Each device gets a unique code that links directly to its full record. Printed and stuck on during the same visit.</div>
     </div>
     <div class="step">
+      <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="none" stroke="#2563EB" stroke-width="2.7" stroke-linecap="round"><circle cx="32" cy="32" r="13"/><path d="M32 6v8M32 50v8M6 32h8M50 32h8M13 13l6 6M45 45l6 6M51 13l-6 6M19 45l-6 6"/></g><circle cx="32" cy="32" r="4" fill="#2563EB"/></svg></div>
       <div class="step-num">03 &mdash; Scan</div>
       <div class="step-body"><strong>Any phone, any time</strong>A nurse, doctor, or patient family member scans the code and sees the device's status and history. Reporting a fault takes 30 seconds and requires no account.</div>
     </div>
     <div class="step">
+      <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="#2563EB"><path d="M9 51h46v4H9z"/><path d="M15 43h8v8h-8zM28 32h8v19h-8zM41 20h8v31h-8z"/></g></svg></div>
       <div class="step-num">04 &mdash; Track</div>
       <div class="step-body"><strong>Engineers see everything</strong>The dashboard shows every open fault, upcoming calibration, and device status across all departments. Reminders send automatically.</div>
     </div>
