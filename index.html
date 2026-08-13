@@ -9,8 +9,8 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue:    #37B6FF;
-      --blue-dk: #0E90D9;
+      --blue:    #2563EB;
+      --blue-dk: #1E4FC4;
       --ink:     #1F2937;
       --muted:   #6B7280;
       --subtle:  #F0F9FF;
@@ -41,7 +41,9 @@
     .nav-wordmark {
       font-size: 1.1rem; font-weight: 700; color: var(--ink);
       letter-spacing: -0.02em; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
     }
+    .nav-wordmark img { height: 28px; display: block; }
     .nav-wordmark span { color: var(--blue); }
     .nav-cta {
       font-size: 0.85rem; font-weight: 600;
@@ -310,7 +312,7 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-wordmark" href="#"><span>Trivsel</span> Biomedical</a>
+  <a class="nav-wordmark" href="#"><img src="assets/logo.png" alt="Trivsel"> Biomedical</a>
   <a class="nav-cta" href="mailto:nisongmonyimba278@gmail.com">Partner With Us</a>
 </nav>
 
