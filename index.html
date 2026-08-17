@@ -294,7 +294,34 @@
     }
     .footer-contact a:hover { text-decoration: underline; }
 
-    /* ── RESPONSIVE ── */
+    
+/* ── CONTACT ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.contact-card {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  text-decoration: none;
+  display: block;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.contact-card:hover {
+  border-color: var(--blue);
+  box-shadow: 0 4px 16px rgba(37,99,235,0.08);
+}
+.contact-email {
+  font-size: 0.95rem; font-weight: 700; color: var(--blue);
+  margin-bottom: 0.4rem;
+}
+.contact-desc {
+  font-size: 0.85rem; color: var(--muted); line-height: 1.6;
+}
+
+/* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; padding-top: 3rem; padding-bottom: 3rem; }
       .hero-text { padding-right: 0; }
@@ -520,6 +547,49 @@
     <p>The idea started at Komfo Anokye Teaching Hospital in Kumasi, where Nisong worked hands-on with medical equipment maintenance and calibration, documenting device performance, and watching how much of that work depended on paper records instead of a system built for the job.</p>
     <p>That understanding deepened through later work in medical device manufacturing and quality engineering at Abbott Laboratories and Vastek Inc., using failure analysis and risk modeling to understand exactly how equipment problems compound when they go untracked, and through research into medical device regulation across 20 African countries, which shaped how Trivsel was built for the realities those systems actually face.</p>
     <p>Trivsel is built specifically for those realities: staff on ordinary phones, variable connectivity, and biomedical teams stretched across large device inventories. No special hardware. No expensive subscriptions.</p>
+  </div>
+</section>
+
+<hr class="section-divider" style="max-width:1200px;margin:0 auto;" />
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-tag">Get in Touch</p>
+  <h2>Reach the right inbox.</h2>
+  <p class="section-lead">Pick the address that matches what you need — every message reaches our team.</p>
+  <div class="contact-grid">
+      <a class="contact-card" href="mailto:info@trivsel.uk">
+        <div class="contact-email">info@trivsel.uk</div>
+        <p class="contact-desc">General questions about Trivsel or how it works.</p>
+      </a>
+      <a class="contact-card" href="mailto:sales@trivsel.uk">
+        <div class="contact-email">sales@trivsel.uk</div>
+        <p class="contact-desc">Pricing, demos, and becoming a hospital partner.</p>
+      </a>
+      <a class="contact-card" href="mailto:support@trivsel.uk">
+        <div class="contact-email">support@trivsel.uk</div>
+        <p class="contact-desc">Help with an existing Trivsel account or device record.</p>
+      </a>
+      <a class="contact-card" href="mailto:calibration@trivsel.uk">
+        <div class="contact-email">calibration@trivsel.uk</div>
+        <p class="contact-desc">Questions about calibration schedules and reminders.</p>
+      </a>
+      <a class="contact-card" href="mailto:admin@trivsel.uk">
+        <div class="contact-email">admin@trivsel.uk</div>
+        <p class="contact-desc">Account administration and billing.</p>
+      </a>
+      <a class="contact-card" href="mailto:privacy@trivsel.uk">
+        <div class="contact-email">privacy@trivsel.uk</div>
+        <p class="contact-desc">Data privacy questions and requests.</p>
+      </a>
+      <a class="contact-card" href="mailto:security@trivsel.uk">
+        <div class="contact-email">security@trivsel.uk</div>
+        <p class="contact-desc">Report a security issue or vulnerability.</p>
+      </a>
+      <a class="contact-card" href="mailto:nisong@trivsel.uk">
+        <div class="contact-email">nisong@trivsel.uk</div>
+        <p class="contact-desc">Reach the founder directly.</p>
+      </a>
   </div>
 </section>
 
