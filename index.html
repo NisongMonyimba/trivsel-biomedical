@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Trivsel gives every medical device a QR-linked digital record — status, calibration schedule, and complete fault history, from any phone." />
-  <title>Trivsel Biomedical — Medical Equipment Tracking for Ghana</title>
+  <title>Trivsel — Medical Equipment Tracking for Ghana</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --blue:    #2563EB;
       --blue-dk: #1E4FC4;
-      --ink:     #1F2937;
+      --ink:     #000000;
       --muted:   #6B7280;
       --subtle:  #F0F9FF;
       --line:    #E5E7EB;
@@ -35,7 +35,8 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 5vw;
       height: 60px;
-      background: var(--white);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--line);
     }
     .nav-wordmark {
@@ -44,14 +45,13 @@
       display: inline-flex; align-items: center; gap: 8px;
     }
     .nav-wordmark img { height: 28px; display: block; }
-    .nav-wordmark span { color: var(--blue); }
     .nav-cta {
       font-size: 0.85rem; font-weight: 600;
       color: var(--white); background: var(--blue);
       padding: 8px 18px; border-radius: 6px;
-      text-decoration: none; transition: background 0.15s;
+      text-decoration: none; transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .nav-cta:hover { background: var(--blue-dk); }
+    .nav-cta:hover { background: var(--blue-dk); transform: translateY(-1px); box-shadow: 0 4px 10px rgba(37,99,235,0.2); }
 
     /* ── HERO ── */
     .hero {
@@ -87,33 +87,65 @@
     .btn-primary {
       font-size: 0.95rem; font-weight: 600; color: var(--white);
       background: var(--blue); padding: 12px 24px; border-radius: 8px;
-      text-decoration: none; transition: background 0.15s;
+      text-decoration: none; transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .btn-primary:hover { background: var(--blue-dk); }
+    .btn-primary:hover { background: var(--blue-dk); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37,99,235,0.22); }
     .btn-secondary {
       font-size: 0.95rem; font-weight: 600; color: var(--ink);
       background: transparent; padding: 12px 24px; border-radius: 8px;
       border: 1.5px solid var(--line); text-decoration: none;
-      transition: border-color 0.15s;
+      transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
     }
-    .btn-secondary:hover { border-color: var(--blue); color: var(--blue); }
+    .btn-secondary:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-1px); }
 
-    /* ── HERO VISUAL: QR DEMO ── */
+    /* ── HERO VISUAL: QR DEMO, dashboard gradient card treatment ── */
     .hero-visual {
       display: flex; align-items: center; justify-content: center;
     }
     .device-card {
-      background: var(--white);
-      border: 1.5px solid var(--line);
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-      width: 300px;
       position: relative;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid #c9e0fa;
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow:
+        0 8px 24px rgba(37, 105, 175, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .device-card:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 14px 34px rgba(37, 105, 175, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+    .device-card::before,
+    .device-card::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      border-radius: 999px;
+      opacity: 0.45;
+      z-index: 0;
+    }
+    .device-card::before {
+      width: 150px; height: 62px;
+      left: -50px; bottom: -30px;
+      background: rgba(67, 171, 246, 0.16);
+      transform: rotate(-18deg);
+    }
+    .device-card::after {
+      width: 130px; height: 54px;
+      right: -36px; top: -28px;
+      background: rgba(127, 112, 235, 0.12);
+      transform: rotate(18deg);
+    }
+    .device-card > * { position: relative; z-index: 1; }
     .device-card-label {
       font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--muted);
+      text-transform: uppercase; color: var(--blue);
       margin-bottom: 0.6rem;
     }
     .device-name {
@@ -137,7 +169,6 @@
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 1rem;
     }
-    /* Hand-drawn SVG QR code pattern */
     .qr-svg { width: 120px; height: 120px; }
     .device-meta {
       font-size: 0.75rem; color: var(--muted);
@@ -153,6 +184,7 @@
       background: var(--subtle); border: 1px solid var(--blue);
       padding: 4px 12px; border-radius: 999px;
       white-space: nowrap;
+      z-index: 2;
     }
 
     /* ── SECTIONS ── */
@@ -186,6 +218,7 @@
     .problem-block, .solution-block {
       padding: 2rem;
       border-radius: 12px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
     .problem-block {
       background: #FFF7ED;
@@ -195,10 +228,18 @@
       background: var(--subtle);
       border: 1px solid #BAE6FD;
     }
-    .block-icon {
-      font-size: 1.8rem; margin-bottom: 1rem;
-      display: block;
+    .problem-block:hover, .solution-block:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(23, 32, 51, 0.06);
     }
+    .block-icon {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.6);
+    }
+    .block-icon svg { width: 22px; height: 22px; }
     .block-heading {
       font-size: 1rem; font-weight: 700; color: var(--ink);
       margin-bottom: 0.6rem;
@@ -213,6 +254,14 @@
     }
     .step {
       position: relative;
+      padding: 1.25rem;
+      border-radius: 12px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+    .step:hover {
+      transform: translateY(-3px);
+      background: var(--subtle);
+      box-shadow: 0 10px 24px rgba(23, 32, 51, 0.06);
     }
     .step-icon {
       width: 44px; height: 44px;
@@ -220,7 +269,9 @@
       border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 0.75rem;
+      transition: transform 0.25s ease;
     }
+    .step:hover .step-icon { transform: scale(1.08); }
     .step-icon svg { width: 24px; height: 24px; }
     .step-num {
       font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
@@ -232,7 +283,7 @@
     .step-body strong { color: var(--ink); display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
     .step::after {
       content: "";
-      position: absolute; top: 6px; left: calc(100% + 0.75rem);
+      position: absolute; top: 27px; left: calc(100% + 0.75rem);
       width: calc(1.5rem - 4px); height: 1px;
       background: var(--line);
     }
@@ -244,6 +295,12 @@
       padding: 1.5rem;
       border: 1px solid var(--line);
       border-radius: 10px;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .role:hover {
+      border-color: #bfd1e3;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(23, 32, 51, 0.06);
     }
     .role-title {
       font-size: 0.85rem; font-weight: 700; color: var(--ink);
@@ -253,6 +310,8 @@
 
     /* ── PARTNER CTA ── */
     .cta-band {
+      position: relative;
+      overflow: hidden;
       background: var(--ink); border-radius: 16px;
       padding: 4rem; text-align: center;
       margin: 0 5vw 5rem;
@@ -266,9 +325,9 @@
       font-size: 0.95rem; font-weight: 600; color: var(--ink);
       background: var(--white); padding: 12px 28px; border-radius: 8px;
       text-decoration: none; display: inline-block;
-      transition: background 0.15s;
+      transition: background 0.15s ease, transform 0.15s ease;
     }
-    .btn-white:hover { background: var(--subtle); }
+    .btn-white:hover { background: var(--subtle); transform: translateY(-1px); }
 
     /* ── ABOUT ── */
     .about-inner {
@@ -294,34 +353,45 @@
     }
     .footer-contact a:hover { text-decoration: underline; }
 
-    
-/* ── CONTACT ── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-}
-.contact-card {
-  padding: 1.5rem;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  text-decoration: none;
-  display: block;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-.contact-card:hover {
-  border-color: var(--blue);
-  box-shadow: 0 4px 16px rgba(37,99,235,0.08);
-}
-.contact-email {
-  font-size: 0.95rem; font-weight: 700; color: var(--blue);
-  margin-bottom: 0.4rem;
-}
-.contact-desc {
-  font-size: 0.85rem; color: var(--muted); line-height: 1.6;
-}
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .contact-card {
+      padding: 1.5rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    }
+    .contact-card:hover {
+      border-color: var(--blue);
+      box-shadow: 0 4px 16px rgba(37,99,235,0.08);
+      transform: translateY(-2px);
+    }
+    .contact-email {
+      font-size: 0.95rem; font-weight: 700; color: var(--blue);
+      margin-bottom: 0.4rem;
+    }
+    .contact-desc {
+      font-size: 0.85rem; color: var(--muted); line-height: 1.6;
+    }
 
-/* ── RESPONSIVE ── */
+    /* ── SCROLL-REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; padding-top: 3rem; padding-bottom: 3rem; }
       .hero-text { padding-right: 0; }
@@ -340,6 +410,7 @@
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
@@ -347,7 +418,7 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-wordmark" href="https://trivsel.uk/"><img src="assets/logo.png" alt="Trivsel"> Biomedical</a>
+  <a class="nav-wordmark" href="https://trivsel.uk/"><img src="assets/logo.png" alt="Trivsel"></a>
   <a class="nav-cta" href="mailto:nisong@trivsel.uk">Partner With Us</a>
 </nav>
 
@@ -376,58 +447,55 @@
         <span class="status-dot"></span>Operational
       </span>
       <div class="qr-wrapper">
-        <!-- QR code pattern (SVG, no external dependency) -->
         <svg class="qr-svg" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" aria-label="Sample QR code">
           <rect width="21" height="21" fill="#F0F9FF"/>
-          <!-- Position detection patterns -->
-          <rect x="1" y="1" width="7" height="7" fill="#1F2937"/>
+          <rect x="1" y="1" width="7" height="7" fill="#000000"/>
           <rect x="2" y="2" width="5" height="5" fill="#F0F9FF"/>
-          <rect x="3" y="3" width="3" height="3" fill="#1F2937"/>
-          <rect x="13" y="1" width="7" height="7" fill="#1F2937"/>
+          <rect x="3" y="3" width="3" height="3" fill="#000000"/>
+          <rect x="13" y="1" width="7" height="7" fill="#000000"/>
           <rect x="14" y="2" width="5" height="5" fill="#F0F9FF"/>
-          <rect x="15" y="3" width="3" height="3" fill="#1F2937"/>
-          <rect x="1" y="13" width="7" height="7" fill="#1F2937"/>
+          <rect x="15" y="3" width="3" height="3" fill="#000000"/>
+          <rect x="1" y="13" width="7" height="7" fill="#000000"/>
           <rect x="2" y="14" width="5" height="5" fill="#F0F9FF"/>
-          <rect x="3" y="15" width="3" height="3" fill="#1F2937"/>
-          <!-- Data modules (simplified pattern) -->
-          <rect x="9" y="1" width="1" height="1" fill="#1F2937"/>
-          <rect x="11" y="1" width="1" height="1" fill="#1F2937"/>
+          <rect x="3" y="15" width="3" height="3" fill="#000000"/>
+          <rect x="9" y="1" width="1" height="1" fill="#000000"/>
+          <rect x="11" y="1" width="1" height="1" fill="#000000"/>
           <rect x="9" y="3" width="1" height="1" fill="#37B6FF"/>
-          <rect x="11" y="3" width="2" height="1" fill="#1F2937"/>
+          <rect x="11" y="3" width="2" height="1" fill="#000000"/>
           <rect x="9" y="5" width="2" height="1" fill="#37B6FF"/>
-          <rect x="12" y="5" width="1" height="1" fill="#1F2937"/>
-          <rect x="9" y="7" width="1" height="1" fill="#1F2937"/>
+          <rect x="12" y="5" width="1" height="1" fill="#000000"/>
+          <rect x="9" y="7" width="1" height="1" fill="#000000"/>
           <rect x="11" y="7" width="1" height="1" fill="#37B6FF"/>
-          <rect x="1" y="9" width="2" height="1" fill="#1F2937"/>
+          <rect x="1" y="9" width="2" height="1" fill="#000000"/>
           <rect x="4" y="9" width="1" height="1" fill="#37B6FF"/>
-          <rect x="6" y="9" width="1" height="1" fill="#1F2937"/>
+          <rect x="6" y="9" width="1" height="1" fill="#000000"/>
           <rect x="9" y="9" width="1" height="1" fill="#37B6FF"/>
-          <rect x="11" y="9" width="3" height="1" fill="#1F2937"/>
+          <rect x="11" y="9" width="3" height="1" fill="#000000"/>
           <rect x="15" y="9" width="2" height="1" fill="#37B6FF"/>
-          <rect x="18" y="9" width="2" height="1" fill="#1F2937"/>
+          <rect x="18" y="9" width="2" height="1" fill="#000000"/>
           <rect x="1" y="11" width="1" height="1" fill="#37B6FF"/>
-          <rect x="3" y="11" width="2" height="1" fill="#1F2937"/>
+          <rect x="3" y="11" width="2" height="1" fill="#000000"/>
           <rect x="6" y="11" width="1" height="1" fill="#37B6FF"/>
-          <rect x="9" y="11" width="2" height="1" fill="#1F2937"/>
+          <rect x="9" y="11" width="2" height="1" fill="#000000"/>
           <rect x="12" y="11" width="1" height="1" fill="#37B6FF"/>
-          <rect x="14" y="11" width="3" height="1" fill="#1F2937"/>
+          <rect x="14" y="11" width="3" height="1" fill="#000000"/>
           <rect x="18" y="11" width="1" height="1" fill="#37B6FF"/>
-          <rect x="9" y="13" width="1" height="1" fill="#1F2937"/>
+          <rect x="9" y="13" width="1" height="1" fill="#000000"/>
           <rect x="11" y="13" width="2" height="1" fill="#37B6FF"/>
-          <rect x="14" y="13" width="1" height="1" fill="#1F2937"/>
+          <rect x="14" y="13" width="1" height="1" fill="#000000"/>
           <rect x="16" y="13" width="3" height="1" fill="#37B6FF"/>
           <rect x="9" y="15" width="2" height="1" fill="#37B6FF"/>
-          <rect x="12" y="15" width="1" height="1" fill="#1F2937"/>
+          <rect x="12" y="15" width="1" height="1" fill="#000000"/>
           <rect x="14" y="15" width="2" height="1" fill="#37B6FF"/>
-          <rect x="17" y="15" width="2" height="1" fill="#1F2937"/>
-          <rect x="9" y="17" width="1" height="1" fill="#1F2937"/>
+          <rect x="17" y="15" width="2" height="1" fill="#000000"/>
+          <rect x="9" y="17" width="1" height="1" fill="#000000"/>
           <rect x="11" y="17" width="3" height="1" fill="#37B6FF"/>
-          <rect x="15" y="17" width="1" height="1" fill="#1F2937"/>
+          <rect x="15" y="17" width="1" height="1" fill="#000000"/>
           <rect x="17" y="17" width="2" height="1" fill="#37B6FF"/>
           <rect x="9" y="19" width="2" height="1" fill="#37B6FF"/>
-          <rect x="12" y="19" width="1" height="1" fill="#1F2937"/>
+          <rect x="12" y="19" width="1" height="1" fill="#000000"/>
           <rect x="14" y="19" width="3" height="1" fill="#37B6FF"/>
-          <rect x="18" y="19" width="1" height="1" fill="#1F2937"/>
+          <rect x="18" y="19" width="1" height="1" fill="#000000"/>
         </svg>
       </div>
       <div class="device-meta">
@@ -458,13 +526,13 @@
   <p class="section-lead">In most hospitals, nobody can answer quickly. Equipment records live in paper files and spreadsheets scattered across departments — and downtime is often discovered only at the moment it matters most.</p>
 
   <div class="two-col">
-    <div class="problem-block">
-      <span class="block-icon">📋</span>
+    <div class="problem-block reveal">
+      <span class="block-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
       <div class="block-heading">Before Trivsel</div>
       <p class="block-body">Paper logbooks. Spreadsheets no one updates. Calibration dates that slip. Faults discovered at the bedside instead of the dashboard. A biomedical engineer spending more time searching for records than fixing equipment.</p>
     </div>
-    <div class="solution-block">
-      <span class="block-icon">📱</span>
+    <div class="solution-block reveal">
+      <span class="block-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><circle cx="12" cy="18" r="0.8" fill="#2563EB" stroke="none"/><path d="M9 6h6"/></svg></span>
       <div class="block-heading">With Trivsel</div>
       <p class="block-body">One QR code per device. Scan it and see the current status, calibration schedule, and complete fault history. Report a problem in seconds from any phone — no login required. Engineers track everything from one dashboard.</p>
     </div>
@@ -480,22 +548,22 @@
   <p class="section-lead">Setup takes one visit. From that point forward, every device tells its own story.</p>
 
   <div class="steps">
-    <div class="step">
+    <div class="step reveal">
       <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="13" width="40" height="43" rx="3"/><rect x="24" y="8" width="16" height="8" rx="3"/><path d="M21 27h22M21 36h22M21 45h14"/></g></svg></div>
       <div class="step-num">01 &mdash; Register</div>
       <div class="step-body"><strong>Device goes into the system</strong>Department, manufacturer, model, serial number, and calibration schedule — entered once during onboarding.</div>
     </div>
-    <div class="step">
+    <div class="step reveal">
       <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="13" width="44" height="30" rx="3"/><path d="M19 35h8l4-12 5 17 5-10 4 5h6"/><path d="M25 52h14M32 43v9"/></g></svg></div>
       <div class="step-num">02 &mdash; Label</div>
       <div class="step-body"><strong>QR code affixed to the device</strong>Each device gets a unique code that links directly to its full record. Printed and stuck on during the same visit.</div>
     </div>
-    <div class="step">
+    <div class="step reveal">
       <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="none" stroke="#2563EB" stroke-width="2.7" stroke-linecap="round"><circle cx="32" cy="32" r="13"/><path d="M32 6v8M32 50v8M6 32h8M50 32h8M13 13l6 6M45 45l6 6M51 13l-6 6M19 45l-6 6"/></g><circle cx="32" cy="32" r="4" fill="#2563EB"/></svg></div>
       <div class="step-num">03 &mdash; Scan</div>
       <div class="step-body"><strong>Any phone, any time</strong>A nurse, doctor, or patient family member scans the code and sees the device's status and history. Reporting a fault takes 30 seconds and requires no account.</div>
     </div>
-    <div class="step">
+    <div class="step reveal">
       <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="#2563EB"><path d="M9 51h46v4H9z"/><path d="M15 43h8v8h-8zM28 32h8v19h-8zM41 20h8v31h-8z"/></g></svg></div>
       <div class="step-num">04 &mdash; Track</div>
       <div class="step-body"><strong>Engineers see everything</strong>The dashboard shows every open fault, upcoming calibration, and device status across all departments. Reminders send automatically.</div>
@@ -512,19 +580,19 @@
   <p class="section-lead">Trivsel works for every person involved in keeping equipment running — without requiring everyone to learn a new system.</p>
 
   <div class="roles">
-    <div class="role">
+    <div class="role reveal">
       <div class="role-title">Biomedical Engineers</div>
       <p class="role-body">One dashboard instead of five logs. Every fault carries a full chain of custody from report to resolution. Calibration reminders arrive automatically — nothing slips.</p>
     </div>
-    <div class="role">
+    <div class="role reveal">
       <div class="role-title">Hospital Administrators</div>
       <p class="role-body">Real visibility into equipment health across every department. A built-in audit trail for every device, ready for inspection at any time.</p>
     </div>
-    <div class="role">
+    <div class="role reveal">
       <div class="role-title">Nurses &amp; Clinical Staff</div>
       <p class="role-body">Scan the code on a device, report the problem, done. No account to create, no paperwork, no phone call to biomedical. Works on any smartphone.</p>
     </div>
-    <div class="role">
+    <div class="role reveal">
       <div class="role-title">Hospital Leadership</div>
       <p class="role-body">Equipment downtime documented and timestamped. Calibration compliance visible at a glance. Data that supports procurement decisions rather than guesswork.</p>
     </div>
@@ -532,7 +600,7 @@
 </section>
 
 <!-- CTA BAND -->
-<div class="cta-band" id="partner">
+<div class="cta-band reveal" id="partner">
   <h2>Become a Founding Hospital Partner.</h2>
   <p>Offered to our first hospital partners in Ghana.</p>
   <a class="btn-white" href="mailto:nisong@trivsel.uk">Get in Touch</a>
@@ -558,35 +626,35 @@
   <h2>Reach the right inbox.</h2>
   <p class="section-lead">Pick the address that matches what you need — every message reaches our team.</p>
   <div class="contact-grid">
-      <a class="contact-card" href="mailto:info@trivsel.uk">
+      <a class="contact-card reveal" href="mailto:info@trivsel.uk">
         <div class="contact-email">info@trivsel.uk</div>
         <p class="contact-desc">General questions about Trivsel or how it works.</p>
       </a>
-      <a class="contact-card" href="mailto:sales@trivsel.uk">
+      <a class="contact-card reveal" href="mailto:sales@trivsel.uk">
         <div class="contact-email">sales@trivsel.uk</div>
         <p class="contact-desc">Pricing, demos, and becoming a hospital partner.</p>
       </a>
-      <a class="contact-card" href="mailto:support@trivsel.uk">
+      <a class="contact-card reveal" href="mailto:support@trivsel.uk">
         <div class="contact-email">support@trivsel.uk</div>
         <p class="contact-desc">Help with an existing Trivsel account or device record.</p>
       </a>
-      <a class="contact-card" href="mailto:calibration@trivsel.uk">
+      <a class="contact-card reveal" href="mailto:calibration@trivsel.uk">
         <div class="contact-email">calibration@trivsel.uk</div>
         <p class="contact-desc">Questions about calibration schedules and reminders.</p>
       </a>
-      <a class="contact-card" href="mailto:admin@trivsel.uk">
+      <a class="contact-card reveal" href="mailto:admin@trivsel.uk">
         <div class="contact-email">admin@trivsel.uk</div>
         <p class="contact-desc">Account administration and billing.</p>
       </a>
-      <a class="contact-card" href="mailto:privacy@trivsel.uk">
+      <a class="contact-card reveal" href="mailto:privacy@trivsel.uk">
         <div class="contact-email">privacy@trivsel.uk</div>
         <p class="contact-desc">Data privacy questions and requests.</p>
       </a>
-      <a class="contact-card" href="mailto:security@trivsel.uk">
+      <a class="contact-card reveal" href="mailto:security@trivsel.uk">
         <div class="contact-email">security@trivsel.uk</div>
         <p class="contact-desc">Report a security issue or vulnerability.</p>
       </a>
-      <a class="contact-card" href="mailto:nisong@trivsel.uk">
+      <a class="contact-card reveal" href="mailto:nisong@trivsel.uk">
         <div class="contact-email">nisong@trivsel.uk</div>
         <p class="contact-desc">Reach the founder directly.</p>
       </a>
@@ -596,13 +664,36 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-left">
-    <strong>Trivsel Biomedical Ltd.</strong><br>
+    <strong>Trivsel Ltd.</strong><br>
     Accra, Ghana
   </div>
   <div class="footer-contact">
     <a href="mailto:nisong@trivsel.uk">nisong@trivsel.uk</a>
   </div>
 </footer>
+
+<script>
+  // Scroll-reveal: fade elements up into view once, respecting
+  // prefers-reduced-motion (handled separately in CSS above).
+  if ("IntersectionObserver" in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      el.classList.add("is-visible");
+    });
+  }
+</script>
 
 </body>
 </html>
