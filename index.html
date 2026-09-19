@@ -1,699 +1,706 @@
 <!DOCTYPE html>
+<!-- trivsel-marketing-source: 4c2e6d37705e329b960f74855c46fc0bcc671296 -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Trivsel gives every medical device a QR-linked digital record — status, calibration schedule, and complete fault history, from any phone." />
-  <title>Trivsel — Medical Equipment Tracking for Ghana</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    :root {
-      --blue:    #2563EB;
-      --blue-dk: #1E4FC4;
-      --ink:     #000000;
-      --muted:   #6B7280;
-      --subtle:  #F0F9FF;
-      --line:    #E5E7EB;
-      --white:   #FFFFFF;
-    }
+    <title>Trivsel — The Intelligence Layer for Physical Assets</title>
+    <meta
+        name="description"
+        content="
+Trivsel gives physical assets identity, history, context and intelligence across healthcare, manufacturing, laboratories, facilities and infrastructure.
+"
+    >
 
-    html { scroll-behavior: smooth; }
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="/static/img/logo-icon.png">
+    <link rel="stylesheet" href="/static/marketing/css/site.css">
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
-      font-size: 17px;
-      line-height: 1.65;
-      color: var(--ink);
-      background: var(--white);
-      -webkit-font-smoothing: antialiased;
-    }
 
-    /* ── NAV ── */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 5vw;
-      height: 60px;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-wordmark {
-      font-size: 1.1rem; font-weight: 700; color: var(--ink);
-      letter-spacing: -0.02em; text-decoration: none;
-      display: inline-flex; align-items: center; gap: 8px;
-    }
-    .nav-wordmark img { height: 28px; display: block; }
-    .nav-cta {
-      font-size: 0.85rem; font-weight: 600;
-      color: var(--white); background: var(--blue);
-      padding: 8px 18px; border-radius: 6px;
-      text-decoration: none; transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .nav-cta:hover { background: var(--blue-dk); transform: translateY(-1px); box-shadow: 0 4px 10px rgba(37,99,235,0.2); }
-
-    /* ── HERO ── */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      min-height: calc(100vh - 60px);
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 5vw;
-      align-items: center;
-    }
-    .hero-text { padding-right: 4rem; }
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--blue);
-      margin-bottom: 1.2rem;
-    }
-    h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800; line-height: 1.15;
-      letter-spacing: -0.03em; color: var(--ink);
-      margin-bottom: 1.2rem;
-    }
-    h1 em { color: var(--blue); font-style: normal; }
-    .hero-sub {
-      font-size: 1.05rem; color: var(--muted);
-      max-width: 440px; margin-bottom: 2rem;
-      line-height: 1.7;
-    }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary {
-      font-size: 0.95rem; font-weight: 600; color: var(--white);
-      background: var(--blue); padding: 12px 24px; border-radius: 8px;
-      text-decoration: none; transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .btn-primary:hover { background: var(--blue-dk); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37,99,235,0.22); }
-    .btn-secondary {
-      font-size: 0.95rem; font-weight: 600; color: var(--ink);
-      background: transparent; padding: 12px 24px; border-radius: 8px;
-      border: 1.5px solid var(--line); text-decoration: none;
-      transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
-    }
-    .btn-secondary:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-1px); }
-
-    /* ── HERO VISUAL: QR DEMO, dashboard gradient card treatment ── */
-    .hero-visual {
-      display: flex; align-items: center; justify-content: center;
-    }
-    .device-card {
-      position: relative;
-      overflow: hidden;
-      background: var(--white);
-      border: 1px solid #c9e0fa;
-      border-radius: 18px;
-      padding: 2rem;
-      box-shadow:
-        0 8px 24px rgba(37, 105, 175, 0.10),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-      width: 300px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .device-card:hover {
-      transform: translateY(-4px);
-      box-shadow:
-        0 14px 34px rgba(37, 105, 175, 0.16),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    }
-    .device-card::before,
-    .device-card::after {
-      content: "";
-      position: absolute;
-      pointer-events: none;
-      border-radius: 999px;
-      opacity: 0.45;
-      z-index: 0;
-    }
-    .device-card::before {
-      width: 150px; height: 62px;
-      left: -50px; bottom: -30px;
-      background: rgba(67, 171, 246, 0.16);
-      transform: rotate(-18deg);
-    }
-    .device-card::after {
-      width: 130px; height: 54px;
-      right: -36px; top: -28px;
-      background: rgba(127, 112, 235, 0.12);
-      transform: rotate(18deg);
-    }
-    .device-card > * { position: relative; z-index: 1; }
-    .device-card-label {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--blue);
-      margin-bottom: 0.6rem;
-    }
-    .device-name {
-      font-size: 1.1rem; font-weight: 700; color: var(--ink);
-      margin-bottom: 0.25rem;
-    }
-    .device-id {
-      font-size: 0.75rem; font-family: monospace;
-      color: var(--muted); margin-bottom: 1.2rem;
-    }
-    .status-pill {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 0.75rem; font-weight: 600; padding: 4px 10px;
-      border-radius: 999px; margin-bottom: 1.2rem;
-    }
-    .status-ok { background: #D1FAE5; color: #065F46; }
-    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
-    .qr-wrapper {
-      background: var(--subtle);
-      border-radius: 10px; padding: 1.2rem;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1rem;
-    }
-    .qr-svg { width: 120px; height: 120px; }
-    .device-meta {
-      font-size: 0.75rem; color: var(--muted);
-      border-top: 1px solid var(--line);
-      padding-top: 0.8rem;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem;
-    }
-    .device-meta-item strong { display: block; color: var(--ink); font-size: 0.8rem; }
-    .scan-hint {
-      position: absolute; bottom: -14px; left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.7rem; font-weight: 600; color: var(--blue);
-      background: var(--subtle); border: 1px solid var(--blue);
-      padding: 4px 12px; border-radius: 999px;
-      white-space: nowrap;
-      z-index: 2;
-    }
-
-    /* ── SECTIONS ── */
-    section {
-      padding: 5rem 5vw;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .section-divider { border: none; border-top: 1px solid var(--line); }
-    .section-tag {
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--blue);
-      margin-bottom: 0.8rem;
-    }
-    h2 {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 800; letter-spacing: -0.025em; line-height: 1.2;
-      color: var(--ink); margin-bottom: 1rem;
-    }
-    .section-lead {
-      font-size: 1.05rem; color: var(--muted);
-      max-width: 560px; margin-bottom: 3rem; line-height: 1.7;
-    }
-
-    /* ── PROBLEM / SOLUTION ── */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-    .problem-block, .solution-block {
-      padding: 2rem;
-      border-radius: 12px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .problem-block {
-      background: #FFF7ED;
-      border: 1px solid #FED7AA;
-    }
-    .solution-block {
-      background: var(--subtle);
-      border: 1px solid #BAE6FD;
-    }
-    .problem-block:hover, .solution-block:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(23, 32, 51, 0.06);
-    }
-    .block-icon {
-      width: 40px; height: 40px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1rem;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.6);
-    }
-    .block-icon svg { width: 22px; height: 22px; }
-    .block-heading {
-      font-size: 1rem; font-weight: 700; color: var(--ink);
-      margin-bottom: 0.6rem;
-    }
-    .block-body { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
-
-    /* ── HOW IT WORKS ── */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-    .step {
-      position: relative;
-      padding: 1.25rem;
-      border-radius: 12px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    }
-    .step:hover {
-      transform: translateY(-3px);
-      background: var(--subtle);
-      box-shadow: 0 10px 24px rgba(23, 32, 51, 0.06);
-    }
-    .step-icon {
-      width: 44px; height: 44px;
-      background: var(--subtle);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 0.75rem;
-      transition: transform 0.25s ease;
-    }
-    .step:hover .step-icon { transform: scale(1.08); }
-    .step-icon svg { width: 24px; height: 24px; }
-    .step-num {
-      font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
-      color: var(--blue); margin-bottom: 0.6rem;
-    }
-    .step-body {
-      font-size: 0.9rem; color: var(--muted); line-height: 1.6;
-    }
-    .step-body strong { color: var(--ink); display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
-    .step::after {
-      content: "";
-      position: absolute; top: 27px; left: calc(100% + 0.75rem);
-      width: calc(1.5rem - 4px); height: 1px;
-      background: var(--line);
-    }
-    .step:last-child::after { display: none; }
-
-    /* ── WHO IT'S FOR ── */
-    .roles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-    .role {
-      padding: 1.5rem;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .role:hover {
-      border-color: #bfd1e3;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(23, 32, 51, 0.06);
-    }
-    .role-title {
-      font-size: 0.85rem; font-weight: 700; color: var(--ink);
-      margin-bottom: 0.4rem;
-    }
-    .role-body { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
-
-    /* ── PARTNER CTA ── */
-    .cta-band {
-      position: relative;
-      overflow: hidden;
-      background: var(--ink); border-radius: 16px;
-      padding: 4rem; text-align: center;
-      margin: 0 5vw 5rem;
-    }
-    .cta-band h2 { color: var(--white); margin-bottom: 0.8rem; }
-    .cta-band p {
-      color: #9CA3AF; max-width: 480px; margin: 0 auto 2rem;
-      font-size: 1rem; line-height: 1.7;
-    }
-    .btn-white {
-      font-size: 0.95rem; font-weight: 600; color: var(--ink);
-      background: var(--white); padding: 12px 28px; border-radius: 8px;
-      text-decoration: none; display: inline-block;
-      transition: background 0.15s ease, transform 0.15s ease;
-    }
-    .btn-white:hover { background: var(--subtle); transform: translateY(-1px); }
-
-    /* ── ABOUT ── */
-    .about-inner {
-      max-width: 680px;
-    }
-    .about-inner p {
-      font-size: 1rem; color: var(--muted); line-height: 1.75;
-      margin-bottom: 1rem;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 2.5rem 5vw;
-      display: flex;
-      align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 1rem;
-    }
-    .footer-left { font-size: 0.85rem; color: var(--muted); }
-    .footer-left strong { color: var(--ink); }
-    .footer-contact a {
-      font-size: 0.85rem; color: var(--blue); text-decoration: none;
-    }
-    .footer-contact a:hover { text-decoration: underline; }
-
-    /* ── CONTACT ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-    .contact-card {
-      padding: 1.5rem;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      text-decoration: none;
-      display: block;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
-    }
-    .contact-card:hover {
-      border-color: var(--blue);
-      box-shadow: 0 4px 16px rgba(37,99,235,0.08);
-      transform: translateY(-2px);
-    }
-    .contact-email {
-      font-size: 0.95rem; font-weight: 700; color: var(--blue);
-      margin-bottom: 0.4rem;
-    }
-    .contact-desc {
-      font-size: 0.85rem; color: var(--muted); line-height: 1.6;
-    }
-
-    /* ── SCROLL-REVEAL ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding-top: 3rem; padding-bottom: 3rem; }
-      .hero-text { padding-right: 0; }
-      .hero-visual { margin-top: 2.5rem; }
-      .two-col { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr 1fr; }
-      .step::after { display: none; }
-      .roles { grid-template-columns: 1fr; }
-      .cta-band { padding: 2.5rem 1.5rem; }
-    }
-    @media (max-width: 540px) {
-      .steps { grid-template-columns: 1fr; }
-      nav { padding: 0 1.2rem; }
-      section { padding: 3.5rem 1.2rem; }
-      footer { padding: 2rem 1.2rem; flex-direction: column; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { transition: none !important; }
-      .reveal { opacity: 1; transform: none; }
-    }
-  </style>
 </head>
-<body>
+<body class="tv-body">
 
-<!-- NAV -->
-<nav>
-  <a class="nav-wordmark" href="https://trivsel.uk/"><img src="assets/logo.png" alt="Trivsel"></a>
-  <a class="nav-cta" href="mailto:nisong@trivsel.uk">Partner With Us</a>
-</nav>
+    <header class="tv-nav" data-nav>
+    <div class="tv-container tv-nav__inner">
+        <a class="tv-brand" href="/" aria-label="Trivsel home">
+            <img
+                class="tv-brand__mark"
+                src="/static/img/logo-icon.png"
+                alt=""
+                width="34"
+                height="34"
+            >
+            <span class="tv-brand__name">TRIVSEL</span>
+        </a>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-text">
-    <span class="eyebrow">Medical Equipment Tracking &mdash; Built for Ghana</span>
-    <h1>Every device gets a<br><em>digital identity.</em></h1>
-    <p class="hero-sub">
-      Trivsel replaces paper logs and spreadsheets with a QR code on every device —
-      giving hospitals instant visibility into equipment status, calibration schedules,
-      and faults. From any phone. No special hardware.
-    </p>
-    <div class="hero-actions">
-      <a class="btn-primary" href="mailto:nisong@trivsel.uk">Partner With Us</a>
-      <a class="btn-secondary" href="#how">See How It Works</a>
-    </div>
-  </div>
+        <button
+            class="tv-menu-button"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            data-menu-button
+        >
+            <span></span>
+            <span></span>
+        </button>
 
-  <div class="hero-visual">
-    <div class="device-card">
-      <div class="device-card-label">Device Record</div>
-      <div class="device-name">ICU Patient Monitor</div>
-      <div class="device-id">GH-KATH-ICU-MON-0012</div>
-      <span class="status-pill status-ok">
-        <span class="status-dot"></span>Operational
-      </span>
-      <div class="qr-wrapper">
-        <svg class="qr-svg" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" aria-label="Sample QR code">
-          <rect width="21" height="21" fill="#F0F9FF"/>
-          <rect x="1" y="1" width="7" height="7" fill="#000000"/>
-          <rect x="2" y="2" width="5" height="5" fill="#F0F9FF"/>
-          <rect x="3" y="3" width="3" height="3" fill="#000000"/>
-          <rect x="13" y="1" width="7" height="7" fill="#000000"/>
-          <rect x="14" y="2" width="5" height="5" fill="#F0F9FF"/>
-          <rect x="15" y="3" width="3" height="3" fill="#000000"/>
-          <rect x="1" y="13" width="7" height="7" fill="#000000"/>
-          <rect x="2" y="14" width="5" height="5" fill="#F0F9FF"/>
-          <rect x="3" y="15" width="3" height="3" fill="#000000"/>
-          <rect x="9" y="1" width="1" height="1" fill="#000000"/>
-          <rect x="11" y="1" width="1" height="1" fill="#000000"/>
-          <rect x="9" y="3" width="1" height="1" fill="#37B6FF"/>
-          <rect x="11" y="3" width="2" height="1" fill="#000000"/>
-          <rect x="9" y="5" width="2" height="1" fill="#37B6FF"/>
-          <rect x="12" y="5" width="1" height="1" fill="#000000"/>
-          <rect x="9" y="7" width="1" height="1" fill="#000000"/>
-          <rect x="11" y="7" width="1" height="1" fill="#37B6FF"/>
-          <rect x="1" y="9" width="2" height="1" fill="#000000"/>
-          <rect x="4" y="9" width="1" height="1" fill="#37B6FF"/>
-          <rect x="6" y="9" width="1" height="1" fill="#000000"/>
-          <rect x="9" y="9" width="1" height="1" fill="#37B6FF"/>
-          <rect x="11" y="9" width="3" height="1" fill="#000000"/>
-          <rect x="15" y="9" width="2" height="1" fill="#37B6FF"/>
-          <rect x="18" y="9" width="2" height="1" fill="#000000"/>
-          <rect x="1" y="11" width="1" height="1" fill="#37B6FF"/>
-          <rect x="3" y="11" width="2" height="1" fill="#000000"/>
-          <rect x="6" y="11" width="1" height="1" fill="#37B6FF"/>
-          <rect x="9" y="11" width="2" height="1" fill="#000000"/>
-          <rect x="12" y="11" width="1" height="1" fill="#37B6FF"/>
-          <rect x="14" y="11" width="3" height="1" fill="#000000"/>
-          <rect x="18" y="11" width="1" height="1" fill="#37B6FF"/>
-          <rect x="9" y="13" width="1" height="1" fill="#000000"/>
-          <rect x="11" y="13" width="2" height="1" fill="#37B6FF"/>
-          <rect x="14" y="13" width="1" height="1" fill="#000000"/>
-          <rect x="16" y="13" width="3" height="1" fill="#37B6FF"/>
-          <rect x="9" y="15" width="2" height="1" fill="#37B6FF"/>
-          <rect x="12" y="15" width="1" height="1" fill="#000000"/>
-          <rect x="14" y="15" width="2" height="1" fill="#37B6FF"/>
-          <rect x="17" y="15" width="2" height="1" fill="#000000"/>
-          <rect x="9" y="17" width="1" height="1" fill="#000000"/>
-          <rect x="11" y="17" width="3" height="1" fill="#37B6FF"/>
-          <rect x="15" y="17" width="1" height="1" fill="#000000"/>
-          <rect x="17" y="17" width="2" height="1" fill="#37B6FF"/>
-          <rect x="9" y="19" width="2" height="1" fill="#37B6FF"/>
-          <rect x="12" y="19" width="1" height="1" fill="#000000"/>
-          <rect x="14" y="19" width="3" height="1" fill="#37B6FF"/>
-          <rect x="18" y="19" width="1" height="1" fill="#000000"/>
-        </svg>
-      </div>
-      <div class="device-meta">
-        <div class="device-meta-item">
-          <strong>Last calibrated</strong>Jun 2026
+        <nav class="tv-nav__links" aria-label="Primary navigation" data-menu>
+            <a href="/platform">Platform</a>
+            <a href="/industries">Industries</a>
+            <a href="/intelligence">Intelligence</a>
+            <a href="/research">Research</a>
+            <a href="/company">Company</a>
+        </nav>
+
+        <div class="tv-nav__actions">
+            <a class="tv-link-muted" href="https://trivsel.uk/">Open Trivsel</a>
+            <a class="tv-button tv-button--primary tv-button--small" href="/contact">
+                Request a pilot
+                <span aria-hidden="true">↗</span>
+            </a>
         </div>
-        <div class="device-meta-item">
-          <strong>Next due</strong>Dec 2026
+    </div>
+</header>
+
+    <main id="main-content">
+
+<section class="tv-hero">
+    <div class="tv-hero__grid" aria-hidden="true"></div>
+
+    <div class="tv-container">
+        <div class="tv-hero__top tv-reveal">
+            <p class="tv-kicker">TRIVSEL / ASSET INTELLIGENCE</p>
+
+            <h1>
+                The intelligence layer
+                <span>for physical assets.</span>
+            </h1>
+
+            <div class="tv-hero__copy-row">
+                <p class="tv-hero__copy">
+                    Trivsel connects identity, location, maintenance, calibration,
+                    intervention, readiness and history so organizations can
+                    understand what they own and what should happen next.
+                </p>
+
+                <div class="tv-hero__actions">
+                    <a class="tv-button tv-button--primary" href="/platform">
+                        Explore the platform
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                    <a class="tv-button tv-button--outline" href="/contact">
+                        Request a pilot
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="device-meta-item">
-          <strong>Open faults</strong>0
+
+        <div class="tv-system tv-reveal" data-system>
+            <div class="tv-system__header">
+                <span>LIVE ASSET MODEL</span>
+                <span>TRIVSEL / 001</span>
+            </div>
+
+            <div class="tv-system__stage">
+                <div class="tv-system__grid" aria-hidden="true"></div>
+
+                <div class="tv-system__orbit tv-system__orbit--1"></div>
+                <div class="tv-system__orbit tv-system__orbit--2"></div>
+                <div class="tv-system__orbit tv-system__orbit--3"></div>
+
+                <div class="tv-system__core">
+                    <img src="/static/img/logo-icon.png" alt="" width="44" height="44">
+                    <span>PHYSICAL ASSET</span>
+                    <strong>MRI-0241</strong>
+                </div>
+
+                <button class="tv-system__node tv-system__node--identity" type="button">
+                    <small>01</small><span>Identity</span>
+                </button>
+                <button class="tv-system__node tv-system__node--location" type="button">
+                    <small>02</small><span>Location</span>
+                </button>
+                <button class="tv-system__node tv-system__node--maintenance" type="button">
+                    <small>03</small><span>Maintenance</span>
+                </button>
+                <button class="tv-system__node tv-system__node--calibration" type="button">
+                    <small>04</small><span>Calibration</span>
+                </button>
+                <button class="tv-system__node tv-system__node--history" type="button">
+                    <small>05</small><span>History</span>
+                </button>
+                <button class="tv-system__node tv-system__node--readiness" type="button">
+                    <small>06</small><span>Readiness</span>
+                </button>
+
+                <div class="tv-system__status">
+                    <div>
+                        <span>Status</span>
+                        <strong><i></i> Operational</strong>
+                    </div>
+                    <div>
+                        <span>Calibration</span>
+                        <strong>42 days</strong>
+                    </div>
+                    <div>
+                        <span>Readiness</span>
+                        <strong>96%</strong>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="device-meta-item">
-          <strong>Department</strong>ICU
+
+        <div class="tv-hero__ticker" aria-label="Trivsel capabilities">
+            <div class="tv-marquee">
+                <span>ASSET IDENTITY</span><i></i>
+                <span>LOCATION</span><i></i>
+                <span>MAINTENANCE</span><i></i>
+                <span>CALIBRATION</span><i></i>
+                <span>INTERVENTIONS</span><i></i>
+                <span>READINESS</span><i></i>
+                <span>AUDIT HISTORY</span><i></i>
+                <span>ASSET INTELLIGENCE</span><i></i>
+            </div>
         </div>
-      </div>
-      <span class="scan-hint">&#x1F4F1; Scan from any phone</span>
     </div>
-  </div>
-</div>
+</section>
+<section class="tv-section tv-platform">
+    <div class="tv-container">
+        <div class="tv-section__intro tv-reveal">
+            <p class="tv-kicker">01 / PLATFORM</p>
+            <h2>One system for the complete life of an asset.</h2>
+            <p>
+                Asset records become more useful when the relationships around
+                them are persistent. Trivsel connects the physical object to its
+                operational context.
+            </p>
+        </div>
 
-<hr class="section-divider" style="max-width:1200px;margin:0 auto;" />
+        <div class="tv-platform__board tv-reveal">
+            <div class="tv-platform__rail">
+                <span class="is-active">Asset 360</span>
+                <span>Maintenance</span>
+                <span>Calibration</span>
+                <span>Interventions</span>
+                <span>Readiness</span>
+                <span>History</span>
+            </div>
 
-<!-- PROBLEM / SOLUTION -->
-<section id="problem">
-  <p class="section-tag">The Problem</p>
-  <h2>Where is this device?<br>When was it last serviced?</h2>
-  <p class="section-lead">In most hospitals, nobody can answer quickly. Equipment records live in paper files and spreadsheets scattered across departments — and downtime is often discovered only at the moment it matters most.</p>
+            <div class="tv-platform__asset">
+                <div class="tv-product-card__top">
+                    <div class="tv-product-card__icon">
+                        <img src="/static/img/icons/stethoscope.svg" alt="">
+                    </div>
+                    <div>
+                        <span>ASSET / GH-CRH-RAD-MRI-0241</span>
+                        <h3>MRI Scanner 3T</h3>
+                    </div>
+                    <span class="tv-pill tv-pill--ok">Operational</span>
+                </div>
 
-  <div class="two-col">
-    <div class="problem-block reveal">
-      <span class="block-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
-      <div class="block-heading">Before Trivsel</div>
-      <p class="block-body">Paper logbooks. Spreadsheets no one updates. Calibration dates that slip. Faults discovered at the bedside instead of the dashboard. A biomedical engineer spending more time searching for records than fixing equipment.</p>
+                <div class="tv-product-card__metrics">
+                    <div><span>Location</span><strong>Radiology / Room 4</strong></div>
+                    <div><span>Responsible</span><strong>Biomedical Engineering</strong></div>
+                    <div><span>Next PM</span><strong>18 Oct 2026</strong></div>
+                    <div><span>Calibration</span><strong>29 Oct 2026</strong></div>
+                </div>
+
+                <div class="tv-product-card__timeline">
+                    <div class="tv-product-card__timeline-head">
+                        <span>Lifecycle history</span>
+                        <span>12 events</span>
+                    </div>
+                    <div class="tv-timeline-row">
+                        <i class="tv-dot tv-dot--blue"></i>
+                        <span>Preventive maintenance completed</span>
+                        <time>12 Sep</time>
+                    </div>
+                    <div class="tv-timeline-row">
+                        <i class="tv-dot tv-dot--black"></i>
+                        <span>Location confirmed</span>
+                        <time>09 Sep</time>
+                    </div>
+                    <div class="tv-timeline-row">
+                        <i class="tv-dot tv-dot--blue"></i>
+                        <span>Calibration evidence attached</span>
+                        <time>24 Aug</time>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="tv-platform__insight">
+                <span class="tv-kicker">SYSTEM INSIGHT</span>
+                <strong>Ready for service</strong>
+                <p>
+                    Core maintenance and calibration requirements are current.
+                    No unresolved intervention blocks readiness.
+                </p>
+                <div class="tv-readiness-ring" aria-label="96 percent readiness">
+                    <span>96<small>%</small></span>
+                </div>
+            </aside>
+        </div>
+
+        <div class="tv-primitives">
+            <article class="tv-primitive tv-reveal">
+                <span>01</span>
+                <img src="/static/img/icons/fingerprint-pattern.svg" alt="">
+                <h3>Identity</h3>
+                <p>Persistent identity across the entire asset lifecycle.</p>
+            </article>
+            <article class="tv-primitive tv-reveal">
+                <span>02</span>
+                <img src="/static/img/icons/map-pin.svg" alt="">
+                <h3>Location</h3>
+                <p>Know where assets belong, where they move and who owns context.</p>
+            </article>
+            <article class="tv-primitive tv-reveal">
+                <span>03</span>
+                <img src="/static/img/icons/wrench.svg" alt="">
+                <h3>Maintenance</h3>
+                <p>Schedules, events, evidence and complete service history.</p>
+            </article>
+            <article class="tv-primitive tv-reveal">
+                <span>04</span>
+                <img src="/static/img/icons/gauge.svg" alt="">
+                <h3>Calibration</h3>
+                <p>Requirements, results, evidence and future due dates.</p>
+            </article>
+            <article class="tv-primitive tv-reveal">
+                <span>05</span>
+                <img src="/static/img/icons/triangle-alert.svg" alt="">
+                <h3>Interventions</h3>
+                <p>Record problems, actions, ownership and resolution.</p>
+            </article>
+            <article class="tv-primitive tv-reveal">
+                <span>06</span>
+                <img src="/static/img/icons/shield-check.svg" alt="">
+                <h3>Readiness</h3>
+                <p>Bring operational evidence together before it matters.</p>
+            </article>
+        </div>
     </div>
-    <div class="solution-block reveal">
-      <span class="block-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><circle cx="12" cy="18" r="0.8" fill="#2563EB" stroke="none"/><path d="M9 6h6"/></svg></span>
-      <div class="block-heading">With Trivsel</div>
-      <p class="block-body">One QR code per device. Scan it and see the current status, calibration schedule, and complete fault history. Report a problem in seconds from any phone — no login required. Engineers track everything from one dashboard.</p>
+</section>
+<section class="tv-section tv-section--dark tv-graph-section">
+    <div class="tv-container">
+        <div class="tv-section__intro tv-reveal">
+            <p class="tv-kicker">02 / ASSET GRAPH</p>
+            <h2>Assets do not exist alone.</h2>
+            <p>
+                Trivsel models the relationships around an asset, not merely the
+                row where the asset happens to live.
+            </p>
+        </div>
+
+        <div class="tv-graph-canvas tv-reveal">
+            <svg
+                class="tv-graph-lines"
+                viewBox="0 0 1200 660"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+            >
+                <path d="M600 330 C450 180 350 145 190 125" />
+                <path d="M600 330 C720 170 860 125 1010 145" />
+                <path d="M600 330 C420 330 320 330 150 330" />
+                <path d="M600 330 C780 330 890 330 1050 330" />
+                <path d="M600 330 C470 470 350 510 205 540" />
+                <path d="M600 330 C730 470 850 510 1000 540" />
+            </svg>
+
+            <div class="tv-graph-core">
+                <img src="/static/img/logo-icon.png" alt="">
+                <span>ASSET</span>
+                <strong>MRI-0241</strong>
+            </div>
+
+            <div class="tv-graph-node tv-graph-node--1">
+                <span>Manufacturer</span><strong>Siemens Healthineers</strong>
+            </div>
+            <div class="tv-graph-node tv-graph-node--2">
+                <span>Location</span><strong>Radiology / Room 4</strong>
+            </div>
+            <div class="tv-graph-node tv-graph-node--3">
+                <span>Custodian</span><strong>Biomedical Engineering</strong>
+            </div>
+            <div class="tv-graph-node tv-graph-node--4">
+                <span>Maintenance</span><strong>PM current</strong>
+            </div>
+            <div class="tv-graph-node tv-graph-node--5">
+                <span>Calibration</span><strong>42 days remaining</strong>
+            </div>
+            <div class="tv-graph-node tv-graph-node--6">
+                <span>History</span><strong>12 recorded events</strong>
+            </div>
+        </div>
+
+        <div class="tv-statement tv-reveal">
+            <span>THE RESULT</span>
+            <p>
+                A persistent operational memory for every physical asset.
+            </p>
+        </div>
     </div>
-  </div>
+</section>
+<section class="tv-section tv-intelligence">
+    <div class="tv-container">
+        <div class="tv-section__intro tv-reveal">
+            <p class="tv-kicker">03 / TRIVSEL INTELLIGENCE</p>
+            <h2>Ask your assets.</h2>
+            <p>
+                Operational intelligence should begin with structured asset
+                reality, not a disconnected chatbot.
+            </p>
+        </div>
+
+        <div class="tv-intelligence__layout">
+            <div class="tv-ai-window tv-reveal">
+                <div class="tv-ai-window__chrome">
+                    <div>
+                        <span></span><span></span><span></span>
+                    </div>
+                    <small>TRIVSEL INTELLIGENCE</small>
+                    <small>LIVE CONTEXT</small>
+                </div>
+
+                <div class="tv-ai-window__body">
+                    <div class="tv-ai-query">
+                        <span>YOU</span>
+                        <p>Which assets require attention this month?</p>
+                    </div>
+
+                    <div class="tv-ai-answer">
+                        <div class="tv-ai-answer__identity">
+                            <img src="/static/img/logo-icon.png" alt="">
+                            <span>TRIVSEL</span>
+                        </div>
+
+                        <h3>12 assets require attention.</h3>
+
+                        <div class="tv-ai-answer__grid">
+                            <div><strong>5</strong><span>PM events due</span></div>
+                            <div><strong>3</strong><span>Calibrations approaching</span></div>
+                            <div><strong>2</strong><span>Open interventions</span></div>
+                            <div><strong>2</strong><span>Evidence gaps</span></div>
+                        </div>
+
+                        <a href="/intelligence">
+                            View affected assets <span>↗</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tv-intelligence__questions">
+                <article class="tv-reveal">
+                    <span>01</span>
+                    <p>Which assets would prevent this department from being audit-ready?</p>
+                </article>
+                <article class="tv-reveal">
+                    <span>02</span>
+                    <p>Why has this equipment class experienced more downtime?</p>
+                </article>
+                <article class="tv-reveal">
+                    <span>03</span>
+                    <p>Show transfers with incomplete post-move inspection evidence.</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="tv-section tv-industries">
+    <div class="tv-container">
+        <div class="tv-section__intro tv-reveal">
+            <p class="tv-kicker">04 / INDUSTRIES</p>
+            <h2>One architecture. Many physical worlds.</h2>
+            <p>
+                Trivsel is built around the common language of physical assets,
+                then adapted to the operational context around them.
+            </p>
+        </div>
+    </div>
+
+    <div class="tv-industries__rail">
+        <a class="tv-industry tv-industry--healthcare tv-reveal" href="/industries">
+            <div class="tv-industry__index">01</div>
+            <div class="tv-industry__icon">
+                <img src="/static/img/icons/stethoscope.svg" alt="">
+            </div>
+            <div>
+                <h3>Healthcare</h3>
+                <p>Medical equipment, biomedical engineering and readiness.</p>
+            </div>
+            <span class="tv-industry__arrow">↗</span>
+        </a>
+
+        <a class="tv-industry tv-reveal" href="/industries">
+            <div class="tv-industry__index">02</div>
+            <div class="tv-industry__icon">
+                <img src="/static/img/icons/factory.svg" alt="">
+            </div>
+            <div>
+                <h3>Manufacturing</h3>
+                <p>Production equipment, tooling and operational history.</p>
+            </div>
+            <span class="tv-industry__arrow">↗</span>
+        </a>
+
+        <a class="tv-industry tv-reveal" href="/industries">
+            <div class="tv-industry__index">03</div>
+            <div class="tv-industry__icon">
+                <img src="/static/img/icons/microscope.svg" alt="">
+            </div>
+            <div>
+                <h3>Laboratories</h3>
+                <p>Scientific instruments, calibration and traceability.</p>
+            </div>
+            <span class="tv-industry__arrow">↗</span>
+        </a>
+
+        <a class="tv-industry tv-reveal" href="/industries">
+            <div class="tv-industry__index">04</div>
+            <div class="tv-industry__icon">
+                <img src="/static/img/icons/building-2.svg" alt="">
+            </div>
+            <div>
+                <h3>Facilities</h3>
+                <p>Buildings, systems, utilities and critical equipment.</p>
+            </div>
+            <span class="tv-industry__arrow">↗</span>
+        </a>
+
+        <a class="tv-industry tv-reveal" href="/industries">
+            <div class="tv-industry__index">05</div>
+            <div class="tv-industry__icon">
+                <img src="/static/img/icons/ship-cargo.svg" alt="">
+            </div>
+            <div>
+                <h3>Infrastructure</h3>
+                <p>Ports, fleets, utilities and long-lived physical systems.</p>
+            </div>
+            <span class="tv-industry__arrow">↗</span>
+        </a>
+    </div>
+</section>
+<section class="tv-section tv-people">
+    <div class="tv-container">
+        <div class="tv-people__layout">
+            <div class="tv-section__intro tv-reveal">
+                <p class="tv-kicker">05 / PEOPLE</p>
+                <h2>Behind every reliable asset is a person.</h2>
+                <p>
+                    Engineers, technicians, operators and scientists keep the
+                    physical world functioning. Trivsel preserves the context
+                    around their work and makes their contribution visible.
+                </p>
+            </div>
+
+            <div class="tv-people__credit tv-reveal">
+                <div class="tv-credit-card">
+                    <span class="tv-kicker">PEOPLE BEHIND THE ASSET</span>
+                    <h3>MRI-0241</h3>
+
+                    <div>
+                        <span>Maintained by</span>
+                        <strong>Biomedical Engineering</strong>
+                    </div>
+                    <div>
+                        <span>Calibration reviewed by</span>
+                        <strong>Quality & Metrology</strong>
+                    </div>
+                    <div>
+                        <span>Last intervention</span>
+                        <strong>Field Service Team</strong>
+                    </div>
+                    <div>
+                        <span>Operational owner</span>
+                        <strong>Radiology</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tv-roles tv-reveal">
+            <span>Biomedical engineers</span>
+            <span>Maintenance technicians</span>
+            <span>Operators</span>
+            <span>Quality engineers</span>
+            <span>Scientists</span>
+            <span>Lab managers</span>
+            <span>Calibration specialists</span>
+            <span>Field engineers</span>
+        </div>
+    </div>
+</section>
+<section class="tv-section tv-section--light tv-trust">
+    <div class="tv-container">
+        <div class="tv-section__intro tv-reveal">
+            <p class="tv-kicker">06 / TRUST</p>
+            <h2>Built for environments where records matter.</h2>
+            <p>
+                Trivsel is designed around durable operational records,
+                traceability and accountable actions.
+            </p>
+        </div>
+
+        <div class="tv-trust__grid">
+            <article class="tv-trust-card tv-reveal">
+                <img src="/static/img/icons/timeline.svg" alt="">
+                <span>01</span>
+                <h3>Traceability</h3>
+                <p>Know who did what, when, and to which asset.</p>
+            </article>
+            <article class="tv-trust-card tv-reveal">
+                <img src="/static/img/icons/scroll-text.svg" alt="">
+                <span>02</span>
+                <h3>Auditability</h3>
+                <p>Preserve operational history and supporting evidence.</p>
+            </article>
+            <article class="tv-trust-card tv-reveal">
+                <img src="/static/img/icons/user-shield.svg" alt="">
+                <span>03</span>
+                <h3>Permissions</h3>
+                <p>Control access across organizations, sites and roles.</p>
+            </article>
+            <article class="tv-trust-card tv-reveal">
+                <img src="/static/img/icons/shield-check.svg" alt="">
+                <span>04</span>
+                <h3>Reliability</h3>
+                <p>Build around durable records instead of ephemeral responses.</p>
+            </article>
+        </div>
+
+        <div class="tv-trust__note tv-reveal">
+            <span>TRUST PRINCIPLE</span>
+            <p>
+                Intelligence should be grounded in the operational record.
+            </p>
+        </div>
+    </div>
+</section>
+<section class="tv-section tv-section--dark tv-research">
+    <div class="tv-container">
+        <div class="tv-research__top tv-reveal">
+            <div class="tv-section__intro">
+                <p class="tv-kicker">07 / RESEARCH</p>
+                <h2>Understanding physical systems at scale.</h2>
+            </div>
+
+            <a class="tv-text-link tv-text-link--light" href="/research">
+                Explore Trivsel Research <span>↗</span>
+            </a>
+        </div>
+
+        <div class="tv-research__grid">
+            <article class="tv-research-card tv-reveal">
+                <span>FIELD 01</span>
+                <h3>Asset reliability</h3>
+                <p>Understanding how equipment condition and event history shape operational reliability.</p>
+            </article>
+            <article class="tv-research-card tv-reveal">
+                <span>FIELD 02</span>
+                <h3>Calibration science</h3>
+                <p>Better models for calibration status, evidence and measurement readiness.</p>
+            </article>
+            <article class="tv-research-card tv-reveal">
+                <span>FIELD 03</span>
+                <h3>Asset knowledge graphs</h3>
+                <p>Representing the relationships between physical assets, people, places and events.</p>
+            </article>
+            <article class="tv-research-card tv-reveal">
+                <span>FIELD 04</span>
+                <h3>Physical-system intelligence</h3>
+                <p>Reasoning over structured operational context to support human decisions.</p>
+            </article>
+        </div>
+    </div>
+</section>
+<section class="tv-final-cta">
+    <div class="tv-final-cta__grid" aria-hidden="true"></div>
+
+    <div class="tv-container">
+        <p class="tv-kicker tv-reveal">TRIVSEL / PHYSICAL ASSET INTELLIGENCE</p>
+
+        <h2 class="tv-reveal">
+            Your assets already generate history.
+            <span>Turn it into intelligence.</span>
+        </h2>
+
+        <div class="tv-final-cta__bottom tv-reveal">
+            <p>
+                Start with the assets you already have.
+                Build a durable operational memory around them.
+            </p>
+
+            <div class="tv-final-cta__actions">
+                <a class="tv-button tv-button--dark" href="/contact">
+                    Request a pilot <span>↗</span>
+                </a>
+                <a class="tv-button tv-button--ghost" href="https://trivsel.uk/">
+                    Open Trivsel
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
 
-<hr class="section-divider" style="max-width:1200px;margin:0 auto;" />
+    </main>
 
-<!-- HOW IT WORKS -->
-<section id="how">
-  <p class="section-tag">How It Works</p>
-  <h2>Four steps to full visibility.</h2>
-  <p class="section-lead">Setup takes one visit. From that point forward, every device tells its own story.</p>
+    <footer class="tv-footer">
+    <div class="tv-container">
+        <div class="tv-footer__hero">
+            <div>
+                <div class="tv-footer__brand">
+                    <img src="/static/img/logo-icon.png" alt="" width="42" height="42">
+                    <span>TRIVSEL</span>
+                </div>
+                <p>
+                    Intelligence infrastructure for the physical asset world.
+                </p>
+            </div>
 
-  <div class="steps">
-    <div class="step reveal">
-      <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="13" width="40" height="43" rx="3"/><rect x="24" y="8" width="16" height="8" rx="3"/><path d="M21 27h22M21 36h22M21 45h14"/></g></svg></div>
-      <div class="step-num">01 &mdash; Register</div>
-      <div class="step-body"><strong>Device goes into the system</strong>Department, manufacturer, model, serial number, and calibration schedule — entered once during onboarding.</div>
+            <a class="tv-footer__cta" href="/contact">
+                Start a conversation
+                <span aria-hidden="true">↗</span>
+            </a>
+        </div>
+
+        <div class="tv-footer__grid">
+            <div>
+                <strong>Platform</strong>
+                <a href="/platform">Asset Intelligence</a>
+                <a href="/intelligence">Trivsel Intelligence</a>
+                <a href="/industries">Industries</a>
+            </div>
+
+            <div>
+                <strong>Company</strong>
+                <a href="/company">About</a>
+                <a href="/research">Research</a>
+                <a href="/careers">Careers</a>
+            </div>
+
+            <div>
+                <strong>Access</strong>
+                <a href="https://trivsel.uk/">Open Trivsel</a>
+                <a href="/contact">Request a pilot</a>
+            </div>
+
+            <div>
+                <strong>Contact</strong>
+                <a href="mailto:nisong@trivsel.uk">nisong@trivsel.uk</a>
+                <span>Accra, Ghana</span>
+            </div>
+        </div>
+
+        <div class="tv-footer__bottom">
+            <span>© 2026 Trivsel Ltd.</span>
+            <span>Physical assets. Persistent intelligence.</span>
+        </div>
     </div>
-    <div class="step reveal">
-      <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="13" width="44" height="30" rx="3"/><path d="M19 35h8l4-12 5 17 5-10 4 5h6"/><path d="M25 52h14M32 43v9"/></g></svg></div>
-      <div class="step-num">02 &mdash; Label</div>
-      <div class="step-body"><strong>QR code affixed to the device</strong>Each device gets a unique code that links directly to its full record. Printed and stuck on during the same visit.</div>
-    </div>
-    <div class="step reveal">
-      <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="none" stroke="#2563EB" stroke-width="2.7" stroke-linecap="round"><circle cx="32" cy="32" r="13"/><path d="M32 6v8M32 50v8M6 32h8M50 32h8M13 13l6 6M45 45l6 6M51 13l-6 6M19 45l-6 6"/></g><circle cx="32" cy="32" r="4" fill="#2563EB"/></svg></div>
-      <div class="step-num">03 &mdash; Scan</div>
-      <div class="step-body"><strong>Any phone, any time</strong>A nurse, doctor, or patient family member scans the code and sees the device's status and history. Reporting a fault takes 30 seconds and requires no account.</div>
-    </div>
-    <div class="step reveal">
-      <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="#2563EB"><path d="M9 51h46v4H9z"/><path d="M15 43h8v8h-8zM28 32h8v19h-8zM41 20h8v31h-8z"/></g></svg></div>
-      <div class="step-num">04 &mdash; Track</div>
-      <div class="step-body"><strong>Engineers see everything</strong>The dashboard shows every open fault, upcoming calibration, and device status across all departments. Reminders send automatically.</div>
-    </div>
-  </div>
-</section>
-
-<hr class="section-divider" style="max-width:1200px;margin:0 auto;" />
-
-<!-- WHO IT'S FOR -->
-<section id="who">
-  <p class="section-tag">Built for Everyone Who Touches It</p>
-  <h2>Different roles, one system.</h2>
-  <p class="section-lead">Trivsel works for every person involved in keeping equipment running — without requiring everyone to learn a new system.</p>
-
-  <div class="roles">
-    <div class="role reveal">
-      <div class="role-title">Biomedical Engineers</div>
-      <p class="role-body">One dashboard instead of five logs. Every fault carries a full chain of custody from report to resolution. Calibration reminders arrive automatically — nothing slips.</p>
-    </div>
-    <div class="role reveal">
-      <div class="role-title">Hospital Administrators</div>
-      <p class="role-body">Real visibility into equipment health across every department. A built-in audit trail for every device, ready for inspection at any time.</p>
-    </div>
-    <div class="role reveal">
-      <div class="role-title">Nurses &amp; Clinical Staff</div>
-      <p class="role-body">Scan the code on a device, report the problem, done. No account to create, no paperwork, no phone call to biomedical. Works on any smartphone.</p>
-    </div>
-    <div class="role reveal">
-      <div class="role-title">Hospital Leadership</div>
-      <p class="role-body">Equipment downtime documented and timestamped. Calibration compliance visible at a glance. Data that supports procurement decisions rather than guesswork.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BAND -->
-<div class="cta-band reveal" id="partner">
-  <h2>Become a Founding Hospital Partner.</h2>
-  <p>Offered to our first hospital partners in Ghana.</p>
-  <a class="btn-white" href="mailto:nisong@trivsel.uk">Get in Touch</a>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <p class="section-tag">About</p>
-  <h2>Built by someone who's lived the problem.</h2>
-  <div class="about-inner">
-    <p>Trivsel was founded by Nisong Monyimba, a biomedical engineer and applied mathematician with a B.Sc. Biomedical Engineering from KNUST and an M.Sc. Biomedical Engineering from Arizona State University.</p>
-    <p>The idea started at Komfo Anokye Teaching Hospital in Kumasi, where Nisong worked hands-on with medical equipment maintenance and calibration, documenting device performance, and watching how much of that work depended on paper records instead of a system built for the job.</p>
-    <p>That understanding deepened through later work in medical device manufacturing and quality engineering at Abbott Laboratories and Vastek Inc., using failure analysis and risk modeling to understand exactly how equipment problems compound when they go untracked, and through research into medical device regulation across 20 African countries, which shaped how Trivsel was built for the realities those systems actually face.</p>
-    <p>Trivsel is built specifically for those realities: staff on ordinary phones, variable connectivity, and biomedical teams stretched across large device inventories. No special hardware. No expensive subscriptions.</p>
-  </div>
-</section>
-
-<hr class="section-divider" style="max-width:1200px;margin:0 auto;" />
-
-<!-- CONTACT -->
-<section id="contact">
-  <p class="section-tag">Get in Touch</p>
-  <h2>Reach the right inbox.</h2>
-  <p class="section-lead">Pick the address that matches what you need — every message reaches our team.</p>
-  <div class="contact-grid">
-      <a class="contact-card reveal" href="mailto:info@trivsel.uk">
-        <div class="contact-email">info@trivsel.uk</div>
-        <p class="contact-desc">General questions about Trivsel or how it works.</p>
-      </a>
-      <a class="contact-card reveal" href="mailto:sales@trivsel.uk">
-        <div class="contact-email">sales@trivsel.uk</div>
-        <p class="contact-desc">Pricing, demos, and becoming a hospital partner.</p>
-      </a>
-      <a class="contact-card reveal" href="mailto:support@trivsel.uk">
-        <div class="contact-email">support@trivsel.uk</div>
-        <p class="contact-desc">Help with an existing Trivsel account or device record.</p>
-      </a>
-      <a class="contact-card reveal" href="mailto:calibration@trivsel.uk">
-        <div class="contact-email">calibration@trivsel.uk</div>
-        <p class="contact-desc">Questions about calibration schedules and reminders.</p>
-      </a>
-      <a class="contact-card reveal" href="mailto:admin@trivsel.uk">
-        <div class="contact-email">admin@trivsel.uk</div>
-        <p class="contact-desc">Account administration and billing.</p>
-      </a>
-      <a class="contact-card reveal" href="mailto:privacy@trivsel.uk">
-        <div class="contact-email">privacy@trivsel.uk</div>
-        <p class="contact-desc">Data privacy questions and requests.</p>
-      </a>
-      <a class="contact-card reveal" href="mailto:security@trivsel.uk">
-        <div class="contact-email">security@trivsel.uk</div>
-        <p class="contact-desc">Report a security issue or vulnerability.</p>
-      </a>
-      <a class="contact-card reveal" href="mailto:nisong@trivsel.uk">
-        <div class="contact-email">nisong@trivsel.uk</div>
-        <p class="contact-desc">Reach the founder directly.</p>
-      </a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-left">
-    <strong>Trivsel Ltd.</strong><br>
-    Accra, Ghana
-  </div>
-  <div class="footer-contact">
-    <a href="mailto:nisong@trivsel.uk">nisong@trivsel.uk</a>
-  </div>
 </footer>
 
-<script>
-  // Scroll-reveal: fade elements up into view once, respecting
-  // prefers-reduced-motion (handled separately in CSS above).
-  if ("IntersectionObserver" in window) {
-    var revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
-
-    document.querySelectorAll(".reveal").forEach(function (el) {
-      revealObserver.observe(el);
-    });
-  } else {
-    document.querySelectorAll(".reveal").forEach(function (el) {
-      el.classList.add("is-visible");
-    });
-  }
-</script>
+    <script src="/static/marketing/js/site.js" defer></script>
 
 </body>
 </html>
