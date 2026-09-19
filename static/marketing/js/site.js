@@ -1,114 +1,146 @@
 (() => {
-  const body = document.body;
+  const menuToggle = document.querySelector("[data-menu-toggle]");
   const nav = document.querySelector("[data-nav]");
-  const mobileToggle = document.querySelector("[data-mobile-toggle]");
-  const triggers = [...document.querySelectorAll("[data-mega-trigger]")];
-  const megas = [...document.querySelectorAll("[data-mega]")];
-
-  const closeMegas = () => {
-    triggers.forEach((t) => t.setAttribute("aria-expanded", "false"));
-    megas.forEach((m) => m.classList.remove("is-open"));
-  };
-
-  triggers.forEach((trigger) => {
-    trigger.addEventListener("click", () => {
-      const key = trigger.dataset.megaTrigger;
-      const target = document.querySelector(`[data-mega="${key}"]`);
-      const open = trigger.getAttribute("aria-expanded") === "true";
-      closeMegas();
-      if (!open && target) {
-        trigger.setAttribute("aria-expanded", "true");
-        target.classList.add("is-open");
-      }
+  if (menuToggle && nav) {
+    menuToggle.addEventListener("click", () => {
+      const open = !nav.classList.contains("is-open");
+      nav.classList.toggle("is-open", open);
+      menuToggle.setAttribute("aria-expanded", String(open));
     });
-  });
+  }
 
-  mobileToggle?.addEventListener("click", () => {
-    const open = mobileToggle.getAttribute("aria-expanded") === "true";
-    mobileToggle.setAttribute("aria-expanded", String(!open));
-    nav?.classList.toggle("is-mobile-open", !open);
-    body.classList.toggle("tv-menu-open", !open);
-    closeMegas();
-  });
-
-  const searchToggle = document.querySelector("[data-search-toggle]");
-  const search = document.querySelector("[data-search]");
+  const searchPanel = document.querySelector("[data-search-panel]");
+  const searchOpen = document.querySelector("[data-search-open]");
   const searchClose = document.querySelector("[data-search-close]");
-  const searchInput = document.querySelector("[data-search-input]");
-  const searchItems = [...document.querySelectorAll("[data-search-item]")];
+  const searchInput = document.querySelector("[data-site-search]");
+  const results = document.querySelector("[data-search-results]");
 
-  const closeSearch = () => {
-    if (!search || !searchToggle) return;
-    search.hidden = true;
-    searchToggle.setAttribute("aria-expanded", "false");
-  };
-
-  searchToggle?.addEventListener("click", () => {
-    const open = searchToggle.getAttribute("aria-expanded") === "true";
-    closeMegas();
-    if (open) closeSearch();
-    else {
-      search.hidden = false;
-      searchToggle.setAttribute("aria-expanded", "true");
-      setTimeout(() => searchInput?.focus(), 0);
-    }
-  });
-
-  searchClose?.addEventListener("click", closeSearch);
-
-  searchInput?.addEventListener("input", () => {
-    const query = searchInput.value.trim().toLowerCase();
-    searchItems.forEach((item) => {
-      const haystack = `${item.textContent} ${item.dataset.terms || ""}`.toLowerCase();
-      item.hidden = Boolean(query && !haystack.includes(query));
-    });
-  });
-
-  const pathwayInput = document.querySelector("[data-pathway-search]");
-  const pathways = [...document.querySelectorAll("[data-pathway]")];
-
-  pathwayInput?.addEventListener("input", () => {
-    const query = pathwayInput.value.trim().toLowerCase();
-    pathways.forEach((item) => {
-      const haystack = `${item.textContent} ${item.dataset.pathway || ""}`.toLowerCase();
-      item.hidden = Boolean(query && !haystack.includes(query));
-    });
-  });
-
-
-  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
-  const observedSections = [
-    ...document.querySelectorAll(".tv-section, .tv-band, .tv-industry, .tv-research"),
+  const index = [
+    ["Platform", "/platform", "asset identity maintenance calibration faults readiness lifecycle"],
+    ["Industries", "/industries", "healthcare manufacturing laboratories facilities infrastructure ports hospitality"],
+    ["Intelligence", "/intelligence", "asset graph operational intelligence readiness human machine responsible ai"],
+    ["Research", "/research", "asset intelligence reliability healthcare engineering applied ai measurement evidence"],
+    ["Company", "/company", "mission principles people Trivsel Ltd"],
+    ["Careers", "/careers", "software engineering design reliability quality security research"],
+    ["Contact", "/contact", "pilot product support research contact"],
+    ["Open Trivsel", "https://trivsel.uk/", "application product sign in"]
   ];
 
-  if (!reducedMotion && "IntersectionObserver" in window) {
-    const sectionObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.setAttribute("data-in-view", "true");
-          observer.unobserve(entry.target);
-        });
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
+  const render = (value = "") => {
+    if (!results) return;
+    const q = value.trim().toLowerCase();
+    const rows = index.filter(([title, , terms]) =>
+      !q || title.toLowerCase().includes(q) || terms.includes(q)
     );
+    results.innerHTML = rows.map(([title, href]) =>
+      `<a class="tv-search-result" href="${href}">${title}</a>`
+    ).join("");
+  };
 
-    observedSections.forEach((section) => sectionObserver.observe(section));
-  } else {
-    observedSections.forEach((section) => section.setAttribute("data-in-view", "true"));
+  const openSearch = () => {
+    if (!searchPanel) return;
+    searchPanel.hidden = false;
+    render("");
+    requestAnimationFrame(() => searchInput?.focus());
+  };
+  const closeSearch = () => {
+    if (!searchPanel) return;
+    searchPanel.hidden = true;
+    searchOpen?.focus();
+  };
+
+  searchOpen?.addEventListener("click", openSearch);
+  searchClose?.addEventListener("click", closeSearch);
+  searchInput?.addEventListener("input", (event) => render(event.target.value));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && searchPanel && !searchPanel.hidden) closeSearch();
+  });
+})();
+
+// Progressive enhancement: restrained section reveals.
+// Content remains usable without JavaScript.
+(() => {
+  if (!("IntersectionObserver" in window)) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return;
+
+  const sections = document.querySelectorAll(
+    ".tv-feature-card, .tv-industry-card, .tv-module-grid article, .tv-role-grid article"
+  );
+
+  sections.forEach((element) => element.classList.add("tv-reveal"));
+
+  const observer = new IntersectionObserver(
+    (entries, instance) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("is-visible");
+        instance.unobserve(entry.target);
+      }
+    },
+    { threshold: 0.08 }
+  );
+
+  sections.forEach((element) => observer.observe(element));
+})();
+
+
+// ============================================================================
+// APPROVED TRIVSEL GLOBAL HEADER DROPDOWNS
+// ============================================================================
+
+(() => {
+  const groups = [...document.querySelectorAll(".tv-nav-group")];
+
+  const closeAll = (except = null) => {
+    for (const group of groups) {
+      if (group === except) continue;
+
+      group.classList.remove("is-open");
+
+      const trigger = group.querySelector("[data-dropdown-trigger]");
+      if (trigger) {
+        trigger.setAttribute("aria-expanded", "false");
+      }
+    }
+  };
+
+  for (const group of groups) {
+    const trigger = group.querySelector("[data-dropdown-trigger]");
+    const dropdown = group.querySelector("[data-dropdown]");
+
+    if (!trigger || !dropdown) continue;
+
+    trigger.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      const opening = !group.classList.contains("is-open");
+
+      closeAll(group);
+
+      group.classList.toggle("is-open", opening);
+      trigger.setAttribute("aria-expanded", String(opening));
+    });
+
+    group.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+
+      group.classList.remove("is-open");
+      trigger.setAttribute("aria-expanded", "false");
+      trigger.focus();
+    });
   }
 
   document.addEventListener("click", (event) => {
-    const header = document.querySelector("[data-header]");
-    if (header && !header.contains(event.target)) closeMegas();
+    if (event.target.closest(".tv-nav-group")) return;
+    closeAll();
   });
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape") return;
-    closeMegas();
-    closeSearch();
-    nav?.classList.remove("is-mobile-open");
-    mobileToggle?.setAttribute("aria-expanded", "false");
-    body.classList.remove("tv-menu-open");
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1180) {
+      closeAll();
+    }
   });
 })();

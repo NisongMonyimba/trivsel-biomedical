@@ -1,248 +1,527 @@
-<!DOCTYPE html>
-<!-- trivsel-marketing-source: 529e306416d7bc944f44a41701139cb4ca1237c9 -->
+<!-- trivsel-marketing-source: e0bbcdbc6bee985c32842b37782f67d71e44afde -->
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Trivsel — The Intelligence Layer for Physical Assets</title>
-  <meta name="description" content="Trivsel gives physical assets identity, history, context and intelligence across healthcare, manufacturing, laboratories, facilities and infrastructure.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#2563EB">
-  <link rel="icon" href="/static/img/logo-icon.png">
+<meta name="description" content="Trivsel connects physical asset identity, location, maintenance, calibration, interventions, readiness and history into useful operational context.">
+  <title>Trivsel — The intelligence layer for physical assets</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;750;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/marketing/css/site.css">
+  <link rel="icon" type="image/png" href="/static/img/logo-icon.png">
+  <link rel="shortcut icon" type="image/png" href="/static/img/logo-icon.png">
+  <link rel="apple-touch-icon" href="/static/img/logo-icon.png">
 </head>
 <body class="tv-body">
-<a class="tv-skip" href="#main-content">Skip to content</a>
-<header class="tv-header" data-header>
-  <div class="tv-utility">
-    <div class="tv-shell tv-utility__row">
-      <nav aria-label="Utility navigation">
-        <a href="/">Trivsel Home</a><a href="/research">Research</a><a href="/careers">Careers</a><a href="/contact">Contact</a>
-      </nav>
-      <div><a href="https://trivsel.uk/">Open Trivsel</a><button type="button" data-search-toggle aria-expanded="false">Search ⌕</button></div>
-    </div>
-  </div>
+  <a class="tv-skip" href="#main">Skip to content</a>
+  <header class="tv-header" data-header>
 
-  <div class="tv-primary">
-    <div class="tv-shell tv-primary__row">
-      <a class="tv-brand tv-brand--official" href="/" aria-label="Trivsel home"><img class="tv-brand__full-logo" src="/static/img/brand/trivsel-full-logo.png" alt="Trivsel"></a>
-      <button class="tv-mobile-toggle" type="button" data-mobile-toggle aria-expanded="false">Menu</button>
+  <div class="tv-shell tv-header__row">
 
-      <nav class="tv-nav" data-nav aria-label="Primary navigation">
+    <a
+      class="tv-brand tv-brand--official"
+      href="/"
+      aria-label="Trivsel Home"
+    >
+      <img
+        class="tv-brand__full-logo"
+        src="/static/img/brand/trivsel-full-logo.png"
+        alt="Trivsel"
+      >
+    </a>
 
+    <button
+      class="tv-menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="tv-primary-nav"
+      data-menu-toggle
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Open navigation</span>
+    </button>
 
-        <div class="tv-nav-group">
-          <button type="button" data-mega-trigger="platform" aria-expanded="false">Platform <span>⌄</span></button>
-          <div class="tv-mega" data-mega="platform">
-            <div class="tv-mega__lead"><p class="tv-eyebrow">Platform</p><h2>
-              One system for the complete life of an asset.
+    <nav
+      class="tv-nav"
+      id="tv-primary-nav"
+      aria-label="Primary navigation"
+      data-nav
+    >
 
-            </h2></div>
-            <div class="tv-mega__links">
-              <a href="/platform#identity"><small>Foundation</small><strong>Asset identity</strong></a><a href="/platform#maintenance"><small>Operations</small><strong>Maintenance</strong></a><a href="/platform#calibration"><small>Operations</small><strong>Calibration</strong></a><a href="/platform#history"><small>Lifecycle</small><strong>Lifecycle history</strong></a>
-            </div>
-          </div>
+      <a class="tv-nav__home" href="/">Home</a>
+
+      <div class="tv-nav-group">
+        <button
+          class="tv-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          data-dropdown-trigger
+        >
+          Platform
+          <span class="tv-chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="tv-dropdown" data-dropdown>
+          <a href="/platform">
+            <strong>Platform overview</strong>
+            <span>See the complete Trivsel operating model.</span>
+          </a>
+          <a href="/platform#identity">
+            <strong>Asset identity</strong>
+            <span>Persistent identity for every physical asset.</span>
+          </a>
+          <a href="/platform#maintenance">
+            <strong>Maintenance</strong>
+            <span>Connect service activity and asset history.</span>
+          </a>
+          <a href="/platform#calibration">
+            <strong>Calibration</strong>
+            <span>Keep calibration evidence traceable.</span>
+          </a>
+          <a href="/platform#interventions">
+            <strong>Faults & interventions</strong>
+            <span>Record problems, response and resolution.</span>
+          </a>
+          <a href="/platform#readiness">
+            <strong>Readiness</strong>
+            <span>Understand current operational state.</span>
+          </a>
         </div>
-
-        <div class="tv-nav-group">
-          <button type="button" data-mega-trigger="industries" aria-expanded="false">Industries <span>⌄</span></button>
-          <div class="tv-mega" data-mega="industries">
-            <div class="tv-mega__lead"><p class="tv-eyebrow">Industries</p><h2>
-              One architecture. Many physical worlds.
-
-            </h2></div>
-            <div class="tv-mega__links">
-              <a href="/industries#healthcare"><small>Physical systems</small><strong>Healthcare</strong></a><a href="/industries#manufacturing"><small>Physical systems</small><strong>Manufacturing</strong></a><a href="/industries#laboratories"><small>Physical systems</small><strong>Laboratories</strong></a><a href="/industries#facilities"><small>Built environment</small><strong>Facilities</strong></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="tv-nav-group">
-          <button type="button" data-mega-trigger="intelligence" aria-expanded="false">Intelligence <span>⌄</span></button>
-          <div class="tv-mega" data-mega="intelligence">
-            <div class="tv-mega__lead"><p class="tv-eyebrow">Intelligence</p><h2>
-              Structured reality before automated reasoning.
-
-            </h2></div>
-            <div class="tv-mega__links">
-              <a href="/intelligence#asset-graph"><small>Models</small><strong>Asset graph</strong></a><a href="/intelligence#operational"><small>Models</small><strong>Operational intelligence</strong></a><a href="/intelligence#human-machine"><small>People</small><strong>Human + machine intelligence</strong></a><a href="/intelligence#responsible"><small>Principles</small><strong>Responsible AI</strong></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="tv-nav-group">
-          <button type="button" data-mega-trigger="research" aria-expanded="false">Research <span>⌄</span></button>
-          <div class="tv-mega" data-mega="research">
-            <div class="tv-mega__lead"><p class="tv-eyebrow">Research</p><h2>
-              Research for better physical systems.
-
-            </h2></div>
-            <div class="tv-mega__links">
-              <a href="/research#asset-intelligence"><small>Areas</small><strong>Asset intelligence</strong></a><a href="/research#reliability"><small>Areas</small><strong>Reliability systems</strong></a><a href="/research#applied-ai"><small>Methods</small><strong>Applied AI</strong></a><a href="/research#principles"><small>Principles</small><strong>Research principles</strong></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="tv-nav-group">
-          <button type="button" data-mega-trigger="company" aria-expanded="false">Company <span>⌄</span></button>
-          <div class="tv-mega" data-mega="company">
-            <div class="tv-mega__lead"><p class="tv-eyebrow">Company</p><h2>
-              Building infrastructure for the physical world.
-
-            </h2></div>
-            <div class="tv-mega__links">
-              <a href="/company#mission"><small>About</small><strong>Mission</strong></a><a href="/company#principles"><small>About</small><strong>Principles</strong></a><a href="/careers"><small>People</small><strong>Careers</strong></a><a href="/contact"><small>Access</small><strong>Contact</strong></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="tv-nav-group">
-          <button type="button" data-mega-trigger="resources" aria-expanded="false">Resources <span>⌄</span></button>
-          <div class="tv-mega" data-mega="resources">
-            <div class="tv-mega__lead"><p class="tv-eyebrow">Resources</p><h2>
-              Find the right Trivsel destination.
-            </h2></div>
-            <div class="tv-mega__links">
-              <a href="/platform"><small>Learn</small><strong>Platform overview</strong></a><a href="/research"><small>Learn</small><strong>Research</strong></a><a href="/company#trust"><small>Trust</small><strong>Trust &amp; evidence</strong></a><a href="/contact#support"><small>Access</small><strong>Support</strong></a>
-            </div>
-          </div>
-        </div>
-
-      </nav>
-
-      <a class="tv-button tv-button--blue tv-primary__cta" href="/contact#pilot">Request a pilot</a>
-    </div>
-  </div>
-
-  <div class="tv-search" data-search hidden>
-    <div class="tv-shell">
-      <div class="tv-search__head"><div><p class="tv-eyebrow">Explore Trivsel</p><h2>What are you looking for?</h2></div><button type="button" data-search-close aria-label="Close search">×</button></div>
-      <input type="search" data-search-input placeholder="Search maintenance, calibration, research…">
-      <div class="tv-search__grid">
-        <a data-search-item data-terms="asset identity qr records" href="/platform#identity">Asset identity <small>Platform</small></a>
-        <a data-search-item data-terms="maintenance service repair preventive" href="/platform#maintenance">Maintenance <small>Platform</small></a>
-        <a data-search-item data-terms="calibration evidence measurement" href="/platform#calibration">Calibration <small>Platform</small></a>
-        <a data-search-item data-terms="hospital medical biomedical" href="/industries#healthcare">Healthcare <small>Industries</small></a>
-        <a data-search-item data-terms="factory production tooling" href="/industries#manufacturing">Manufacturing <small>Industries</small></a>
-        <a data-search-item data-terms="research engineering ai reliability" href="/research">Research <small>Research</small></a>
       </div>
+
+      <div class="tv-nav-group">
+        <button
+          class="tv-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          data-dropdown-trigger
+        >
+          Industries
+          <span class="tv-chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="tv-dropdown" data-dropdown>
+          <a href="/industries">
+            <strong>Industries overview</strong>
+            <span>One architecture across physical environments.</span>
+          </a>
+          <a href="/industries#healthcare">
+            <strong>Healthcare</strong>
+            <span>Medical equipment and biomedical operations.</span>
+          </a>
+          <a href="/industries#manufacturing">
+            <strong>Manufacturing</strong>
+            <span>Production assets, tooling and service history.</span>
+          </a>
+          <a href="/industries#laboratories">
+            <strong>Laboratories</strong>
+            <span>Scientific instruments and calibration context.</span>
+          </a>
+          <a href="/industries#facilities">
+            <strong>Facilities</strong>
+            <span>Buildings, utilities and critical systems.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tv-nav-group">
+        <button
+          class="tv-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          data-dropdown-trigger
+        >
+          Intelligence
+          <span class="tv-chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="tv-dropdown" data-dropdown>
+          <a href="/intelligence">
+            <strong>Intelligence overview</strong>
+            <span>Structured asset reality before reasoning.</span>
+          </a>
+          <a href="/intelligence#model">
+            <strong>Asset graph</strong>
+            <span>Connect assets, places, people and events.</span>
+          </a>
+          <a href="/intelligence#model">
+            <strong>Operational intelligence</strong>
+            <span>Turn history and context into useful questions.</span>
+          </a>
+          <a href="/intelligence#model">
+            <strong>Human + machine intelligence</strong>
+            <span>Keep expert judgment inside the loop.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tv-nav-group">
+        <button
+          class="tv-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          data-dropdown-trigger
+        >
+          Research
+          <span class="tv-chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="tv-dropdown" data-dropdown>
+          <a href="/research">
+            <strong>Research overview</strong>
+            <span>Research for better physical systems.</span>
+          </a>
+          <a href="/research">
+            <strong>Asset intelligence</strong>
+            <span>Study structured operational histories.</span>
+          </a>
+          <a href="/research">
+            <strong>Reliability systems</strong>
+            <span>Explore lifecycle, interventions and evidence.</span>
+          </a>
+          <a href="/research">
+            <strong>Applied AI</strong>
+            <span>Machine intelligence grounded in evidence.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tv-nav-group">
+        <button
+          class="tv-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          data-dropdown-trigger
+        >
+          Company
+          <span class="tv-chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="tv-dropdown" data-dropdown>
+          <a href="/company">
+            <strong>About Trivsel</strong>
+            <span>Building infrastructure for the physical world.</span>
+          </a>
+          <a href="/company">
+            <strong>Mission & principles</strong>
+            <span>People, evidence and connected systems.</span>
+          </a>
+          <a href="/careers">
+            <strong>Careers</strong>
+            <span>Work at the intersection of software and reality.</span>
+          </a>
+          <a href="/contact">
+            <strong>Contact</strong>
+            <span>Start with the problem you are solving.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tv-nav-group">
+        <button
+          class="tv-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          data-dropdown-trigger
+        >
+          Resources
+          <span class="tv-chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="tv-dropdown tv-dropdown--right" data-dropdown>
+          <a href="/company#resources">
+            <strong>Resources overview</strong>
+            <span>Public pathways into Trivsel.</span>
+          </a>
+          <a href="/research">
+            <strong>Research</strong>
+            <span>Current research directions and principles.</span>
+          </a>
+          <a href="/contact">
+            <strong>Support</strong>
+            <span>Product and operational support.</span>
+          </a>
+          <a href="/contact">
+            <strong>Request a pilot</strong>
+            <span>Explore Trivsel in a real operating environment.</span>
+          </a>
+        </div>
+      </div>
+
+      <button
+        class="tv-nav-search"
+        type="button"
+        aria-label="Search Trivsel"
+        data-search-open
+      >
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-3.5-3.5"></path>
+        </svg>
+      </button>
+
+      <a
+        class="tv-button tv-button--open"
+        href="https://trivsel.uk/"
+      >
+        Open Trivsel
+      </a>
+
+      <a
+        class="tv-button tv-button--blue tv-nav__cta"
+        href="/contact"
+      >
+        Request a pilot
+      </a>
+
+    </nav>
+  </div>
+
+  <div class="tv-search-panel" data-search-panel hidden>
+    <div class="tv-shell tv-search-panel__inner">
+      <label for="tv-site-search">Search Trivsel</label>
+
+      <div class="tv-search-panel__control">
+        <input
+          id="tv-site-search"
+          type="search"
+          placeholder="Search platform, industries, intelligence, research…"
+          autocomplete="off"
+          data-site-search
+        >
+
+        <button
+          type="button"
+          class="tv-search-panel__close"
+          data-search-close
+        >
+          Close
+        </button>
+      </div>
+
+      <div
+        class="tv-search-panel__results"
+        data-search-results
+      ></div>
     </div>
   </div>
+
 </header>
-<main id="main-content">
-<section class="tv-home-hero">
-  <div class="tv-shell tv-home-hero__grid">
-    <div class="tv-home-hero__copy">
+  <main id="main">
+
+<section class="tv-hero tv-hero--home">
+  <div class="tv-shell tv-hero__grid">
+    <div class="tv-hero__copy">
       <p class="tv-eyebrow">TRIVSEL / ASSET INTELLIGENCE</p>
       <h1>The intelligence layer <span>for physical assets.</span></h1>
-      <p class="tv-lead">Trivsel connects identity, location, maintenance, calibration, interventions, readiness and history so organizations can understand what they own and what should happen next.</p>
-      <div class="tv-actions"><a class="tv-button tv-button--blue" href="/platform">Explore Trivsel</a><a class="tv-button tv-button--outline" href="/contact#pilot">Request a pilot</a></div>
-    </div>
-    <aside class="tv-finder">
-      <p class="tv-eyebrow tv-eyebrow--light">EXPLORE TRIVSEL</p><h2>What do you need to understand?</h2>
-      <input type="search" data-pathway-search placeholder="Search by need…">
-      <div data-pathways>
-        <a data-pathway="assets ownership inventory" href="/platform#asset-360"><span>01</span>Know what assets we own</a>
-        <a data-pathway="location placement department" href="/platform#location"><span>02</span>Know where equipment is</a>
-        <a data-pathway="maintenance service repair" href="/platform#maintenance"><span>03</span>Plan maintenance</a>
-        <a data-pathway="calibration evidence due dates" href="/platform#calibration"><span>04</span>Manage calibration</a>
-        <a data-pathway="fault intervention repair" href="/platform#interventions"><span>05</span>Record faults and repairs</a>
-        <a data-pathway="history lifecycle audit" href="/platform#history"><span>06</span>Understand lifecycle history</a>
-        <a data-pathway="readiness review requirements" href="/platform#readiness"><span>07</span>Prepare for operational review</a>
+      <p class="tv-hero__lead">Trivsel connects identity, location, maintenance, calibration, interventions, readiness and history so organizations can understand what they own and what should happen next.</p>
+      <div class="tv-actions">
+        <a class="tv-button tv-button--blue" href="/platform">Explore Trivsel</a>
+        <a class="tv-button" href="/contact">Request a pilot</a>
       </div>
-    </aside>
+    </div>
+    <figure class="tv-hero__media tv-media-card">
+      <img src="/static/marketing/img/hero-hospital.png" alt="A healthcare professional walking through a modern hospital corridor with medical equipment." fetchpriority="high">
+    </figure>
   </div>
 </section>
 
-<section class="tv-cap-strip"><div class="tv-shell"><span>Identity</span><span>Location</span><span>Maintenance</span><span>Calibration</span><span>Interventions</span><span>Readiness</span><span>History</span><span>Intelligence</span></div></section>
+<section class="tv-discovery">
+  <div class="tv-shell tv-discovery__grid">
+    <div class="tv-discovery__intro">
+      <p class="tv-eyebrow tv-eyebrow--light">EXPLORE TRIVSEL</p>
+      <h2>What do you need to understand?</h2>
+      <p>Start with the operational question, then follow it into the asset context beneath it.</p>
+    </div>
+    <div class="tv-discovery__links">
+      <a href="/platform#identity"><span>01</span>Know what assets we own</a>
+      <a href="/platform#identity"><span>02</span>Know where equipment is</a>
+      <a href="/platform#maintenance"><span>03</span>Plan maintenance</a>
+      <a href="/platform#calibration"><span>04</span>Manage calibration</a>
+      <a href="/platform#interventions"><span>05</span>Record faults and repairs</a>
+      <a href="/platform#history"><span>06</span>Understand lifecycle history</a>
+      <a href="/platform#readiness"><span>07</span>Prepare for operational review</a>
+    </div>
+  </div>
+</section>
+
+<section class="tv-capability-strip" aria-label="Core Trivsel capability areas">
+  <div class="tv-shell tv-capability-strip__grid">
+    <a href="/platform#identity"><span>01</span><strong>Identity</strong><small>Know what an asset is.</small></a>
+    <a href="/platform#maintenance"><span>02</span><strong>Reliability</strong><small>Keep work and evidence connected.</small></a>
+    <a href="/platform#history"><span>03</span><strong>Lifecycle</strong><small>Understand change over time.</small></a>
+    <a href="/intelligence"><span>04</span><strong>Intelligence</strong><small>Ask better operational questions.</small></a>
+  </div>
+</section>
 
 <section class="tv-section">
   <div class="tv-shell">
-    <header class="tv-section-head"><div><p class="tv-eyebrow">PATHWAYS</p><h2>I manage…</h2></div><p>Start with the physical environment you know. The underlying asset model stays consistent while the operational context changes.</p></header>
-    <div class="tv-card-grid tv-card-grid--5">
-      <a class="tv-path-card" href="/industries#healthcare"><span>01</span><img src="/static/img/icons/stethoscope.svg" alt=""><h3>Healthcare equipment</h3><p>Medical devices, biomedical engineering workflows and equipment readiness.</p></a>
-      <a class="tv-path-card" href="/industries#manufacturing"><span>02</span><img src="/static/img/icons/factory.svg" alt=""><h3>Manufacturing assets</h3><p>Production equipment, tooling, service history and operating context.</p></a>
-      <a class="tv-path-card" href="/industries#laboratories"><span>03</span><img src="/static/img/icons/microscope.svg" alt=""><h3>Laboratory instruments</h3><p>Scientific instruments, calibration context and traceable lifecycle evidence.</p></a>
-      <a class="tv-path-card" href="/industries#facilities"><span>04</span><img src="/static/img/icons/building-2.svg" alt=""><h3>Facilities</h3><p>Buildings, systems, utilities and critical equipment across locations.</p></a>
-      <a class="tv-path-card" href="/industries#infrastructure"><span>05</span><img src="/static/img/icons/ship-cargo.svg" alt=""><h3>Infrastructure</h3><p>Distributed physical assets whose history, ownership and readiness matter.</p></a>
+    <header class="tv-section-head">
+      <p class="tv-eyebrow">THE TRIVSEL PLATFORM</p>
+      <h2>A complete operating context for physical assets.</h2>
+      <p>Build from persistent asset identity, then connect the events, people and evidence that determine readiness.</p>
+    </header>
+
+    <div class="tv-feature-grid">
+      <article class="tv-feature-card">
+        <div class="tv-icon-tile">◎</div><h3>Asset intelligence</h3>
+        <p>Bring identity, location, status and history into one operational view.</p>
+        <a href="/intelligence">Explore intelligence →</a>
+      </article>
+      <article class="tv-feature-card">
+        <div class="tv-icon-tile">✓</div><h3>Reliability</h3>
+        <p>Connect maintenance, faults and interventions to the asset they affect.</p>
+        <a href="/platform#maintenance">Explore reliability →</a>
+      </article>
+      <article class="tv-feature-card">
+        <div class="tv-icon-tile">∞</div><h3>Lifecycle</h3>
+        <p>Preserve the history of an asset as it moves, changes and receives service.</p>
+        <a href="/platform#history">Explore lifecycle →</a>
+      </article>
+      <article class="tv-feature-card">
+        <div class="tv-icon-tile">◇</div><h3>Governance</h3>
+        <p>Make responsibility, evidence and asset state easier to understand.</p>
+        <a href="/platform#readiness">Explore readiness →</a>
+      </article>
+      <article class="tv-feature-card">
+        <div class="tv-icon-tile">↗</div><h3>Action</h3>
+        <p>Turn an observed condition into a documented operational response.</p>
+        <a href="/platform#interventions">Explore interventions →</a>
+      </article>
+      <article class="tv-feature-card">
+        <div class="tv-icon-tile">▣</div><h3>Knowledge</h3>
+        <p>Keep the evidence and context surrounding physical work discoverable.</p>
+        <a href="/platform">Explore the platform →</a>
+      </article>
+      <article class="tv-feature-card">
+        <div class="tv-icon-tile">▥</div><h3>Readiness</h3>
+        <p>See the operational state of the asset estate without losing the underlying evidence.</p>
+        <a href="/platform#readiness">Explore readiness →</a>
+      </article>
     </div>
   </div>
 </section>
 
+<section class="tv-section tv-section--soft">
+  <div class="tv-shell tv-story-split">
+    <figure class="tv-story-split__media tv-media-card">
+      <img src="/static/marketing/img/campus-impact.png" alt="A modern healthcare campus surrounded by landscaped grounds." loading="lazy">
+    </figure>
+    <div class="tv-story-split__copy">
+      <p class="tv-eyebrow">THE TRIVSEL DIFFERENCE</p>
+      <h2>Behind every reliable asset is a person.</h2>
+      <p>Technology should make the work of engineers, technicians, operators and scientists more visible — not erase it.</p>
+      <div class="tv-proof-list">
+        <div><span>01</span><p><strong>Context stays connected.</strong> Asset identity, location, responsibility and events belong together.</p></div>
+        <div><span>02</span><p><strong>History remains useful.</strong> The operational story should survive moves, maintenance and interventions.</p></div>
+        <div><span>03</span><p><strong>Humans remain in the loop.</strong> Machine intelligence should strengthen expert work, not obscure it.</p></div>
+      </div>
+      <a class="tv-text-link" href="/company">How Trivsel thinks →</a>
+    </div>
+  </div>
+</section>
 
-<section class="tv-section tv-ask-section">
-  <div class="tv-shell tv-split">
+<section class="tv-band tv-band--blue">
+  <div class="tv-shell tv-band__grid">
     <div>
-      <p class="tv-eyebrow">INTELLIGENCE</p>
+      <p class="tv-eyebrow tv-eyebrow--light">INTELLIGENCE</p>
       <h2>Ask your assets.</h2>
     </div>
     <div>
-      <p class="tv-lead-small">Persistent identity, context and history create a better foundation for useful questions. Human expertise + machine intelligence.</p>
-      <a class="tv-button tv-button--dark" href="/intelligence">Explore intelligence</a>
+      <p>Persistent identity, context and history create a better foundation for useful questions. Human expertise + machine intelligence.</p>
+      <a class="tv-button tv-button--white" href="/intelligence">Explore intelligence</a>
     </div>
   </div>
 </section>
-
-<section class="tv-section tv-paper">
-  <div class="tv-shell">
-    <header class="tv-section-head"><div><p class="tv-eyebrow">IDEAS</p><h2>Stories from the physical world.</h2></div><p>Explain the operating ideas behind Trivsel without manufacturing customer stories or unsupported claims.</p></header>
-    <div class="tv-story-grid">
-      <article class="tv-story tv-story--feature"><div class="tv-story__visual tv-blue"><img src="/static/img/icons/timeline.svg" alt=""></div><div><small>OPERATIONS</small><h3>Why asset history matters when equipment moves.</h3><p>Identity is more useful when location, responsibility and events remain connected over time.</p><a href="/platform#history">Explore lifecycle history →</a></div></article>
-      <article class="tv-story"><div class="tv-story__visual"><img src="/static/img/icons/gauge.svg" alt=""></div><div><small>ENGINEERING</small><h3>Calibration evidence belongs to the asset lifecycle.</h3><a href="/platform#calibration">Explore calibration →</a></div></article>
-      <article class="tv-story"><div class="tv-story__visual"><img src="/static/img/icons/user-shield.svg" alt=""></div><div><small>PEOPLE</small><h3>Why the technician belongs inside the intelligence loop.</h3><a href="/intelligence#human-machine">Human + machine intelligence →</a></div></article>
-    </div>
-  </div>
-</section>
-
-<section class="tv-band tv-blue"><div class="tv-shell tv-band__grid"><div><p class="tv-eyebrow tv-eyebrow--light">THE TRIVSEL DIFFERENCE</p><h2>Behind every reliable asset is a person.</h2></div><p>Technology should make the work of engineers, technicians, operators and scientists more visible — not erase it.</p></div></section>
 
 <section class="tv-section">
   <div class="tv-shell">
-    <header class="tv-section-head"><div><p class="tv-eyebrow">INSTITUTIONAL DOMAINS</p><h2>Three connected ways of working.</h2></div><p>Operations, intelligence and research form the broader Trivsel institution.</p></header>
-    <div class="tv-card-grid tv-card-grid--3">
-      <article class="tv-pillar"><span>01</span><h3>Operations</h3><p>Give every asset persistent operational context across its lifecycle.</p><a href="/platform">Explore the platform →</a></article>
-      <article class="tv-pillar"><span>02</span><h3>Intelligence</h3><p>Turn structured asset context and history into useful questions and decisions.</p><a href="/intelligence">Explore intelligence →</a></article>
-      <article class="tv-pillar"><span>03</span><h3>Research</h3><p>Study better ways to understand reliability, measurement and physical systems.</p><a href="/research">Explore research →</a></article>
+    <header class="tv-section-head tv-section-head--row">
+      <div>
+        <p class="tv-eyebrow">PATHWAYS</p>
+        <h2>I manage…</h2>
+      </div>
+      <p>Start with the physical environment you know. The underlying asset model stays consistent while the operational context changes.</p>
+    </header>
+    <div class="tv-path-grid">
+      <a href="/industries#healthcare"><span>01</span><h3>Healthcare equipment</h3><p>Medical devices, biomedical workflows and equipment readiness.</p></a>
+      <a href="/industries#manufacturing"><span>02</span><h3>Manufacturing assets</h3><p>Production equipment, tooling, service history and operating context.</p></a>
+      <a href="/industries#laboratories"><span>03</span><h3>Laboratory instruments</h3><p>Scientific instruments, calibration context and traceable lifecycle evidence.</p></a>
+      <a href="/industries#facilities"><span>04</span><h3>Facilities</h3><p>Buildings, systems, utilities and critical equipment across locations.</p></a>
     </div>
   </div>
 </section>
 
-<section class="tv-section tv-dark">
-  <div class="tv-shell">
-    <header class="tv-section-head tv-section-head--dark"><div><p class="tv-eyebrow tv-eyebrow--light">ONE ARCHITECTURE</p><h2>Many physical worlds.</h2></div><p>A hospital scanner, production machine and laboratory instrument differ, but each has identity, location, responsibility, service events and history.</p></header>
-    <div class="tv-worlds">
-      <a href="/industries#healthcare"><span>01</span><strong>Healthcare</strong><small>Medical equipment and biomedical operations</small></a>
-      <a href="/industries#manufacturing"><span>02</span><strong>Manufacturing</strong><small>Production equipment and tooling</small></a>
-      <a href="/industries#laboratories"><span>03</span><strong>Laboratories</strong><small>Scientific instruments and calibration</small></a>
-      <a href="/industries#facilities"><span>04</span><strong>Facilities</strong><small>Buildings, utilities and critical systems</small></a>
-      <a href="/industries#infrastructure"><span>05</span><strong>Infrastructure</strong><small>Distributed physical systems</small></a>
+<section class="tv-cta">
+  <div class="tv-shell tv-cta__inner">
+    <div>
+      <p class="tv-eyebrow tv-eyebrow--light">START HERE</p>
+      <h2>Bring the physical asset world into focus.</h2>
+    </div>
+    <div class="tv-actions">
+      <a class="tv-button tv-button--white" href="/contact">Request a pilot</a>
+      <a class="tv-button tv-button--ghost-light" href="https://trivsel.uk/">Open Trivsel</a>
     </div>
   </div>
 </section>
 
-<section class="tv-section"><div class="tv-shell tv-split"><div><p class="tv-eyebrow">RESEARCH AT TRIVSEL</p><h2>Understanding physical systems through data, engineering and intelligence.</h2><p class="tv-lead-small">Research pages distinguish current product capabilities from design intent and longer-term questions.</p><a class="tv-button tv-button--dark" href="/research">Explore research</a></div><div class="tv-link-list"><a href="/research#asset-intelligence"><span>01</span>Asset intelligence</a><a href="/research#reliability"><span>02</span>Reliability & lifecycle systems</a><a href="/research#healthcare"><span>03</span>Healthcare engineering</a><a href="/research#applied-ai"><span>04</span>Applied AI</a><a href="/research#measurement"><span>05</span>Measurement & evidence</a></div></div></section>
-
-<section class="tv-final"><div class="tv-shell"><div><p class="tv-eyebrow tv-eyebrow--light">START HERE</p><h2>Bring the physical asset world into focus.</h2></div><div class="tv-actions"><a class="tv-button tv-button--white" href="/contact#pilot">Request a pilot</a><a class="tv-button tv-button--outline-light" href="https://trivsel.uk/">Open Trivsel</a></div></div></section>
-</main>
-<footer class="tv-footer">
-  <div class="tv-shell">
-    <div class="tv-footer__lead">
-      <div><a class="tv-footer__brand" href="/"><img src="/static/img/logo-icon.png" alt=""><span>TRIVSEL</span></a><p>Intelligence infrastructure for the physical asset world.</p></div>
+  </main>
+  <footer class="tv-footer">
+  <div class="tv-shell tv-footer__top">
+    <div class="tv-footer__brand-block">
+      <img src="/static/img/brand/trivsel-full-logo.png" alt="Trivsel" class="tv-footer__logo">
+      <p>Intelligence infrastructure for the physical asset world.</p>
       <a class="tv-button tv-button--white" href="/contact">Start a conversation</a>
     </div>
-    <div class="tv-footer__grid">
-      <div><strong>Platform</strong><a href="/platform#identity">Asset identity</a><a href="/platform#maintenance">Maintenance</a><a href="/platform#calibration">Calibration</a><a href="/platform#readiness">Readiness</a></div>
-      <div><strong>Industries</strong><a href="/industries#healthcare">Healthcare</a><a href="/industries#manufacturing">Manufacturing</a><a href="/industries#laboratories">Laboratories</a><a href="/industries#infrastructure">Infrastructure</a></div>
-      <div><strong>Intelligence</strong><a href="/intelligence#asset-graph">Asset graph</a><a href="/intelligence#operational">Operational intelligence</a><a href="/intelligence#human-machine">Human + machine</a><a href="/intelligence#responsible">Responsible AI</a></div>
-      <div><strong>Research</strong><a href="/research">Overview</a><a href="/research#asset-intelligence">Asset intelligence</a><a href="/research#reliability">Reliability</a><a href="/research#applied-ai">Applied AI</a></div>
-      <div><strong>Company</strong><a href="/company">About</a><a href="/company#mission">Mission</a><a href="/company#principles">Principles</a><a href="/careers">Careers</a></div>
-      <div><strong>Access</strong><a href="https://trivsel.uk/">Open Trivsel</a><a href="/contact#pilot">Request a pilot</a><a href="/contact#support">Support</a><a href="mailto:nisong@trivsel.uk">nisong@trivsel.uk</a></div>
+
+    <div class="tv-footer__links">
+      <div>
+        <h2>Platform</h2>
+        <a href="/platform#identity">Asset identity</a>
+        <a href="/platform#maintenance">Maintenance</a>
+        <a href="/platform#calibration">Calibration</a>
+        <a href="/platform#readiness">Readiness</a>
+      </div>
+      <div>
+        <h2>Industries</h2>
+        <a href="/industries#healthcare">Healthcare</a>
+        <a href="/industries#manufacturing">Manufacturing</a>
+        <a href="/industries#laboratories">Laboratories</a>
+        <a href="/industries#facilities">Facilities</a>
+      </div>
+      <div>
+        <h2>Institution</h2>
+        <a href="/intelligence">Intelligence</a>
+        <a href="/research">Research</a>
+        <a href="/company">Company</a>
+        <a href="/careers">Careers</a>
+      </div>
+      <div>
+        <h2>Access</h2>
+        <a href="https://trivsel.uk/">Open Trivsel</a>
+        <a href="/contact">Request a pilot</a>
+        <a href="mailto:nisong@trivsel.uk">nisong@trivsel.uk</a>
+      </div>
     </div>
-    <div class="tv-footer__bottom"><span>© 2026 Trivsel Ltd. · Accra, Ghana</span><span>Physical assets. Persistent intelligence.</span></div>
+  </div>
+  <div class="tv-shell tv-footer__bottom">
+    <span>© 2026 Trivsel Ltd. · Accra, Ghana</span>
+    <span>Physical assets. Persistent intelligence.</span>
   </div>
 </footer>
-<script src="/static/marketing/js/site.js" defer></script>
+  <script src="/static/marketing/js/site.js" defer></script>
 </body>
 </html>
