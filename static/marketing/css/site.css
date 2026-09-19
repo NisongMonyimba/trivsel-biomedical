@@ -90,3 +90,581 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
   .tv-card-grid--5,.tv-card-grid--4,.tv-card-grid--3,.tv-story-grid,.tv-contact-grid,.tv-search__grid,.tv-matrix{grid-template-columns:1fr}.tv-detail__grid,.tv-research>.tv-shell{grid-template-columns:1fr}.tv-detail__grid>p,.tv-research>.tv-shell>p{grid-column:auto}.tv-footer__grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (prefers-reduced-motion: reduce) {html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+/* ==========================================================================
+   TRIVSEL WWW — PRODUCT / DASHBOARD VISUAL HARMONY
+   Source of truth: current Trivsel application UI.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Inter";
+  src: url("/static/fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/static/fonts/Inter-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/static/fonts/Inter-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/static/fonts/Inter-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/static/fonts/Inter-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --brand: #2563EB;
+  --brand-accent: #60A5FA;
+  --brand-pale: #E9F1FF;
+  --brand-navy: #000000;
+  --brand-gold: #EAB308;
+  --brand-gray: #F1F5F9;
+  --green: #16A34A;
+  --yellow: #EAB308;
+  --red: #DC2626;
+  --repair: #EAB308;
+  --muted: #6B7280;
+  --border: #E5E7EB;
+
+  --trivsel-font-ui:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --trivsel-font-heading:
+    "Poppins",
+    var(--trivsel-font-ui);
+
+  --trivsel-font-mono:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  --tv-blue: var(--brand);
+  --tv-blue-deep: #1D4ED8;
+  --tv-blue-soft: var(--brand-pale);
+  --tv-blue-mid: var(--brand-accent);
+  --tv-black: var(--brand-navy);
+  --tv-ink: #0B0B0D;
+  --tv-paper: #F8FAFC;
+  --tv-paper-2: var(--brand-gray);
+  --tv-muted: var(--muted);
+  --tv-line: var(--border);
+
+  --tv-radius-sm: 8px;
+  --tv-radius-md: 10px;
+  --tv-radius-lg: 14px;
+  --tv-ease: ease;
+}
+
+body.tv-body,
+.tv-body button,
+.tv-body input,
+.tv-body select,
+.tv-body textarea,
+.tv-body p,
+.tv-body li,
+.tv-body a,
+.tv-body small,
+.tv-body label {
+  font-family: var(--trivsel-font-ui);
+}
+
+.tv-body h1,
+.tv-body h2,
+.tv-body h3,
+.tv-body h4,
+.tv-body h5,
+.tv-body h6,
+.tv-brand,
+.tv-footer__brand {
+  font-family: var(--trivsel-font-heading);
+  font-synthesis: none;
+}
+
+body.tv-body {
+  background: #F6F9FC;
+  color: #000000;
+}
+
+.tv-primary,
+.tv-search,
+.tv-mega,
+.tv-local {
+  background: #FFFFFF;
+}
+
+.tv-utility {
+  background: #F1F5F9;
+  border-bottom-color: #E5E7EB;
+}
+
+.tv-brand--official {
+  position: relative;
+  min-height: 52px;
+  padding: 0 0.35rem;
+  overflow: hidden;
+}
+
+.tv-brand__full-logo {
+  display: block;
+  width: auto;
+  height: 42px;
+  max-width: 185px;
+  object-fit: contain;
+}
+
+.tv-brand--official::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      100deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.95) 50%,
+      transparent 70%
+    );
+  background-size: 250% 100%;
+  background-position: -150% 0;
+  -webkit-mask-image: url("/static/img/brand/trivsel-full-logo.png");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left center;
+  mask-image: url("/static/img/brand/trivsel-full-logo.png");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: left center;
+  animation: trivsel-logo-sheen 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes trivsel-logo-sheen {
+  0%,
+  85% {
+    background-position: -150% 0;
+  }
+
+  95%,
+  100% {
+    background-position: 150% 0;
+  }
+}
+
+.tv-eyebrow,
+.tv-kicker {
+  color: var(--brand);
+  font-family: var(--trivsel-font-ui);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.10em;
+}
+
+.tv-home-hero h1 {
+  font-family: var(--trivsel-font-heading);
+  font-size: clamp(3.6rem, 7vw, 7.2rem);
+  font-weight: 750;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+}
+
+.tv-page-hero h1 {
+  font-family: var(--trivsel-font-heading);
+  font-size: clamp(3rem, 5.8vw, 6rem);
+  font-weight: 750;
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+}
+
+.tv-section-head h2,
+.tv-split h2,
+.tv-band h2,
+.tv-final h2,
+.tv-industry h2,
+.tv-research h2 {
+  font-family: var(--trivsel-font-heading);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.tv-lead,
+.tv-page-hero__lead,
+.tv-lead-small,
+.tv-section-head > p,
+.tv-path-card p,
+.tv-pillar p,
+.tv-story p,
+.tv-industry p,
+.tv-dark-copy {
+  font-family: var(--trivsel-font-ui);
+  line-height: 1.55;
+}
+
+.tv-primary__row {
+  min-height: 76px;
+  gap: 18px;
+}
+
+.tv-nav {
+  gap: 7px;
+}
+
+.tv-nav-group > button {
+  min-height: 44px;
+  padding: 0 13px;
+  margin: 0;
+  border: 1px solid #CFD8E3;
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: #000000;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+.tv-nav-group > button:hover,
+.tv-nav-group > button[aria-expanded="true"] {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #FFFFFF;
+  box-shadow: 0 5px 12px rgba(37, 99, 235, 0.14);
+  transform: translateY(-1px);
+}
+
+.tv-nav-group > button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.tv-primary__cta {
+  min-height: 44px;
+}
+
+.tv-search input,
+.tv-finder input {
+  border: 1px solid #CFD8E3;
+  border-radius: 9px;
+  font-family: var(--trivsel-font-ui);
+  font-size: 0.85rem;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.tv-search input:focus,
+.tv-finder input:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+  outline: none;
+}
+
+.tv-mega {
+  top: calc(100% + 7px);
+  left: max(18px, calc((100vw - var(--tv-shell)) / 2));
+  right: max(18px, calc((100vw - var(--tv-shell)) / 2));
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+.tv-mega__links {
+  border-color: #E5E7EB;
+}
+
+.tv-mega__links a {
+  border-color: #E5E7EB;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.tv-mega__links a:hover,
+.tv-mega__links a:focus-visible {
+  background: var(--brand);
+  color: #FFFFFF;
+  outline: none;
+}
+
+.tv-mega__links a:hover small,
+.tv-mega__links a:focus-visible small {
+  color: #DBEAFE;
+}
+
+.tv-button {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid #C9DBE5;
+  border-radius: 9px;
+  background: #FFFFFF;
+  color: #000000;
+  font-family: var(--trivsel-font-ui);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  box-shadow: none;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+.tv-button:hover,
+.tv-button:focus-visible,
+.tv-button--blue:hover,
+.tv-button--dark:hover,
+.tv-button--outline:hover {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #FFFFFF;
+  box-shadow: 0 5px 12px rgba(37, 99, 235, 0.14);
+  transform: translateY(-1px);
+}
+
+.tv-button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.tv-button--blue {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #FFFFFF;
+}
+
+.tv-button--blue:hover,
+.tv-button--blue:focus-visible {
+  background: #1D4ED8;
+  border-color: #1D4ED8;
+}
+
+.tv-button--white {
+  background: #FFFFFF;
+  border-color: #C9DBE5;
+  color: #000000;
+}
+
+.tv-button--outline,
+.tv-button--outline-light {
+  border-color: #C9DBE5;
+}
+
+.tv-path-card,
+.tv-pillar,
+.tv-story,
+.tv-contact,
+.tv-data-panel,
+.tv-matrix > div,
+.tv-worlds a,
+.tv-link-list > a,
+.tv-search__grid a,
+.tv-mega__links a {
+  border-color: var(--border);
+}
+
+.tv-path-card,
+.tv-story,
+.tv-contact,
+.tv-data-panel {
+  border-radius: 10px;
+}
+
+.tv-path-card,
+.tv-story,
+.tv-contact,
+.tv-pillar,
+.tv-search__grid a,
+.tv-mega__links a,
+.tv-worlds a,
+.tv-link-list > a {
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+.tv-path-card:hover,
+.tv-story:hover,
+.tv-contact:hover,
+.tv-pillar:hover,
+.tv-search__grid a:hover,
+.tv-worlds a:hover,
+.tv-link-list > a:hover {
+  border-color: #9ECFEE;
+  background-color: #FBFDFF;
+  box-shadow: 0 4px 12px rgba(23, 137, 245, 0.09);
+  transform: translateY(-1px);
+}
+
+.tv-dark .tv-worlds a:hover {
+  background: rgba(37, 99, 235, 0.14);
+  border-color: var(--brand-accent);
+}
+
+.tv-path-card img,
+.tv-detail img,
+.tv-industry img,
+.tv-story__visual img {
+  width: 36px;
+  height: 36px;
+}
+
+.tv-path-card img,
+.tv-detail > .tv-shell > img {
+  padding: 8px;
+  border-radius: 8px;
+  background: var(--brand-pale);
+}
+
+.tv-story__visual {
+  background: #F5F9FF;
+}
+
+.tv-story__visual.tv-blue {
+  background: var(--brand);
+}
+
+.tv-status--good,
+.tv-accent--good {
+  color: var(--brand);
+  background: var(--brand-pale);
+}
+
+.tv-status--warning,
+.tv-accent--warning {
+  color: #92400E;
+  background: #FFF3DF;
+}
+
+.tv-status--critical,
+.tv-accent--critical {
+  color: #B91C1C;
+  background: #FDEBED;
+}
+
+.tv-paper {
+  background: #F8FAFC;
+}
+
+.tv-section,
+.tv-page-hero {
+  background-color: #FFFFFF;
+}
+
+.tv-section.tv-paper {
+  background-color: #F8FAFC;
+}
+
+.tv-dark {
+  background: #000000;
+}
+
+.tv-blue,
+.tv-final,
+.tv-finder {
+  background: var(--brand);
+}
+
+.tv-finder input {
+  border-color: rgba(255,255,255,.72);
+  background: rgba(255,255,255,.08);
+  color: #FFFFFF;
+}
+
+.tv-finder input:focus {
+  border-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tv-brand--official::after {
+    display: none;
+    animation: none;
+  }
+
+  .tv-button,
+  .tv-nav-group > button,
+  .tv-path-card,
+  .tv-story,
+  .tv-contact,
+  .tv-pillar,
+  .tv-search__grid a,
+  .tv-worlds a,
+  .tv-link-list > a {
+    transition: none;
+    transform: none;
+  }
+}
+
+@media (max-width: 1220px) {
+  .tv-brand__full-logo {
+    height: 38px;
+    max-width: 168px;
+  }
+
+  .tv-mega {
+    left: 0;
+    right: 0;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .tv-brand--official {
+    min-height: 46px;
+    padding: 0;
+  }
+
+  .tv-brand__full-logo {
+    height: 34px;
+    max-width: 150px;
+  }
+
+  .tv-home-hero h1 {
+    font-size: clamp(3rem, 15vw, 5.1rem);
+  }
+
+  .tv-page-hero h1 {
+    font-size: clamp(2.8rem, 13vw, 4.6rem);
+  }
+}
