@@ -787,3 +787,300 @@ body[data-marketing-route="home"] .tv-nav__home::after,
     transition: none;
   }
 }
+
+/* BEGIN TRIVSEL APP HOVER PARITY
+   ------------------------------------------------------------
+   Source of truth:
+   Trivsel application interaction behavior.
+
+   CONTROL:
+   white/dark -> #2563EB / white
+
+   CARD:
+   #FBFDFF + #9ECFEE + restrained lift/shadow
+   ------------------------------------------------------------ */
+
+:root {
+  --tv-app-hover-blue: #2563EB;
+  --tv-app-hover-blue-deep: #1D4ED8;
+
+  --tv-app-hover-card-border: #9ECFEE;
+  --tv-app-hover-card-bg: #FBFDFF;
+
+  --tv-app-hover-shadow:
+    0 5px 12px rgba(37, 99, 235, 0.14);
+
+  --tv-app-card-hover-shadow:
+    0 4px 12px rgba(23, 137, 245, 0.09);
+}
+
+
+/* ============================================================
+   APP-STYLE CONTROL SURFACES
+   ============================================================ */
+
+.tv-nav a,
+.tv-nav button,
+.tv-button,
+.tv-primary__cta,
+[data-search-open],
+.tv-search-open,
+.tv-search button {
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+
+/*
+Same interaction as the Classification control in the app:
+white -> brand blue, dark text -> white text.
+*/
+@media (hover: hover) and (pointer: fine) {
+
+  .tv-nav a:hover,
+  .tv-nav button:hover,
+  .tv-button:hover,
+  .tv-primary__cta:hover,
+  [data-search-open]:hover,
+  .tv-search-open:hover,
+  .tv-search button:hover {
+
+    background: var(--tv-app-hover-blue) !important;
+    border-color: var(--tv-app-hover-blue) !important;
+    color: #FFFFFF !important;
+
+    box-shadow: var(--tv-app-hover-shadow);
+
+    transform: translateY(-1px);
+
+    text-decoration: none;
+  }
+}
+
+
+/* Keyboard users receive the same interaction feedback. */
+
+.tv-nav a:focus-visible,
+.tv-nav button:focus-visible,
+.tv-button:focus-visible,
+.tv-primary__cta:focus-visible,
+[data-search-open]:focus-visible,
+.tv-search-open:focus-visible,
+.tv-search button:focus-visible {
+
+  background: var(--tv-app-hover-blue) !important;
+  border-color: var(--tv-app-hover-blue) !important;
+  color: #FFFFFF !important;
+
+  box-shadow: var(--tv-app-hover-shadow);
+
+  outline: 2px solid var(--tv-app-hover-blue);
+  outline-offset: 2px;
+
+  transform: translateY(-1px);
+
+  text-decoration: none;
+}
+
+
+/* Dropdown trigger remains blue while its menu is open. */
+
+.tv-nav button[aria-expanded="true"],
+.tv-nav [data-dropdown-trigger][aria-expanded="true"] {
+
+  background: var(--tv-app-hover-blue) !important;
+  border-color: var(--tv-app-hover-blue) !important;
+  color: #FFFFFF !important;
+
+  box-shadow: var(--tv-app-hover-shadow);
+}
+
+
+/* SVG arrows/search/icons inherit the white foreground. */
+
+.tv-nav a:hover svg,
+.tv-nav button:hover svg,
+.tv-nav a:focus-visible svg,
+.tv-nav button:focus-visible svg,
+.tv-button:hover svg,
+.tv-button:focus-visible svg,
+[data-search-open]:hover svg,
+[data-search-open]:focus-visible svg {
+
+  color: currentColor;
+  stroke: currentColor;
+}
+
+
+/*
+Already-blue primary controls should deepen slightly rather
+than appearing unchanged.
+*/
+
+@media (hover: hover) and (pointer: fine) {
+
+  .tv-button--blue:hover,
+  .tv-primary__cta.tv-button--blue:hover {
+
+    background: var(--tv-app-hover-blue-deep) !important;
+    border-color: var(--tv-app-hover-blue-deep) !important;
+    color: #FFFFFF !important;
+  }
+}
+
+
+/* ============================================================
+   APP-STYLE CARD SURFACES
+   ============================================================ */
+
+.tv-path-card,
+.tv-story,
+.tv-contact,
+.tv-pillar,
+.tv-worlds a,
+.tv-link-list > a,
+.tv-search__grid a,
+.tv-industry-card,
+.tv-capability-card,
+.tv-resource-card,
+.tv-module-card,
+a.tv-card,
+button.tv-card,
+.tv-card-link {
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+
+  .tv-path-card:hover,
+  .tv-story:hover,
+  .tv-contact:hover,
+  .tv-pillar:hover,
+  .tv-worlds a:hover,
+  .tv-link-list > a:hover,
+  .tv-search__grid a:hover,
+  .tv-industry-card:hover,
+  .tv-capability-card:hover,
+  .tv-resource-card:hover,
+  .tv-module-card:hover,
+  a.tv-card:hover,
+  button.tv-card:hover,
+  .tv-card-link:hover {
+
+    background-color:
+      var(--tv-app-hover-card-bg) !important;
+
+    border-color:
+      var(--tv-app-hover-card-border) !important;
+
+    box-shadow:
+      var(--tv-app-card-hover-shadow);
+
+    transform:
+      translateY(-1px);
+  }
+}
+
+
+/* Same treatment for keyboard focus on clickable cards. */
+
+.tv-worlds a:focus-visible,
+.tv-link-list > a:focus-visible,
+.tv-search__grid a:focus-visible,
+a.tv-card:focus-visible,
+button.tv-card:focus-visible,
+.tv-card-link:focus-visible,
+.tv-path-card:focus-within,
+.tv-story:focus-within,
+.tv-contact:focus-within,
+.tv-pillar:focus-within,
+.tv-industry-card:focus-within,
+.tv-capability-card:focus-within,
+.tv-resource-card:focus-within,
+.tv-module-card:focus-within {
+
+  background-color:
+    var(--tv-app-hover-card-bg) !important;
+
+  border-color:
+    var(--tv-app-hover-card-border) !important;
+
+  box-shadow:
+    var(--tv-app-card-hover-shadow);
+
+  transform:
+    translateY(-1px);
+}
+
+
+/* ============================================================
+   NORMAL TEXT LINKS
+   ============================================================ */
+
+/*
+Do not turn paragraph/footer text links into big blue boxes.
+They keep restrained blue text feedback.
+*/
+
+.tv-footer a {
+  transition:
+    color 0.15s ease,
+    text-decoration-color 0.15s ease;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+
+  .tv-footer a:hover {
+    color: var(--tv-app-hover-blue);
+    text-decoration-color: currentColor;
+  }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tv-nav a,
+  .tv-nav button,
+  .tv-button,
+  .tv-primary__cta,
+  [data-search-open],
+  .tv-search-open,
+  .tv-search button,
+
+  .tv-path-card,
+  .tv-story,
+  .tv-contact,
+  .tv-pillar,
+  .tv-worlds a,
+  .tv-link-list > a,
+  .tv-search__grid a,
+  .tv-industry-card,
+  .tv-capability-card,
+  .tv-resource-card,
+  .tv-module-card,
+  a.tv-card,
+  button.tv-card,
+  .tv-card-link {
+
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* END TRIVSEL APP HOVER PARITY */
