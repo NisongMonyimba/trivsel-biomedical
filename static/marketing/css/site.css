@@ -623,11 +623,7 @@ body[data-marketing-route="home"] .tv-nav__home::after,
   display: block;
 }
 
-@media (hover:hover) and (pointer:fine) {
-  .tv-nav-group:hover > .tv-dropdown {
-    display: block;
-  }
-}
+
 
 .tv-dropdown > a {
   display: block;
@@ -1238,3 +1234,18 @@ blue background + white foreground.
 }
 
 /* END TRIVSEL CLICK-ONLY DROPDOWNS */
+
+/* BEGIN TRIVSEL CLICK-ONLY DROPDOWNS V3
+   Dropdown contents are controlled only by the existing click/tap JavaScript.
+   Pointer hover changes visual styling only; it must never reveal menu contents.
+   ========================================================================== */
+
+.tv-dropdown {
+  display: none;
+}
+
+.tv-nav-group.is-open > .tv-dropdown {
+  display: block;
+}
+
+/* END TRIVSEL CLICK-ONLY DROPDOWNS V3 */
