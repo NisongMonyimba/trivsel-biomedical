@@ -1084,3 +1084,121 @@ They keep restrained blue text feedback.
 }
 
 /* END TRIVSEL APP HOVER PARITY */
+
+/* ============================================================
+   TRIVSEL FOOTER — WHITE / BRAND BLUE
+   ============================================================ */
+
+.tv-footer {
+  background: #FFFFFF !important;
+  color: #2563EB !important;
+  border-top: 1px solid #E5E7EB;
+}
+
+/* Main footer copy */
+.tv-footer p,
+.tv-footer span,
+.tv-footer small,
+.tv-footer address {
+  color: #2563EB !important;
+}
+
+/* Column headings */
+.tv-footer h1,
+.tv-footer h2,
+.tv-footer h3,
+.tv-footer h4,
+.tv-footer h5,
+.tv-footer h6,
+.tv-footer__title,
+.tv-footer__heading {
+  color: #2563EB !important;
+}
+
+/* Footer links */
+.tv-footer a {
+  color: #2563EB !important;
+  text-decoration: none;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tv-footer a:hover {
+    color: #1D4ED8 !important;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.tv-footer a:focus-visible {
+  color: #1D4ED8 !important;
+  outline: 2px solid #2563EB;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Footer brand */
+.tv-footer__brand,
+.tv-footer__brand span,
+.tv-footer__brand strong {
+  color: #2563EB !important;
+}
+
+/*
+Restore the normal blue Trivsel logo in the footer.
+This removes any white/invert filter that was being used
+for the previous dark footer.
+*/
+.tv-footer__brand img,
+.tv-footer img {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Footer separators */
+.tv-footer hr,
+.tv-footer__bottom,
+.tv-footer__legal,
+.tv-footer__divider {
+  border-color: #DCE6F5 !important;
+}
+
+/* Copyright / bottom-line text */
+.tv-footer__bottom,
+.tv-footer__bottom p,
+.tv-footer__bottom span,
+.tv-footer__legal,
+.tv-footer__legal a {
+  color: #2563EB !important;
+}
+
+/*
+Keep the main CTA visually strong:
+blue background + white foreground.
+*/
+.tv-footer .tv-button,
+.tv-footer .tv-button--blue {
+  background: #2563EB !important;
+  border-color: #2563EB !important;
+  color: #FFFFFF !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tv-footer .tv-button:hover,
+  .tv-footer .tv-button--blue:hover {
+    background: #1D4ED8 !important;
+    border-color: #1D4ED8 !important;
+    color: #FFFFFF !important;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tv-footer a,
+  .tv-footer .tv-button {
+    transition: none !important;
+  }
+}
