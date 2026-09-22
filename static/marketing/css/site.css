@@ -1596,3 +1596,99 @@ blue background + white foreground.
 }
 
 /* END TRIVSEL BRANDED DIRECT CONTACT */
+
+/* BEGIN TRIVSEL BRANDED LIGHT CONTENT SECTIONS
+   Canonical full-width explanatory treatment:
+   white / very pale blue, black headings, dark-slate copy, Trivsel-blue accents.
+   Legacy standalone dark navy slabs are intentionally retired.
+   ========================================================================== */
+
+.tv-band--light,
+.tv-section--light {
+  position: relative;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FBFF 100%) !important;
+  color: #000000 !important;
+  border-top: 1px solid #BFDBFE;
+  border-bottom: 1px solid #BFDBFE;
+}
+
+.tv-band--light::before,
+.tv-section--light::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: min(240px, 28vw);
+  height: 3px;
+  background: #2563EB;
+}
+
+.tv-band--light h1,
+.tv-band--light h2,
+.tv-band--light h3,
+.tv-band--light h4,
+.tv-section--light h1,
+.tv-section--light h2,
+.tv-section--light h3,
+.tv-section--light h4 {
+  color: #000000 !important;
+}
+
+.tv-band--light p,
+.tv-band--light li,
+.tv-section--light p,
+.tv-section--light li {
+  color: #475569 !important;
+}
+
+.tv-band--light .tv-eyebrow,
+.tv-band--light .tv-card-kicker,
+.tv-section--light .tv-eyebrow,
+.tv-section--light .tv-card-kicker {
+  color: #2563EB !important;
+}
+
+.tv-section--light.tv-graph-section,
+.tv-section--light.tv-research {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FBFF 100%) !important;
+  color: #000000 !important;
+}
+
+.tv-band--light .tv-button,
+.tv-section--light .tv-button {
+  background: #FFFFFF !important;
+  border-color: #93C5FD !important;
+  color: #000000 !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tv-band--light .tv-button:hover,
+  .tv-section--light .tv-button:hover {
+    background: #2563EB !important;
+    border-color: #2563EB !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 5px 12px rgba(37, 99, 235, .14);
+    transform: translateY(-1px);
+  }
+}
+
+.tv-band--light .tv-button:focus-visible,
+.tv-section--light .tv-button:focus-visible {
+  background: #2563EB !important;
+  border-color: #2563EB !important;
+  color: #FFFFFF !important;
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
+  box-shadow: 0 5px 12px rgba(37, 99, 235, .14);
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tv-band--light .tv-button,
+  .tv-section--light .tv-button {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* END TRIVSEL BRANDED LIGHT CONTENT SECTIONS */
