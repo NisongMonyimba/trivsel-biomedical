@@ -1249,3 +1249,44 @@ blue background + white foreground.
 }
 
 /* END TRIVSEL CLICK-ONLY DROPDOWNS V3 */
+
+/* BEGIN TRIVSEL PURE BLACK HEADER TEXT V3
+   All public-site navigation writing is pure #000000 at rest.
+   Existing app-style hover/open states remain unchanged.
+   ========================================================================== */
+
+/* Primary navigation labels. */
+.tv-header .tv-nav__home:not(:hover):not(:focus-visible),
+.tv-header .tv-nav-trigger:not(:hover):not(:focus-visible):not([aria-expanded="true"]) {
+  color: #000000 !important;
+}
+
+/* Dropdown copy at rest. */
+.tv-header .tv-dropdown > a:not(:hover):not(:focus-visible) strong,
+.tv-header .tv-dropdown > a:not(:hover):not(:focus-visible) span {
+  color: #000000 !important;
+}
+
+/* Search icon and outlined Open Trivsel control at rest. */
+.tv-header .tv-nav-search:not(:hover):not(:focus-visible),
+.tv-header .tv-button--open:not(:hover):not(:focus-visible) {
+  color: #000000 !important;
+}
+
+/* Chevrons/search strokes follow the same pure-black rest state. */
+.tv-header .tv-nav-trigger:not(:hover):not(:focus-visible):not([aria-expanded="true"]) .tv-chevron,
+.tv-header .tv-nav-search:not(:hover):not(:focus-visible) svg,
+.tv-header .tv-nav-search:not(:hover):not(:focus-visible) svg * {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+
+/* Filled primary CTA stays readable. */
+.tv-header .tv-button--blue,
+.tv-header .tv-button--blue *,
+.tv-header .tv-nav__cta,
+.tv-header .tv-nav__cta * {
+  color: #FFFFFF !important;
+}
+
+/* END TRIVSEL PURE BLACK HEADER TEXT V3 */
