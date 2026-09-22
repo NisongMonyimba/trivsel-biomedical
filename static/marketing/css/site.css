@@ -1290,3 +1290,157 @@ blue background + white foreground.
 }
 
 /* END TRIVSEL PURE BLACK HEADER TEXT V3 */
+
+/* BEGIN TRIVSEL CANONICAL CONTROL HOVER
+   Canonical Trivsel control interaction:
+   white + #000000 at rest -> #2563EB + #FFFFFF on hover/focus.
+   Apply this to compact actionable controls, not large informational cards.
+   ========================================================================== */
+
+:root {
+  --tv-canonical-control-blue: #2563EB;
+  --tv-canonical-control-blue-deep: #1D4ED8;
+  --tv-canonical-control-shadow: 0 5px 12px rgba(37, 99, 235, .14);
+}
+
+/* --------------------------------------------------------------------------
+   REST STATE
+   -------------------------------------------------------------------------- */
+
+.tv-header .tv-dropdown > a,
+.tv-search-result,
+.tv-search-panel__close,
+.tv-utility__row a {
+  background: #FFFFFF;
+  color: #000000;
+  transition:
+    background-color .15s ease,
+    border-color .15s ease,
+    color .15s ease,
+    box-shadow .15s ease,
+    transform .15s ease;
+}
+
+/* Dropdown child copy must inherit the control color. */
+.tv-header .tv-dropdown > a strong,
+.tv-header .tv-dropdown > a span,
+.tv-header .tv-dropdown > a small {
+  color: inherit !important;
+  transition: color .15s ease;
+}
+
+/* --------------------------------------------------------------------------
+   CANONICAL POINTER HOVER
+   -------------------------------------------------------------------------- */
+
+@media (hover: hover) and (pointer: fine) {
+  .tv-header .tv-dropdown > a:hover,
+  .tv-search-result:hover,
+  .tv-search-panel__close:hover,
+  .tv-utility__row a:hover {
+    background: var(--tv-canonical-control-blue) !important;
+    border-color: var(--tv-canonical-control-blue) !important;
+    color: #FFFFFF !important;
+    box-shadow: var(--tv-canonical-control-shadow);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+
+  .tv-header .tv-dropdown > a:hover strong,
+  .tv-header .tv-dropdown > a:hover span,
+  .tv-header .tv-dropdown > a:hover small {
+    color: #FFFFFF !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   KEYBOARD FOCUS MATCHES HOVER
+   -------------------------------------------------------------------------- */
+
+.tv-header .tv-dropdown > a:focus-visible,
+.tv-search-result:focus-visible,
+.tv-search-panel__close:focus-visible,
+.tv-utility__row a:focus-visible {
+  background: var(--tv-canonical-control-blue) !important;
+  border-color: var(--tv-canonical-control-blue) !important;
+  color: #FFFFFF !important;
+  box-shadow: var(--tv-canonical-control-shadow);
+  outline: 2px solid var(--tv-canonical-control-blue);
+  outline-offset: 2px;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.tv-header .tv-dropdown > a:focus-visible strong,
+.tv-header .tv-dropdown > a:focus-visible span,
+.tv-header .tv-dropdown > a:focus-visible small {
+  color: #FFFFFF !important;
+}
+
+/* --------------------------------------------------------------------------
+   EXISTING HEADER CONTROLS
+   Make the canonical foreground explicit so black rest-state rules can never
+   leak through while a header control is hovered/focused/open.
+   -------------------------------------------------------------------------- */
+
+@media (hover: hover) and (pointer: fine) {
+  .tv-header .tv-nav__home:hover,
+  .tv-header .tv-nav-trigger:hover,
+  .tv-header .tv-nav-search:hover,
+  .tv-header .tv-button--open:hover {
+    background: var(--tv-canonical-control-blue) !important;
+    border-color: var(--tv-canonical-control-blue) !important;
+    color: #FFFFFF !important;
+  }
+}
+
+.tv-header .tv-nav__home:focus-visible,
+.tv-header .tv-nav-trigger:focus-visible,
+.tv-header .tv-nav-search:focus-visible,
+.tv-header .tv-button--open:focus-visible,
+.tv-header .tv-nav-trigger[aria-expanded="true"] {
+  background: var(--tv-canonical-control-blue) !important;
+  border-color: var(--tv-canonical-control-blue) !important;
+  color: #FFFFFF !important;
+}
+
+/* Chevron and search icon follow white foreground during interaction. */
+.tv-header .tv-nav-trigger:hover .tv-chevron,
+.tv-header .tv-nav-trigger:focus-visible .tv-chevron,
+.tv-header .tv-nav-trigger[aria-expanded="true"] .tv-chevron,
+.tv-header .tv-nav-search:hover svg,
+.tv-header .tv-nav-search:hover svg *,
+.tv-header .tv-nav-search:focus-visible svg,
+.tv-header .tv-nav-search:focus-visible svg * {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+}
+
+/* Filled primary CTA is already blue, so deepen it on hover. */
+@media (hover: hover) and (pointer: fine) {
+  .tv-header .tv-nav__cta:hover,
+  .tv-header .tv-button--blue:hover {
+    background: var(--tv-canonical-control-blue-deep) !important;
+    border-color: var(--tv-canonical-control-blue-deep) !important;
+    color: #FFFFFF !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   LARGE CONTENT CARDS
+   Deliberately retain the established subtle card treatment instead of
+   turning large content areas into solid blue controls.
+   -------------------------------------------------------------------------- */
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tv-header .tv-dropdown > a,
+  .tv-search-result,
+  .tv-search-panel__close,
+  .tv-utility__row a {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* END TRIVSEL CANONICAL CONTROL HOVER */
