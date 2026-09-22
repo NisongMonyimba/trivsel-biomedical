@@ -1202,3 +1202,39 @@ blue background + white foreground.
     transition: none !important;
   }
 }
+
+/* BEGIN TRIVSEL CLICK-ONLY DROPDOWNS
+   Dropdown contents open only after explicit click/tap.
+   Hover by itself must never reveal the menu.
+   ========================================================================== */
+
+.tv-nav [data-dropdown-menu] {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tv-nav [data-dropdown]:hover [data-dropdown-menu],
+  .tv-nav [data-dropdown-trigger]:hover + [data-dropdown-menu] {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
+.tv-nav [data-dropdown-trigger][aria-expanded="true"] + [data-dropdown-menu],
+.tv-nav [data-dropdown]:has(> [data-dropdown-trigger][aria-expanded="true"]) [data-dropdown-menu],
+.tv-nav [data-dropdown].is-open [data-dropdown-menu],
+.tv-nav [data-dropdown][data-open="true"] [data-dropdown-menu] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.tv-nav [data-dropdown-trigger]:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
+}
+
+/* END TRIVSEL CLICK-ONLY DROPDOWNS */
