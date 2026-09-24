@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/marketing/css/site.css?v=dedicated-pages-v5-20260922-104242">
+  <link rel="stylesheet" href="/static/marketing/css/site.css?v=asset-identity-deep-dive-20260924-113619">
 <link rel="shortcut icon" type="image/png" href="/static/img/logo-icon.png">
 </head>
 <body class="tv-body">
@@ -71,7 +71,7 @@
             <strong>Platform overview</strong>
             <span>See the complete Trivsel operating model.</span>
           </a>
-          <a href="/platform#identity">
+          <a href="/platform/asset-identity">
             <strong>Asset identity</strong>
             <span>Persistent identity for every physical asset.</span>
           </a>
@@ -322,129 +322,314 @@
 </header>
   <main id="main">
 
-<section class="tv-page-hero tv-page-hero--simple tv-detail-hero">
-  <div class="tv-shell tv-detail-hero__grid">
-    <div>
+<section class="tv-page-hero tv-page-hero--simple tv-asset-id-hero">
+  <div class="tv-shell tv-asset-id-hero__grid">
+    <div class="tv-asset-id-hero__copy">
       <p class="tv-eyebrow">PLATFORM / ASSET IDENTITY</p>
-      <h1>Asset identity</h1>
-      <p class="tv-page-hero__lead">Give every physical asset a persistent identity that stays connected to its model, serial context, location, work and lifecycle history.</p>
+      <h1>One asset. One persistent operational identity.</h1>
+      <p class="tv-page-hero__lead">
+        Asset identity gives an organization a stable reference for each physical
+        asset so location, maintenance, calibration, faults, ownership context and
+        lifecycle events stay connected to the right physical object over time.
+      </p>
+      <div class="tv-actions">
+        <a class="tv-button tv-button--blue" href="/platform/asset-location">Explore asset location</a>
+        <a class="tv-button" href="/contact/pilot">Discuss a pilot</a>
+      </div>
     </div>
-    <figure class="tv-detail-hero__visual tv-media-card">
-      <img src="/static/marketing/img/platform-operations.png" alt="" fetchpriority="high">
+
+    <figure class="tv-asset-id-hero__visual tv-media-card">
+      <img
+        src="/static/marketing/img/platform-operations.png"
+        alt="Trivsel physical asset operations"
+        fetchpriority="high"
+      >
+      <figcaption class="tv-asset-id-hero__caption">
+        <span>IDENTITY</span>
+        <strong>The stable anchor for everything that happens to an asset.</strong>
+      </figcaption>
     </figure>
   </div>
 </section>
 
 <section class="tv-section">
   <div class="tv-shell">
-    <div class="tv-detail-section-head">
-      <p class="tv-eyebrow">WHAT IT CONNECTS</p>
-      <h2>One concept, explained in context.</h2>
+    <div class="tv-asset-id-intro">
+      <div>
+        <p class="tv-eyebrow">WHY IT MATTERS</p>
+        <h2>An asset cannot have a trustworthy history if the organization is not sure which physical object the record describes.</h2>
+      </div>
+      <p>
+        Names change. Locations change. Departments reorganize. People rotate.
+        A persistent asset identity gives the organization a stable anchor that
+        can remain consistent while the surrounding operating context changes.
+      </p>
     </div>
 
-    <div class="tv-detail-card-grid">
-
-      <article class="tv-detail-card">
-        <span class="tv-detail-card__icon" aria-hidden="true">
+    <div class="tv-asset-id-value-grid">
+      <article>
+        <span class="tv-asset-id-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M8 9h8M8 13h5M8 17h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
           </svg>
         </span>
-        <h3>Persistent identity</h3>
-        <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
+        <h3>Reduce ambiguity</h3>
+        <p>
+          Organizations can own many units of the same equipment type and model.
+          A persistent identity distinguishes the individual physical unit from
+          the general model or category it belongs to.
+        </p>
       </article>
 
-      <article class="tv-detail-card">
-        <span class="tv-detail-card__icon" aria-hidden="true">
+      <article>
+        <span class="tv-asset-id-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M5 7h9a5 5 0 0 1 0 10H9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="m8 14-3 3 3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </span>
-        <h3>Asset context</h3>
-        <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
+        <h3>Keep history continuous</h3>
+        <p>
+          Maintenance, calibration, faults, interventions, transfers and status
+          changes can remain connected to the same asset even when the asset moves.
+        </p>
       </article>
 
-      <article class="tv-detail-card">
-        <span class="tv-detail-card__icon" aria-hidden="true">
+      <article>
+        <span class="tv-asset-id-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <circle cx="8" cy="9" r="3" stroke="currentColor" stroke-width="1.7"/>
+            <circle cx="16" cy="9" r="3" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M3.5 19c.6-3.1 2.1-4.8 4.5-4.8s3.9 1.7 4.5 4.8M11.5 19c.6-3.1 2.1-4.8 4.5-4.8s3.9 1.7 4.5 4.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
           </svg>
         </span>
-        <h3>Traceability</h3>
-        <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
+        <h3>Give teams a shared reference</h3>
+        <p>
+          Engineering, operations, procurement, finance and asset-management
+          teams can refer to the same physical asset while using the context each
+          function needs.
+        </p>
       </article>
 
-    </div>
-
-    <div class="tv-detail-system-map" aria-label="Trivsel operating model">
-      <span>Asset</span><b>→</b>
-      <span>Context</span><b>→</b>
-      <span>History</span><b>→</b>
-      <span>Intelligence</span><b>→</b>
-      <span>Action</span>
+      <article>
+        <span class="tv-asset-id-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M5 19V8l7-4 7 4v11" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M8 12h8M8 16h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <h3>Support lifecycle decisions</h3>
+        <p>
+          A consistent reference makes it easier to review what has happened to
+          an asset before planning maintenance, transfer, replacement or retirement.
+        </p>
+      </article>
     </div>
   </div>
 </section>
 
 <section class="tv-section tv-section--soft">
-  <div class="tv-shell tv-detail-explainer">
-    <div>
-      <p class="tv-eyebrow">WORKFLOW</p>
-      <h2>How the concept moves through the operating system.</h2>
-      <p>Give every physical asset a persistent identity that stays connected to its model, serial context, location, work and lifecycle history.</p>
+  <div class="tv-shell">
+    <div class="tv-detail-section-head">
+      <p class="tv-eyebrow">THE OPERATIONAL DIFFERENCE</p>
+      <h2>Identity turns scattered records into one asset story.</h2>
+      <p>
+        The point is not merely to assign a number. The identity becomes the
+        reference that other operational information can attach to.
+      </p>
     </div>
 
-    <ol class="tv-detail-flow">
+    <div class="tv-asset-id-compare" role="table" aria-label="Without and with persistent asset identity">
+      <div class="tv-asset-id-compare__head" role="row">
+        <span role="columnheader">Operating question</span>
+        <span role="columnheader">Without a stable identity</span>
+        <span role="columnheader">With a persistent identity</span>
+      </div>
 
-      <li>
-        <span class="tv-detail-flow__number">01</span>
-        <span>Register the asset</span>
-      </li>
+      <div class="tv-asset-id-compare__row" role="row">
+        <strong role="cell">Which physical unit is this?</strong>
+        <span role="cell">Teams may rely on a room, nickname, model or handwritten label.</span>
+        <span role="cell">The individual asset has its own persistent reference.</span>
+      </div>
 
-      <li>
-        <span class="tv-detail-flow__number">02</span>
-        <span>Connect model and serial context</span>
-      </li>
+      <div class="tv-asset-id-compare__row" role="row">
+        <strong role="cell">What happens when it moves?</strong>
+        <span role="cell">Location-based records can become disconnected from the physical item.</span>
+        <span role="cell">Location changes while the asset identity remains the same.</span>
+      </div>
 
-      <li>
-        <span class="tv-detail-flow__number">03</span>
-        <span>Attach location and ownership</span>
-      </li>
+      <div class="tv-asset-id-compare__row" role="row">
+        <strong role="cell">Where does service evidence belong?</strong>
+        <span role="cell">Maintenance and calibration evidence may use different references.</span>
+        <span role="cell">Operational events can attach to one asset history.</span>
+      </div>
 
-      <li>
-        <span class="tv-detail-flow__number">04</span>
-        <span>Accumulate lifecycle evidence</span>
-      </li>
+      <div class="tv-asset-id-compare__row" role="row">
+        <strong role="cell">Can different teams talk about the same thing?</strong>
+        <span role="cell">Functions may maintain different labels or lists.</span>
+        <span role="cell">The asset identity provides a common reference across functions.</span>
+      </div>
 
-    </ol>
+      <div class="tv-asset-id-compare__row" role="row">
+        <strong role="cell">What happened over its life?</strong>
+        <span role="cell">History may need to be reconstructed across files or systems.</span>
+        <span role="cell">Lifecycle evidence can remain connected to the same physical asset.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tv-section">
+  <div class="tv-shell tv-asset-id-anatomy">
+    <div class="tv-asset-id-anatomy__copy">
+      <p class="tv-eyebrow">ANATOMY OF AN ASSET RECORD</p>
+      <h2>Identity first. Context around it. History behind it.</h2>
+      <p>
+        Trivsel separates the asset's persistent identity from information that
+        can change over time. That makes movement, service and lifecycle events
+        easier to understand without losing the thread of which physical item the
+        organization is talking about.
+      </p>
+    </div>
+
+    <div class="tv-asset-id-stack">
+      <article>
+        <span>01</span>
+        <div>
+          <h3>Core identity</h3>
+          <p>Asset ID or QR reference, asset tag, manufacturer, model and serial number.</p>
+        </div>
+      </article>
+      <article>
+        <span>02</span>
+        <div>
+          <h3>Operational context</h3>
+          <p>Organization, location, department, placement and current operational status.</p>
+        </div>
+      </article>
+      <article>
+        <span>03</span>
+        <div>
+          <h3>Lifecycle connections</h3>
+          <p>Maintenance, calibration, faults, interventions, warranty and asset events.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="tv-section tv-section--soft">
+  <div class="tv-shell">
+    <div class="tv-detail-section-head">
+      <p class="tv-eyebrow">WHO CARES ABOUT ASSET IDENTITY?</p>
+      <h2>The same identity becomes useful to different teams for different reasons.</h2>
+    </div>
+
+    <div class="tv-asset-id-stakeholders">
+      <article>
+        <span>ENGINEERING</span>
+        <h3>Work on the correct asset</h3>
+        <p>Connect maintenance, calibration, faults and interventions to the physical unit that received the work.</p>
+      </article>
+      <article>
+        <span>OPERATIONS</span>
+        <h3>Know what is actually in use</h3>
+        <p>Reference the same equipment as it moves between locations, departments or operating contexts.</p>
+      </article>
+      <article>
+        <span>ASSET MANAGEMENT</span>
+        <h3>Know what exists and where it belongs</h3>
+        <p>Keep the installed physical asset distinct from its equipment type, model or category.</p>
+      </article>
+      <article>
+        <span>PROCUREMENT</span>
+        <h3>Plan from the installed base</h3>
+        <p>Distinguish individual assets when reviewing additions, replacements, transfers and standardization needs.</p>
+      </article>
+      <article>
+        <span>FINANCE</span>
+        <h3>Reference the physical item behind the record</h3>
+        <p>Use a consistent asset reference when operational and financial teams need to reconcile which physical item is being discussed.</p>
+      </article>
+      <article>
+        <span>LEADERSHIP & QUALITY</span>
+        <h3>Review traceable operational history</h3>
+        <p>Follow the evidence attached to a particular asset instead of reconstructing history from disconnected records.</p>
+      </article>
+    </div>
   </div>
 </section>
 
 <section class="tv-section">
   <div class="tv-shell">
     <div class="tv-detail-section-head">
-      <p class="tv-eyebrow">CONNECTION MAP</p>
-      <h2>Where this concept sits in Trivsel.</h2>
+      <p class="tv-eyebrow">HOW IT WORKS</p>
+      <h2>The identity remains stable while the asset's world changes around it.</h2>
     </div>
 
-    <div class="tv-detail-bars">
-      <div><span>Identity</span><i><b style="width:92%"></b></i></div>
-      <div><span>Context</span><i><b style="width:84%"></b></i></div>
-      <div><span>History</span><i><b style="width:76%"></b></i></div>
-      <div><span>Action</span><i><b style="width:68%"></b></i></div>
-    </div>
-    <p class="tv-detail-bars__note">The rails are a visual relationship diagram, not a customer score, product-performance metric or measured percentage.</p>
+    <ol class="tv-asset-id-flow">
+      <li>
+        <span>01</span>
+        <strong>Identify</strong>
+        <p>Create a persistent reference for the physical asset.</p>
+      </li>
+      <li>
+        <span>02</span>
+        <strong>Contextualize</strong>
+        <p>Connect manufacturer, model, serial, location and department.</p>
+      </li>
+      <li>
+        <span>03</span>
+        <strong>Use</strong>
+        <p>Let people open or scan the asset record when work happens.</p>
+      </li>
+      <li>
+        <span>04</span>
+        <strong>Accumulate history</strong>
+        <p>Attach maintenance, calibration, faults, interventions and status changes.</p>
+      </li>
+      <li>
+        <span>05</span>
+        <strong>Move without losing the thread</strong>
+        <p>Update placement and context while preserving the asset's identity and history.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
 <section class="tv-section tv-section--soft">
+  <div class="tv-shell tv-asset-id-foundation">
+    <div>
+      <p class="tv-eyebrow">THE FOUNDATION</p>
+      <h2>Asset identity is the first layer of operational intelligence.</h2>
+      <p>
+        Trivsel's operating model starts with a real physical asset. Context
+        explains where it is and how it is being used. History records what has
+        happened. Intelligence can then reason from that connected evidence, and
+        people can decide what action to take.
+      </p>
+    </div>
+
+    <div class="tv-asset-id-system-map" aria-label="Trivsel asset intelligence operating model">
+      <span class="is-current">Asset</span>
+      <b>→</b>
+      <span>Context</span>
+      <b>→</b>
+      <span>History</span>
+      <b>→</b>
+      <span>Intelligence</span>
+      <b>→</b>
+      <span>Action</span>
+    </div>
+  </div>
+</section>
+
+<section class="tv-section">
   <div class="tv-shell tv-cta__inner">
     <div>
       <p class="tv-eyebrow">NEXT</p>
-      <h2>Continue exploring Trivsel.</h2>
+      <h2>Once the asset has an identity, the next question is where it is.</h2>
     </div>
     <a class="tv-button tv-button--blue" href="/platform/asset-location">Explore asset location</a>
   </div>
@@ -462,7 +647,7 @@
     <div class="tv-footer__links">
       <div>
         <h2>Platform</h2>
-        <a href="/platform#identity">Asset identity</a>
+        <a href="/platform/asset-identity">Asset identity</a>
         <a href="/platform#maintenance">Maintenance</a>
         <a href="/platform#calibration">Calibration</a>
         <a href="/platform#readiness">Readiness</a>
