@@ -17,6 +17,7 @@
 
   const index = [
     ["Asset identity", "/platform/asset-identity", "asset identity persistent asset id qr asset tag manufacturer model serial location department placement traceability lifecycle maintenance calibration faults"],
+    ["Maintenance", "/platform/maintenance", "maintenance preventive corrective service repair intervention work order asset history lifecycle technician engineer planned due completed faults"],
     ["Platform", "/platform", "asset identity maintenance calibration faults readiness lifecycle"],
     ["Industries", "/industries", "healthcare manufacturing laboratories facilities infrastructure ports hospitality"],
     ["Intelligence", "/intelligence", "asset graph operational intelligence readiness human machine responsible ai"],

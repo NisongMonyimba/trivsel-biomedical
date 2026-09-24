@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/marketing/css/site.css?v=asset-identity-deep-dive-20260924-113619">
+  <link rel="stylesheet" href="/static/marketing/css/site.css?v=maintenance-deep-dive-20260924-133240">
 <link rel="shortcut icon" type="image/png" href="/static/img/logo-icon.png">
 </head>
 <body class="tv-body">
@@ -75,7 +75,7 @@
             <strong>Asset identity</strong>
             <span>Persistent identity for every physical asset.</span>
           </a>
-          <a href="/platform#maintenance">
+          <a href="/platform/maintenance">
             <strong>Maintenance</strong>
             <span>Connect service activity and asset history.</span>
           </a>
@@ -322,133 +322,203 @@
 </header>
   <main id="main">
 
-<section class="tv-page-hero tv-page-hero--simple tv-detail-hero">
-  <div class="tv-shell tv-detail-hero__grid">
-    <div>
+
+<section class="tv-page-hero tv-page-hero--simple tv-maint-hero">
+  <div class="tv-shell tv-maint-hero__grid">
+    <div class="tv-maint-hero__copy">
       <p class="tv-eyebrow">PLATFORM / MAINTENANCE</p>
-      <h1>Maintenance</h1>
-      <p class="tv-page-hero__lead">Connect preventive and corrective maintenance work to the asset history instead of leaving service activity fragmented.</p>
+      <h1>Maintenance should become part of the asset's memory.</h1>
+      <p class="tv-page-hero__lead">
+        Trivsel connects planned and corrective maintenance to the physical asset
+        that received the work, so organizations can understand what was done,
+        when it happened, why it happened and what the asset's history now says.
+      </p>
+      <div class="tv-actions">
+        <a class="tv-button tv-button--blue" href="/platform/calibration">Explore calibration</a>
+        <a class="tv-button" href="/contact/pilot">Discuss a pilot</a>
+      </div>
     </div>
-    <figure class="tv-detail-hero__visual tv-media-card">
-      <img src="/static/marketing/img/platform-operations.png" alt="" fetchpriority="high">
+
+    <figure class="tv-maint-hero__visual tv-media-card">
+      <img src="/static/marketing/img/platform-operations.png"
+           alt="Trivsel physical asset operations"
+           fetchpriority="high">
+      <figcaption class="tv-maint-hero__caption">
+        <span>MAINTENANCE</span>
+        <strong>Service work is more useful when it stays connected to the asset it changed.</strong>
+      </figcaption>
     </figure>
   </div>
 </section>
 
 <section class="tv-section">
   <div class="tv-shell">
-    <div class="tv-detail-section-head">
-      <p class="tv-eyebrow">WHAT IT CONNECTS</p>
-      <h2>One concept, explained in context.</h2>
+    <div class="tv-maint-intro">
+      <div>
+        <p class="tv-eyebrow">WHY ORGANIZATIONS SHOULD CARE</p>
+        <h2>Maintenance is not only a task. It is evidence about the condition, use and history of a physical asset.</h2>
+      </div>
+      <p>
+        A maintenance activity can answer important operational questions only
+        when the organization can connect the work to the correct asset, its
+        location, the problem or planned need, the person or team involved and
+        the resulting state of the equipment.
+      </p>
     </div>
 
-    <div class="tv-detail-card-grid">
-
-      <article class="tv-detail-card">
-        <span class="tv-detail-card__icon" aria-hidden="true">
+    <div class="tv-maint-value-grid">
+      <article>
+        <span class="tv-maint-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M14 5a5 5 0 0 0-6 6L4 15l5 5 4-4a5 5 0 0 0 6-6l-3 3-3-3 3-3-2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
           </svg>
         </span>
-        <h3>Planned work</h3>
-        <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
+        <h3>Know what work was actually done</h3>
+        <p>Keep the maintenance action connected to the asset instead of leaving service information in separate notes, messages or spreadsheets.</p>
       </article>
 
-      <article class="tv-detail-card">
-        <span class="tv-detail-card__icon" aria-hidden="true">
+      <article>
+        <span class="tv-maint-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
             <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M12 8v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
           </svg>
         </span>
-        <h3>Completed evidence</h3>
-        <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
+        <h3>Keep planned work visible</h3>
+        <p>Give teams a structured way to see maintenance that is due, planned, completed or still awaiting attention.</p>
       </article>
 
-      <article class="tv-detail-card">
-        <span class="tv-detail-card__icon" aria-hidden="true">
+      <article>
+        <span class="tv-maint-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M6 5h12v14H6z" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M9 9h6M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
           </svg>
         </span>
-        <h3>Lifecycle continuity</h3>
-        <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
+        <h3>Build lifecycle evidence</h3>
+        <p>Each completed maintenance event becomes part of the asset's history, helping future teams understand what has already happened.</p>
       </article>
 
-    </div>
-
-    <div class="tv-detail-system-map" aria-label="Trivsel operating model">
-      <span>Asset</span><b>→</b>
-      <span>Context</span><b>→</b>
-      <span>History</span><b>→</b>
-      <span>Intelligence</span><b>→</b>
-      <span>Action</span>
+      <article>
+        <span class="tv-maint-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 17l5-5 4 3 7-8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 7h3v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <h3>See patterns over time</h3>
+        <p>Connected maintenance history can make recurring interventions, repeated issues and service burden easier to review.</p>
+      </article>
     </div>
   </div>
 </section>
 
 <section class="tv-section tv-section--soft">
-  <div class="tv-shell tv-detail-explainer">
-    <div>
-      <p class="tv-eyebrow">WORKFLOW</p>
-      <h2>How the concept moves through the operating system.</h2>
-      <p>Connect preventive and corrective maintenance work to the asset history instead of leaving service activity fragmented.</p>
+  <div class="tv-shell">
+    <div class="tv-detail-section-head">
+      <p class="tv-eyebrow">PLANNED + CORRECTIVE WORK</p>
+      <h2>Different maintenance paths. One connected asset history.</h2>
+      <p>Preventive work and corrective work begin for different reasons, but both become more useful when the resulting evidence stays attached to the same physical asset.</p>
     </div>
 
-    <ol class="tv-detail-flow">
+    <div class="tv-maint-paths">
+      <article>
+        <span>01</span>
+        <h3>Preventive maintenance</h3>
+        <p>Work planned in advance to inspect, service, adjust or replace items before a known maintenance need becomes overdue.</p>
+        <div class="tv-maint-paths__flow">
+          <b>Schedule</b><i>→</i><b>Perform</b><i>→</i><b>Record</b><i>→</i><b>Next due state</b>
+        </div>
+      </article>
 
-      <li>
-        <span class="tv-detail-flow__number">01</span>
-        <span>Plan service</span>
-      </li>
+      <article>
+        <span>02</span>
+        <h3>Corrective maintenance</h3>
+        <p>Work that responds to a fault, failed check, observed problem or other condition requiring an intervention.</p>
+        <div class="tv-maint-paths__flow">
+          <b>Problem</b><i>→</i><b>Intervention</b><i>→</i><b>Resolution</b><i>→</i><b>History</b>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-      <li>
-        <span class="tv-detail-flow__number">02</span>
-        <span>Record the intervention</span>
-      </li>
+<section class="tv-section">
+  <div class="tv-shell tv-maint-record">
+    <div class="tv-maint-record__copy">
+      <p class="tv-eyebrow">ANATOMY OF A MAINTENANCE RECORD</p>
+      <h2>The useful question is not just "Was maintenance done?"</h2>
+      <p>The record becomes operationally meaningful when it can explain the asset, timing, maintenance reason, work performed, evidence and resulting condition in one connected context.</p>
+    </div>
 
-      <li>
-        <span class="tv-detail-flow__number">03</span>
-        <span>Attach evidence</span>
-      </li>
+    <div class="tv-maint-record__stack">
+      <article><span>01</span><div><h3>Asset</h3><p>The persistent identity of the physical unit that received the work.</p></div></article>
+      <article><span>02</span><div><h3>Maintenance context</h3><p>Planned or corrective reason, date, location, responsible team and relevant notes.</p></div></article>
+      <article><span>03</span><div><h3>Work performed</h3><p>The inspection, repair, replacement, adjustment or other maintenance activity completed.</p></div></article>
+      <article><span>04</span><div><h3>Outcome + evidence</h3><p>Completion state, supporting evidence and the updated asset history after the work.</p></div></article>
+    </div>
+  </div>
+</section>
 
-      <li>
-        <span class="tv-detail-flow__number">04</span>
-        <span>Carry the result into asset history</span>
-      </li>
+<section class="tv-section tv-section--soft">
+  <div class="tv-shell">
+    <div class="tv-detail-section-head">
+      <p class="tv-eyebrow">WHO CARES ABOUT MAINTENANCE?</p>
+      <h2>The same maintenance history supports different decisions across the organization.</h2>
+    </div>
 
-    </ol>
+    <div class="tv-maint-stakeholders">
+      <article><span>ENGINEERS & TECHNICIANS</span><h3>See what happened before starting the next job</h3><p>Review prior interventions, work history and asset context before repeating or escalating maintenance.</p></article>
+      <article><span>OPERATIONS</span><h3>Understand service state around active assets</h3><p>Know whether an asset is awaiting work, undergoing maintenance or returning to normal operation.</p></article>
+      <article><span>ASSET MANAGEMENT</span><h3>Connect maintenance burden to lifecycle history</h3><p>Keep service events tied to the asset when reviewing its ongoing use, transfer or replacement needs.</p></article>
+      <article><span>PROCUREMENT</span><h3>Bring service history into replacement discussions</h3><p>Review accumulated maintenance context when considering repair, replacement or standardization choices.</p></article>
+      <article><span>FINANCE</span><h3>Reference the physical asset behind maintenance activity</h3><p>Keep operational service discussions anchored to the same equipment unit that other teams recognize.</p></article>
+      <article><span>LEADERSHIP & QUALITY</span><h3>Review whether maintenance evidence is traceable</h3><p>Follow the sequence of planned work, corrective work and resulting asset history without rebuilding the story manually.</p></article>
+    </div>
   </div>
 </section>
 
 <section class="tv-section">
   <div class="tv-shell">
     <div class="tv-detail-section-head">
-      <p class="tv-eyebrow">CONNECTION MAP</p>
-      <h2>Where this concept sits in Trivsel.</h2>
+      <p class="tv-eyebrow">THE MAINTENANCE LOOP</p>
+      <h2>Maintenance becomes more useful when each action feeds the next decision.</h2>
     </div>
 
-    <div class="tv-detail-bars">
-      <div><span>Identity</span><i><b style="width:92%"></b></i></div>
-      <div><span>Context</span><i><b style="width:84%"></b></i></div>
-      <div><span>History</span><i><b style="width:76%"></b></i></div>
-      <div><span>Action</span><i><b style="width:68%"></b></i></div>
-    </div>
-    <p class="tv-detail-bars__note">The rails are a visual relationship diagram, not a customer score, product-performance metric or measured percentage.</p>
+    <ol class="tv-maint-flow">
+      <li><span>01</span><strong>Identify the asset</strong><p>Start with the exact physical unit that needs attention.</p></li>
+      <li><span>02</span><strong>Understand the need</strong><p>Determine whether the work is planned, fault-driven or otherwise required.</p></li>
+      <li><span>03</span><strong>Perform the work</strong><p>Record the intervention, service activity and responsible people.</p></li>
+      <li><span>04</span><strong>Attach evidence</strong><p>Keep completion details and relevant supporting information with the asset record.</p></li>
+      <li><span>05</span><strong>Update the asset story</strong><p>Carry the result into lifecycle history so the next decision starts with better context.</p></li>
+    </ol>
   </div>
 </section>
 
 <section class="tv-section tv-section--soft">
+  <div class="tv-shell tv-maint-foundation">
+    <div>
+      <p class="tv-eyebrow">CONNECTED MAINTENANCE</p>
+      <h2>Maintenance becomes operational intelligence when it remains connected to identity, context and history.</h2>
+      <p>Trivsel treats maintenance as one part of the broader physical-asset operating model. The asset provides identity. Context explains where and how it is being used. Maintenance adds history. That history can then support better questions and better human decisions.</p>
+    </div>
+
+    <div class="tv-maint-system-map" aria-label="Trivsel maintenance operating model">
+      <span>Asset</span><b>→</b><span>Context</span><b>→</b><span class="is-current">Maintenance</span><b>→</b><span>History</span><b>→</b><span>Action</span>
+    </div>
+  </div>
+</section>
+
+<section class="tv-section">
   <div class="tv-shell tv-cta__inner">
     <div>
       <p class="tv-eyebrow">NEXT</p>
-      <h2>Continue exploring Trivsel.</h2>
+      <h2>Maintenance tells you what was done. Calibration tells you whether measurement performance is supported by traceable evidence.</h2>
     </div>
     <a class="tv-button tv-button--blue" href="/platform/calibration">Explore calibration</a>
   </div>
 </section>
+
 
   </main>
   <footer class="tv-footer">
@@ -463,7 +533,7 @@
       <div>
         <h2>Platform</h2>
         <a href="/platform/asset-identity">Asset identity</a>
-        <a href="/platform#maintenance">Maintenance</a>
+        <a href="/platform/maintenance">Maintenance</a>
         <a href="/platform#calibration">Calibration</a>
         <a href="/platform#readiness">Readiness</a>
       </div>
