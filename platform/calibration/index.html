@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/marketing/css/site.css?v=maintenance-deep-dive-20260924-133240">
+  <link rel="stylesheet" href="/static/marketing/css/site.css?v=calibration-deep-dive-20260924-204832">
 <link rel="shortcut icon" type="image/png" href="/static/img/logo-icon.png">
 </head>
 <body class="tv-body">
@@ -79,7 +79,7 @@
             <strong>Maintenance</strong>
             <span>Connect service activity and asset history.</span>
           </a>
-          <a href="/platform#calibration">
+          <a href="/platform/calibration">
             <strong>Calibration</strong>
             <span>Keep calibration evidence traceable.</span>
           </a>
@@ -322,133 +322,215 @@
 </header>
   <main id="main">
 
-<section class="tv-page-hero tv-page-hero--simple tv-detail-hero">
-  <div class="tv-shell tv-detail-hero__grid">
-    <div>
+
+<section class="tv-page-hero tv-page-hero--simple tv-cal-hero">
+  <div class="tv-shell tv-cal-hero__grid">
+    <div class="tv-cal-hero__copy">
       <p class="tv-eyebrow">PLATFORM / CALIBRATION</p>
-      <h1>Calibration</h1>
-      <p class="tv-page-hero__lead">Keep calibration status, evidence and due-state connected to the physical asset that depends on it.</p>
+      <h1>Calibration evidence should stay connected to the asset that depends on it.</h1>
+      <p class="tv-page-hero__lead">
+        Trivsel connects calibration status, due-state and supporting evidence to
+        the physical asset itself, so organizations can understand whether a
+        calibration requirement is current, what evidence exists and what action
+        should happen next.
+      </p>
+      <div class="tv-actions">
+        <a class="tv-button tv-button--blue" href="/platform/faults-interventions">Explore faults &amp; interventions</a>
+        <a class="tv-button" href="/contact/pilot">Discuss a pilot</a>
+      </div>
     </div>
-    <figure class="tv-detail-hero__visual tv-media-card">
-      <img src="/static/marketing/img/platform-operations.png" alt="" fetchpriority="high">
+
+    <figure class="tv-cal-hero__visual tv-media-card">
+      <img
+        src="/static/marketing/img/platform-operations.png"
+        alt="Trivsel physical asset operations"
+        fetchpriority="high"
+      >
+      <figcaption class="tv-cal-hero__caption">
+        <span>CALIBRATION</span>
+        <strong>Calibration becomes more useful when status, evidence and due-state stay attached to the right asset.</strong>
+      </figcaption>
     </figure>
   </div>
 </section>
 
 <section class="tv-section">
   <div class="tv-shell">
-    <div class="tv-detail-section-head">
-      <p class="tv-eyebrow">WHAT IT CONNECTS</p>
-      <h2>One concept, explained in context.</h2>
+    <div class="tv-cal-intro">
+      <div>
+        <p class="tv-eyebrow">WHY ORGANIZATIONS SHOULD CARE</p>
+        <h2>A calibration record is only useful when the organization can connect it to the correct physical asset and its current operating context.</h2>
+      </div>
+      <p>
+        Calibration can affect whether a measurement-capable asset is ready for
+        use, due for attention or carrying evidence that needs review. A connected
+        record helps teams see calibration as part of the asset's operational
+        state instead of as a detached certificate or spreadsheet row.
+      </p>
     </div>
 
-    <div class="tv-detail-card-grid">
-
-      <article class="tv-detail-card">
-        <span class="tv-detail-card__icon" aria-hidden="true">
+    <div class="tv-cal-value-grid">
+      <article>
+        <span class="tv-cal-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
             <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M12 12l4-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M8 17h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
           </svg>
         </span>
-        <h3>Calibration state</h3>
-        <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
+        <h3>See current calibration state</h3>
+        <p>Keep calibration status visible with the asset instead of asking teams to reconstruct it from separate records.</p>
       </article>
 
-      <article class="tv-detail-card">
-        <span class="tv-detail-card__icon" aria-hidden="true">
+      <article>
+        <span class="tv-cal-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M6 4h9l3 3v13H6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
           </svg>
         </span>
-        <h3>Evidence</h3>
-        <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
+        <h3>Keep evidence traceable</h3>
+        <p>Connect supporting calibration evidence to the same physical asset so people can find the record that explains the current state.</p>
       </article>
 
-      <article class="tv-detail-card">
-        <span class="tv-detail-card__icon" aria-hidden="true">
+      <article>
+        <span class="tv-cal-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <rect x="5" y="6" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M8 4v4M16 4v4M8 11h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
           </svg>
         </span>
-        <h3>Due-state</h3>
-        <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
+        <h3>Understand due-state</h3>
+        <p>Make the next calibration date or due condition easier to review in context with the asset and its operational state.</p>
       </article>
 
-    </div>
-
-    <div class="tv-detail-system-map" aria-label="Trivsel operating model">
-      <span>Asset</span><b>→</b>
-      <span>Context</span><b>→</b>
-      <span>History</span><b>→</b>
-      <span>Intelligence</span><b>→</b>
-      <span>Action</span>
+      <article>
+        <span class="tv-cal-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/>
+          </svg>
+        </span>
+        <h3>Support readiness decisions</h3>
+        <p>Calibration status becomes one part of the evidence teams can review before deciding whether an asset is ready for its intended use.</p>
+      </article>
     </div>
   </div>
 </section>
 
 <section class="tv-section tv-section--soft">
-  <div class="tv-shell tv-detail-explainer">
-    <div>
-      <p class="tv-eyebrow">WORKFLOW</p>
-      <h2>How the concept moves through the operating system.</h2>
-      <p>Keep calibration status, evidence and due-state connected to the physical asset that depends on it.</p>
+  <div class="tv-shell">
+    <div class="tv-detail-section-head">
+      <p class="tv-eyebrow">CALIBRATION IS NOT MAINTENANCE</p>
+      <h2>They are connected, but they answer different operational questions.</h2>
+      <p>
+        Maintenance records what was serviced, repaired or adjusted. Calibration
+        records whether a measurement-related requirement has been evaluated and
+        what evidence supports the resulting calibration state.
+      </p>
     </div>
 
-    <ol class="tv-detail-flow">
+    <div class="tv-cal-compare">
+      <article>
+        <span>MAINTENANCE</span>
+        <h3>What work was done to the asset?</h3>
+        <p>Service activity, repairs, replacement, inspection or adjustment belong in the maintenance history.</p>
+      </article>
 
-      <li>
-        <span class="tv-detail-flow__number">01</span>
-        <span>Identify calibrated equipment</span>
-      </li>
+      <article>
+        <span>CALIBRATION</span>
+        <h3>What evidence supports the asset's calibration state?</h3>
+        <p>Calibration status, date, due-state and supporting evidence belong in a calibration record connected to the asset.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-      <li>
-        <span class="tv-detail-flow__number">02</span>
-        <span>Record calibration evidence</span>
-      </li>
+<section class="tv-section">
+  <div class="tv-shell tv-cal-record">
+    <div class="tv-cal-record__copy">
+      <p class="tv-eyebrow">ANATOMY OF A CALIBRATION RECORD</p>
+      <h2>The record should explain more than a date.</h2>
+      <p>
+        A useful calibration record connects the physical asset, calibration
+        event, status, due-state and supporting evidence so another person can
+        understand what the current state means.
+      </p>
+    </div>
 
-      <li>
-        <span class="tv-detail-flow__number">03</span>
-        <span>Track due-state</span>
-      </li>
+    <div class="tv-cal-record__stack">
+      <article><span>01</span><div><h3>Asset identity</h3><p>The exact physical asset to which the calibration record applies.</p></div></article>
+      <article><span>02</span><div><h3>Calibration event</h3><p>The relevant calibration date, activity or evaluation recorded for the asset.</p></div></article>
+      <article><span>03</span><div><h3>Status + due-state</h3><p>The current calibration state and the next date or condition requiring attention.</p></div></article>
+      <article><span>04</span><div><h3>Supporting evidence</h3><p>The record, certificate, note or other evidence that explains the calibration event and resulting state.</p></div></article>
+    </div>
+  </div>
+</section>
 
-      <li>
-        <span class="tv-detail-flow__number">04</span>
-        <span>Review readiness context</span>
-      </li>
+<section class="tv-section tv-section--soft">
+  <div class="tv-shell">
+    <div class="tv-detail-section-head">
+      <p class="tv-eyebrow">WHO CARES ABOUT CALIBRATION?</p>
+      <h2>The same calibration evidence supports different decisions across the organization.</h2>
+    </div>
 
-    </ol>
+    <div class="tv-cal-stakeholders">
+      <article><span>ENGINEERS & TECHNICIANS</span><h3>See status before working with the asset</h3><p>Review calibration history and due-state alongside maintenance and fault context.</p></article>
+      <article><span>QUALITY & METROLOGY</span><h3>Keep evidence connected to the correct equipment</h3><p>Trace the calibration record back to the exact asset instead of relying on disconnected filenames or lists.</p></article>
+      <article><span>OPERATIONS & LABS</span><h3>Understand whether calibration needs attention</h3><p>See calibration state as part of the asset's operating context before use or scheduling.</p></article>
+      <article><span>ASSET MANAGEMENT</span><h3>Carry calibration history through the lifecycle</h3><p>Keep calibration events attached to the asset as it moves, changes placement or accumulates history.</p></article>
+      <article><span>PROCUREMENT</span><h3>See calibration requirements around the installed base</h3><p>Understand which kinds of assets carry calibration obligations when planning replacement or standardization.</p></article>
+      <article><span>LEADERSHIP</span><h3>Review calibration state without rebuilding the evidence trail</h3><p>Follow the connection from asset to calibration state to supporting evidence in one operating context.</p></article>
+    </div>
   </div>
 </section>
 
 <section class="tv-section">
   <div class="tv-shell">
     <div class="tv-detail-section-head">
-      <p class="tv-eyebrow">CONNECTION MAP</p>
-      <h2>Where this concept sits in Trivsel.</h2>
+      <p class="tv-eyebrow">THE CALIBRATION LOOP</p>
+      <h2>Calibration becomes more useful when every step updates the asset's operational context.</h2>
     </div>
 
-    <div class="tv-detail-bars">
-      <div><span>Identity</span><i><b style="width:92%"></b></i></div>
-      <div><span>Context</span><i><b style="width:84%"></b></i></div>
-      <div><span>History</span><i><b style="width:76%"></b></i></div>
-      <div><span>Action</span><i><b style="width:68%"></b></i></div>
-    </div>
-    <p class="tv-detail-bars__note">The rails are a visual relationship diagram, not a customer score, product-performance metric or measured percentage.</p>
+    <ol class="tv-cal-flow">
+      <li><span>01</span><strong>Identify the asset</strong><p>Start with the exact physical unit whose calibration state matters.</p></li>
+      <li><span>02</span><strong>Review the requirement</strong><p>Understand the relevant calibration need, timing or due-state.</p></li>
+      <li><span>03</span><strong>Record the event</strong><p>Capture the calibration activity and resulting status.</p></li>
+      <li><span>04</span><strong>Attach the evidence</strong><p>Keep supporting records connected to the same asset.</p></li>
+      <li><span>05</span><strong>Update readiness context</strong><p>Carry the new calibration state into the asset's broader operational history.</p></li>
+    </ol>
   </div>
 </section>
 
 <section class="tv-section tv-section--soft">
+  <div class="tv-shell tv-cal-foundation">
+    <div>
+      <p class="tv-eyebrow">CONNECTED CALIBRATION</p>
+      <h2>Calibration becomes operational intelligence when evidence, due-state and asset history stay connected.</h2>
+      <p>
+        Trivsel places calibration inside the wider physical-asset operating model.
+        Identity tells you which asset the record belongs to. Context explains
+        where and how that asset is used. Calibration adds evidence and state.
+        History preserves what changed. People can then decide what should happen next.
+      </p>
+    </div>
+
+    <div class="tv-cal-system-map" aria-label="Trivsel calibration operating model">
+      <span>Asset</span><b>→</b><span>Context</span><b>→</b><span class="is-current">Calibration</span><b>→</b><span>History</span><b>→</b><span>Action</span>
+    </div>
+  </div>
+</section>
+
+<section class="tv-section">
   <div class="tv-shell tv-cta__inner">
     <div>
       <p class="tv-eyebrow">NEXT</p>
-      <h2>Continue exploring Trivsel.</h2>
+      <h2>Calibration describes measurement-related evidence. Faults and interventions explain what happens when an asset has a problem.</h2>
     </div>
     <a class="tv-button tv-button--blue" href="/platform/faults-interventions">Explore faults &amp; interventions</a>
   </div>
 </section>
+
 
   </main>
   <footer class="tv-footer">
@@ -464,7 +546,7 @@
         <h2>Platform</h2>
         <a href="/platform/asset-identity">Asset identity</a>
         <a href="/platform/maintenance">Maintenance</a>
-        <a href="/platform#calibration">Calibration</a>
+        <a href="/platform/calibration">Calibration</a>
         <a href="/platform#readiness">Readiness</a>
       </div>
       <div>
