@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/marketing/css/site.css?v=calibration-deep-dive-20260924-204832">
+  <link rel="stylesheet" href="/static/marketing/css/site.css?v=repository-icon-system-20260927-142605">
 <link rel="shortcut icon" type="image/png" href="/static/img/logo-icon.png">
 </head>
 <body class="tv-body">
@@ -40,10 +40,8 @@
       aria-controls="tv-primary-nav"
       data-menu-toggle
     >
-      <span></span>
-      <span></span>
-      <span></span>
-      <span class="sr-only">Open navigation</span>
+        <span class="tv-repo-icon tv-repo-icon--menu" style="--tv-repo-icon:url('/static/img/icons/menu.svg')" aria-hidden="true"></span>
+        <span class="sr-only">Open navigation</span>
     </button>
 
     <nav
@@ -259,18 +257,7 @@
         aria-label="Search Trivsel"
         data-search-open
       >
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-          width="20"
-          height="20"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <circle cx="11" cy="11" r="7"></circle>
-          <path d="m20 20-3.5-3.5"></path>
-        </svg>
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/search.svg')" aria-hidden="true"></span>
       </button>
 
       <a
@@ -322,6 +309,10 @@
 </header>
   <main id="main">
 
+
+
+
+
 <section class="tv-page-hero tv-page-hero--simple tv-detail-hero">
   <div class="tv-shell tv-detail-hero__grid">
     <div>
@@ -346,10 +337,7 @@
 
       <article class="tv-detail-card">
         <span class="tv-detail-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-          </svg>
+          <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/file-check.svg')" aria-hidden="true"></span>
         </span>
         <h3>Grounded evidence</h3>
         <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
@@ -357,10 +345,7 @@
 
       <article class="tv-detail-card">
         <span class="tv-detail-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-          </svg>
+          <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/users.svg')" aria-hidden="true"></span>
         </span>
         <h3>Human expertise</h3>
         <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
@@ -368,10 +353,7 @@
 
       <article class="tv-detail-card">
         <span class="tv-detail-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-          </svg>
+          <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/brain-circuit.svg')" aria-hidden="true"></span>
         </span>
         <h3>Machine intelligence</h3>
         <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
@@ -380,10 +362,10 @@
     </div>
 
     <div class="tv-detail-system-map" aria-label="Trivsel operating model">
-      <span>Asset</span><b>→</b>
-      <span>Context</span><b>→</b>
-      <span>History</span><b>→</b>
-      <span>Intelligence</span><b>→</b>
+      <span>Asset</span><b><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></b>
+      <span>Context</span><b><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></b>
+      <span>History</span><b><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></b>
+      <span>Intelligence</span><b><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></b>
       <span>Action</span>
     </div>
   </div>

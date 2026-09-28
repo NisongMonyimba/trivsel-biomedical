@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/marketing/css/site.css?v=calibration-deep-dive-20260924-204832">
+  <link rel="stylesheet" href="/static/marketing/css/site.css?v=repository-icon-system-20260927-142605">
 <link rel="shortcut icon" type="image/png" href="/static/img/logo-icon.png">
 </head>
 <body class="tv-body">
@@ -40,10 +40,8 @@
       aria-controls="tv-primary-nav"
       data-menu-toggle
     >
-      <span></span>
-      <span></span>
-      <span></span>
-      <span class="sr-only">Open navigation</span>
+        <span class="tv-repo-icon tv-repo-icon--menu" style="--tv-repo-icon:url('/static/img/icons/menu.svg')" aria-hidden="true"></span>
+        <span class="sr-only">Open navigation</span>
     </button>
 
     <nav
@@ -259,18 +257,7 @@
         aria-label="Search Trivsel"
         data-search-open
       >
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-          width="20"
-          height="20"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <circle cx="11" cy="11" r="7"></circle>
-          <path d="m20 20-3.5-3.5"></path>
-        </svg>
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/search.svg')" aria-hidden="true"></span>
       </button>
 
       <a
@@ -369,9 +356,7 @@
     <div class="tv-maint-value-grid">
       <article>
         <span class="tv-maint-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M14 5a5 5 0 0 0-6 6L4 15l5 5 4-4a5 5 0 0 0 6-6l-3 3-3-3 3-3-2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-          </svg>
+          <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/wrench.svg')" aria-hidden="true"></span>
         </span>
         <h3>Know what work was actually done</h3>
         <p>Keep the maintenance action connected to the asset instead of leaving service information in separate notes, messages or spreadsheets.</p>
@@ -379,10 +364,7 @@
 
       <article>
         <span class="tv-maint-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M12 8v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-          </svg>
+          <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/wrench.svg')" aria-hidden="true"></span>
         </span>
         <h3>Keep planned work visible</h3>
         <p>Give teams a structured way to see maintenance that is due, planned, completed or still awaiting attention.</p>
@@ -390,10 +372,7 @@
 
       <article>
         <span class="tv-maint-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M6 5h12v14H6z" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M9 9h6M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-          </svg>
+          <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/wrench.svg')" aria-hidden="true"></span>
         </span>
         <h3>Build lifecycle evidence</h3>
         <p>Each completed maintenance event becomes part of the asset's history, helping future teams understand what has already happened.</p>
@@ -401,10 +380,7 @@
 
       <article>
         <span class="tv-maint-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M4 17l5-5 4 3 7-8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M17 7h3v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-          </svg>
+          <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/wrench.svg')" aria-hidden="true"></span>
         </span>
         <h3>See patterns over time</h3>
         <p>Connected maintenance history can make recurring interventions, repeated issues and service burden easier to review.</p>
@@ -427,7 +403,7 @@
         <h3>Preventive maintenance</h3>
         <p>Work planned in advance to inspect, service, adjust or replace items before a known maintenance need becomes overdue.</p>
         <div class="tv-maint-paths__flow">
-          <b>Schedule</b><i>→</i><b>Perform</b><i>→</i><b>Record</b><i>→</i><b>Next due state</b>
+          <b>Schedule</b><i><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></i><b>Perform</b><i><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></i><b>Record</b><i><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></i><b>Next due state</b>
         </div>
       </article>
 
@@ -436,7 +412,7 @@
         <h3>Corrective maintenance</h3>
         <p>Work that responds to a fault, failed check, observed problem or other condition requiring an intervention.</p>
         <div class="tv-maint-paths__flow">
-          <b>Problem</b><i>→</i><b>Intervention</b><i>→</i><b>Resolution</b><i>→</i><b>History</b>
+          <b>Problem</b><i><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></i><b>Intervention</b><i><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></i><b>Resolution</b><i><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></i><b>History</b>
         </div>
       </article>
     </div>
@@ -504,7 +480,7 @@
     </div>
 
     <div class="tv-maint-system-map" aria-label="Trivsel maintenance operating model">
-      <span>Asset</span><b>→</b><span>Context</span><b>→</b><span class="is-current">Maintenance</span><b>→</b><span>History</span><b>→</b><span>Action</span>
+      <span>Asset</span><b><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></b><span>Context</span><b><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></b><span class="is-current">Maintenance</span><b><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></b><span>History</span><b><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></b><span>Action</span>
     </div>
   </div>
 </section>

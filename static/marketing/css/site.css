@@ -2378,3 +2378,61 @@ blue background + white foreground.
 @media (max-width:620px){.tv-cal-value-grid,.tv-cal-stakeholders,.tv-cal-flow{grid-template-columns:1fr}.tv-cal-flow li:last-child{grid-column:auto}}
 @media (prefers-reduced-motion:reduce){.tv-cal-value-grid article,.tv-cal-stakeholders article{transition:none!important;transform:none!important}}
 /* END TRIVSEL CALIBRATION DEEP DIVE */
+
+/* BEGIN TRIVSEL REPOSITORY ICON SYSTEM */
+.tv-repo-icon {
+  display:inline-block;
+  width:22px;
+  height:22px;
+  flex:0 0 22px;
+  background:currentColor;
+  -webkit-mask-image:var(--tv-repo-icon);
+  mask-image:var(--tv-repo-icon);
+  -webkit-mask-repeat:no-repeat;
+  mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  mask-position:center;
+  -webkit-mask-size:contain;
+  mask-size:contain;
+  vertical-align:middle;
+}
+.tv-repo-icon--arrow {width:16px;height:16px;flex-basis:16px;color:var(--brand)}
+.tv-repo-icon--menu {width:22px;height:22px}
+.tv-menu-toggle > span:not(.sr-only):not(.tv-repo-icon) {display:none!important}
+.tv-chevron {
+  width:14px!important;
+  height:14px!important;
+  border:0!important;
+  transform:none!important;
+  background:currentColor;
+  -webkit-mask-image:url('/static/img/icons/chevron-down.svg');
+  mask-image:url('/static/img/icons/chevron-down.svg');
+  -webkit-mask-repeat:no-repeat;
+  mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  mask-position:center;
+  -webkit-mask-size:contain;
+  mask-size:contain;
+}
+.tv-spinner,.tv-loading-spinner,[data-loading-indicator] {
+  width:22px;
+  height:22px;
+  display:inline-block;
+  border:0!important;
+  border-radius:0!important;
+  background:currentColor;
+  -webkit-mask-image:url('/static/img/icons/loader.svg');
+  mask-image:url('/static/img/icons/loader.svg');
+  -webkit-mask-repeat:no-repeat;
+  mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  mask-position:center;
+  -webkit-mask-size:contain;
+  mask-size:contain;
+  animation:tv-repo-icon-spin .8s linear infinite;
+}
+@keyframes tv-repo-icon-spin {to {transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce) {
+  .tv-spinner,.tv-loading-spinner,[data-loading-indicator] {animation:none!important}
+}
+/* END TRIVSEL REPOSITORY ICON SYSTEM */
