@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" href="/static/img/logo-icon.png?v=app-favicon-885f51c574f8">
   <meta name="theme-color" content="#2563EB">
 <meta name="description" content="Trivsel connects physical asset identity, location, maintenance, calibration, interventions, readiness and history into useful operational context.">
-  <title>Faults &amp; interventions | Trivsel</title>
+  <title>Faults & interventions | Trivsel</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
@@ -81,7 +81,7 @@
             <strong>Calibration</strong>
             <span>Keep calibration evidence traceable.</span>
           </a>
-          <a href="/platform#interventions">
+          <a href="/platform/faults-interventions">
             <strong>Faults & interventions</strong>
             <span>Record problems, response and resolution.</span>
           </a>
@@ -309,116 +309,186 @@
 </header>
   <main id="main">
 
-
-
-
-
-<section class="tv-page-hero tv-page-hero--simple tv-detail-hero">
-  <div class="tv-shell tv-detail-hero__grid">
-    <div>
+<section class="tv-page-hero tv-faults-hero">
+  <div class="tv-shell tv-faults-hero__grid">
+    <div class="tv-faults-hero__copy">
       <p class="tv-eyebrow">PLATFORM / FAULTS &amp; INTERVENTIONS</p>
-      <h1>Faults &amp; interventions</h1>
-      <p class="tv-page-hero__lead">Record a problem from first report through acknowledgement, intervention and resolution while preserving who did what and when.</p>
+      <h1>A fault should not disappear into a ticket.</h1>
+      <p class="tv-page-hero__lead">
+        Trivsel keeps the problem connected to the physical asset, the people who responded,
+        the intervention that followed and the evidence of resolution.
+      </p>
+      <div class="tv-faults-hero__actions">
+        <a class="tv-button tv-button--blue" href="/contact/pilot">Request a pilot</a>
+        <a class="tv-button tv-button--open" href="/platform/readiness">Explore readiness</a>
+      </div>
     </div>
-    <figure class="tv-detail-hero__visual tv-media-card">
-      <img src="/static/marketing/img/platform-operations.png" alt="" fetchpriority="high">
-    </figure>
+
+    <div class="tv-faults-hero__system" aria-label="Fault lifecycle">
+      <article class="tv-faults-node tv-faults-node--primary">
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/siren.svg')" aria-hidden="true"></span>
+        <div><span>01</span><strong>Fault reported</strong><p>The issue begins as an event on a known asset.</p></div>
+      </article>
+      <div class="tv-faults-connector" aria-hidden="true"></div>
+      <article class="tv-faults-node">
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/users.svg')" aria-hidden="true"></span>
+        <div><span>02</span><strong>Acknowledged</strong><p>Responsibility and response become visible.</p></div>
+      </article>
+      <div class="tv-faults-connector" aria-hidden="true"></div>
+      <article class="tv-faults-node">
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/wrench.svg')" aria-hidden="true"></span>
+        <div><span>03</span><strong>Intervention recorded</strong><p>Work stays attached to the asset and event history.</p></div>
+      </article>
+      <div class="tv-faults-connector" aria-hidden="true"></div>
+      <article class="tv-faults-node">
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/circle-check.svg')" aria-hidden="true"></span>
+        <div><span>04</span><strong>Resolution retained</strong><p>The outcome becomes part of future operational context.</p></div>
+      </article>
+    </div>
   </div>
 </section>
 
 <section class="tv-section">
   <div class="tv-shell">
-    <div class="tv-detail-section-head">
-      <p class="tv-eyebrow">WHAT IT CONNECTS</p>
-      <h2>One concept, explained in context.</h2>
+    <div class="tv-faults-intro">
+      <div>
+        <p class="tv-eyebrow">THE OPERATING PROBLEM</p>
+        <h2>Problems become useful only when their context survives.</h2>
+      </div>
+      <p>
+        A fault report on its own says very little. Teams need to know which asset was affected,
+        where it was, who acknowledged the issue, what intervention occurred, what evidence was
+        recorded and whether the asset's current state changed afterward.
+      </p>
     </div>
 
-    <div class="tv-detail-card-grid">
-
-      <article class="tv-detail-card">
-        <span class="tv-detail-card__icon" aria-hidden="true">
-          <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/siren.svg')" aria-hidden="true"></span>
-        </span>
-        <h3>Fault reporting</h3>
-        <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
+    <div class="tv-faults-principles">
+      <article>
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/qr-code.svg')" aria-hidden="true"></span>
+        <h3>Asset anchored</h3>
+        <p>Every problem remains tied to the identity of the physical asset it concerns.</p>
       </article>
-
-      <article class="tv-detail-card">
-        <span class="tv-detail-card__icon" aria-hidden="true">
-          <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/brain-circuit.svg')" aria-hidden="true"></span>
-        </span>
-        <h3>Response</h3>
-        <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
+      <article>
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/map-pin.svg')" aria-hidden="true"></span>
+        <h3>Context retained</h3>
+        <p>Location and operational context remain available while the issue moves through response.</p>
       </article>
-
-      <article class="tv-detail-card">
-        <span class="tv-detail-card__icon" aria-hidden="true">
-          <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/clock-3.svg')" aria-hidden="true"></span>
-        </span>
-        <h3>Resolution history</h3>
-        <p>Connected to the surrounding physical-asset context rather than treated as an isolated record.</p>
+      <article>
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/file-check.svg')" aria-hidden="true"></span>
+        <h3>Evidence preserved</h3>
+        <p>Notes, actions and resolution evidence remain part of the asset's history.</p>
       </article>
-
-    </div>
-
-    <div class="tv-detail-system-map" aria-label="Trivsel operating model">
-      <span>Asset</span><b><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></b>
-      <span>Context</span><b><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></b>
-      <span>History</span><b><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></b>
-      <span>Intelligence</span><b><span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span></b>
-      <span>Action</span>
+      <article>
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/clock-3.svg')" aria-hidden="true"></span>
+        <h3>History connected</h3>
+        <p>Repeated issues and previous interventions can be reviewed in sequence instead of isolation.</p>
+      </article>
     </div>
   </div>
 </section>
 
 <section class="tv-section tv-section--soft">
-  <div class="tv-shell tv-detail-explainer">
-    <div>
-      <p class="tv-eyebrow">WORKFLOW</p>
-      <h2>How the concept moves through the operating system.</h2>
-      <p>Record a problem from first report through acknowledgement, intervention and resolution while preserving who did what and when.</p>
+  <div class="tv-shell tv-faults-evidence">
+    <div class="tv-faults-evidence__copy">
+      <p class="tv-eyebrow">FAULT RECORD ANATOMY</p>
+      <h2>One event, multiple pieces of evidence.</h2>
+      <p>
+        Trivsel treats a fault as more than a status label. The record connects the issue to the
+        surrounding operational facts that make the event understandable later.
+      </p>
     </div>
 
-    <ol class="tv-detail-flow">
-
-      <li>
-        <span class="tv-detail-flow__number">01</span>
-        <span>Report the fault</span>
-      </li>
-
-      <li>
-        <span class="tv-detail-flow__number">02</span>
-        <span>Acknowledge the issue</span>
-      </li>
-
-      <li>
-        <span class="tv-detail-flow__number">03</span>
-        <span>Record the intervention</span>
-      </li>
-
-      <li>
-        <span class="tv-detail-flow__number">04</span>
-        <span>Resolve and retain the evidence</span>
-      </li>
-
-    </ol>
+    <div class="tv-faults-evidence__grid">
+      <article><span>01</span><h3>What happened</h3><p>The reported problem, observation or abnormal condition.</p></article>
+      <article><span>02</span><h3>Who responded</h3><p>The person or role that acknowledged and acted on the issue.</p></article>
+      <article><span>03</span><h3>What was done</h3><p>The intervention, assessment, service activity or other recorded response.</p></article>
+      <article><span>04</span><h3>What changed</h3><p>The resolution and resulting operational state retained for future review.</p></article>
+    </div>
   </div>
 </section>
 
 <section class="tv-section">
   <div class="tv-shell">
     <div class="tv-detail-section-head">
-      <p class="tv-eyebrow">CONNECTION MAP</p>
-      <h2>Where this concept sits in Trivsel.</h2>
+      <p class="tv-eyebrow">PEOPLE IN THE LOOP</p>
+      <h2>Different roles see the same event from different operational angles.</h2>
     </div>
 
-    <div class="tv-detail-bars">
-      <div><span>Identity</span><i><b style="width:92%"></b></i></div>
-      <div><span>Context</span><i><b style="width:84%"></b></i></div>
-      <div><span>History</span><i><b style="width:76%"></b></i></div>
-      <div><span>Action</span><i><b style="width:68%"></b></i></div>
+    <div class="tv-faults-roles">
+      <article>
+        <div class="tv-faults-role__top">
+          <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/users.svg')" aria-hidden="true"></span>
+          <h3>Operator, nurse or frontline staff</h3>
+        </div>
+        <p>Reports the issue close to where it occurred and adds the first operational context.</p>
+      </article>
+      <article>
+        <div class="tv-faults-role__top">
+          <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/wrench.svg')" aria-hidden="true"></span>
+          <h3>Engineer or technician</h3>
+        </div>
+        <p>Acknowledges the issue, records intervention work and documents the outcome.</p>
+      </article>
+      <article>
+        <div class="tv-faults-role__top">
+          <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/file-check.svg')" aria-hidden="true"></span>
+          <h3>Manager or administrator</h3>
+        </div>
+        <p>Reviews unresolved issues, response history and the operational context around recurring problems.</p>
+      </article>
     </div>
-    <p class="tv-detail-bars__note">The rails are a visual relationship diagram, not a customer score, product-performance metric or measured percentage.</p>
+  </div>
+</section>
+
+<section class="tv-section tv-section--soft">
+  <div class="tv-shell">
+    <div class="tv-detail-section-head">
+      <p class="tv-eyebrow">CONNECTED SYSTEM</p>
+      <h2>Faults influence more than the fault list.</h2>
+    </div>
+
+    <div class="tv-faults-links">
+      <a href="/platform/asset-identity">
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/qr-code.svg')" aria-hidden="true"></span>
+        <div><strong>Asset identity</strong><span>Know exactly which physical asset the event belongs to.</span></div>
+      </a>
+      <a href="/platform/maintenance">
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/wrench.svg')" aria-hidden="true"></span>
+        <div><strong>Maintenance</strong><span>Connect intervention work to service history.</span></div>
+      </a>
+      <a href="/platform/readiness">
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/circle-check.svg')" aria-hidden="true"></span>
+        <div><strong>Readiness</strong><span>Keep unresolved problems visible in current operational context.</span></div>
+      </a>
+      <a href="/platform/lifecycle-history">
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/clock-3.svg')" aria-hidden="true"></span>
+        <div><strong>Lifecycle history</strong><span>Retain the event as part of the asset's longer operating story.</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="tv-section">
+  <div class="tv-shell tv-faults-closing">
+    <div>
+      <p class="tv-eyebrow">FROM EVENT TO INTELLIGENCE</p>
+      <h2>The value grows when fault history stays structured.</h2>
+      <p>
+        Connected fault histories create better context for future review, recurring-issue analysis,
+        reliability research and operational decision support without separating the event from the asset.
+      </p>
+    </div>
+    <div class="tv-faults-closing__path" aria-label="Fault information path">
+      <span>Fault</span>
+      <span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span>
+      <span>Intervention</span>
+      <span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span>
+      <span>History</span>
+      <span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span>
+      <span>Readiness</span>
+      <span class="tv-repo-icon tv-repo-icon--arrow" style="--tv-repo-icon:url('/static/img/icons/arrow-right.svg')" aria-hidden="true"></span>
+      <span>Intelligence</span>
+    </div>
   </div>
 </section>
 
@@ -426,7 +496,7 @@
   <div class="tv-shell tv-cta__inner">
     <div>
       <p class="tv-eyebrow">NEXT</p>
-      <h2>Continue exploring Trivsel.</h2>
+      <h2>See how unresolved issues affect asset readiness.</h2>
     </div>
     <a class="tv-button tv-button--blue" href="/platform/readiness">Explore readiness</a>
   </div>
