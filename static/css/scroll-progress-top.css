@@ -1,0 +1,185 @@
+.trivsel-scroll-top {
+  position: fixed;
+  left: min(max(var(--trivsel-scroll-left, -100px), calc(env(safe-area-inset-left) + 20px)), calc(100vw - env(safe-area-inset-right) - 68px));
+  top: min(var(--trivsel-scroll-top, -100px), calc(100vh - env(safe-area-inset-bottom) - 68px));
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #0f2a43;
+  box-shadow: 0 3px 14px rgba(15, 42, 67, .17);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 150ms ease, visibility 150ms ease, box-shadow 150ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.trivsel-scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.trivsel-scroll-top:hover {
+  box-shadow: 0 5px 18px rgba(15, 42, 67, .23);
+}
+
+.trivsel-scroll-top:focus-visible {
+  outline: 3px solid var(--brand, #2563eb);
+  outline-offset: 3px;
+}
+
+.trivsel-scroll-top__ring {
+  position: absolute;
+  inset: 0;
+  width: 48px;
+  height: 48px;
+  overflow: visible;
+  transform: rotate(-90deg);
+}
+
+.trivsel-scroll-top__track,
+.trivsel-scroll-top__progress {
+  fill: none;
+  stroke-width: 3;
+}
+
+.trivsel-scroll-top__track {
+  stroke: #dce5ed;
+}
+
+.trivsel-scroll-top__progress {
+  stroke: var(--brand, #2563eb);
+  stroke-linecap: round;
+  stroke-dasharray: 131.9469;
+  stroke-dashoffset: 131.9469;
+}
+
+.trivsel-scroll-top__arrow {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trivsel-scroll-top { transition: none; }
+}
+
+.trivsel-scroll-down {
+  position: fixed;
+  left: min(max(var(--trivsel-scroll-down-left, -100px), calc(env(safe-area-inset-left) + 20px)), calc(100vw - env(safe-area-inset-right) - 68px));
+  top: min(var(--trivsel-scroll-down-top, -100px), calc(100vh - env(safe-area-inset-bottom) - 68px));
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #0f2a43;
+  box-shadow: 0 3px 14px rgba(15, 42, 67, .17);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 150ms ease, visibility 150ms ease, box-shadow 150ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.trivsel-scroll-down.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.trivsel-scroll-down:hover {
+  box-shadow: 0 5px 18px rgba(15, 42, 67, .23);
+}
+
+.trivsel-scroll-down:focus-visible {
+  outline: 3px solid var(--brand, #2563eb);
+  outline-offset: 3px;
+}
+
+.trivsel-scroll-down__ring {
+  position: absolute;
+  inset: 0;
+  width: 48px;
+  height: 48px;
+  overflow: visible;
+  transform: rotate(-90deg);
+}
+
+.trivsel-scroll-down__track,
+.trivsel-scroll-down__progress {
+  fill: none;
+  stroke-width: 3;
+}
+
+.trivsel-scroll-down__track {
+  stroke: #dce5ed;
+}
+
+.trivsel-scroll-down__progress {
+  stroke: var(--brand, #2563eb);
+  stroke-linecap: round;
+  stroke-dasharray: 131.9469;
+  stroke-dashoffset: 0;
+}
+
+.trivsel-scroll-down__arrow {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trivsel-scroll-top::after,
+.trivsel-scroll-down::after {
+  content: attr(title);
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px 8px;
+  border-radius: 5px;
+  background: #0f2a43;
+  color: #fff;
+  font: 12px/1.2 var(--trivsel-font-ui, sans-serif);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.trivsel-scroll-top:is(:hover, :focus-visible)::after,
+.trivsel-scroll-down:is(:hover, :focus-visible)::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 600px) {
+  .trivsel-scroll-down { width: 44px; height: 44px; }
+  .trivsel-scroll-down__ring { width: 44px; height: 44px; }
+  .trivsel-scroll-down__arrow { width: 20px; height: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trivsel-scroll-down { transition: none; }
+}
