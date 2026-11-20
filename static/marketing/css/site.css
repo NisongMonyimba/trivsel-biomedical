@@ -2884,3 +2884,12 @@ blue background + white foreground.
 .tv-knowledge details { padding: 12px; border: 1px solid var(--border-strong); border-radius: 8px; }
 .tv-knowledge summary { cursor: pointer; min-height: 28px; }
 .tv-knowledge-related { border-top: 1px solid var(--border-strong); padding-top: 18px; }
+
+/* WEB-R02: scrollable expanded public dropdowns */
+@media (min-width: 1181px) {
+  .tv-header .tv-dropdown { max-height: calc(100vh - 110px); overflow-y: auto; overscroll-behavior: contain; }
+}
+@media (max-width: 1180px) {
+  .tv-header .tv-nav { max-height: calc(100vh - 100px); max-height: calc(100dvh - 100px); overflow-y: auto; overscroll-behavior: contain; }
+  .tv-header .tv-nav > * { flex-shrink: 0; }
+}
