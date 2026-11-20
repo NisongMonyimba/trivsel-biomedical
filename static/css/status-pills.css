@@ -1,0 +1,127 @@
+/* Shared passive status labels and paired dots. Never use on controls.
+   Attribute specificity keeps existing status hooks without their legacy styling. */
+:root {
+  --tv-status-brand-fg: var(--brand, #2563EB);
+  --tv-status-brand-bg: var(--brand-pale, #E9F1FF);
+  --tv-status-warning-fg: #8A5200;
+  --tv-status-warning-bg: #FFF3DF;
+  --tv-status-critical-fg: #B42318;
+  --tv-status-critical-bg: #FDEBED;
+  --tv-status-neutral-fg: #475569;
+  --tv-status-neutral-bg: #F1F5F9;
+  --tv-status-success-fg: #166534;
+  --tv-status-success-bg: #E9F8EE;
+  --tv-status-resolved-fg: #166534;
+  --tv-status-resolved-bg: #E9F8EE;
+  --tv-status-resolved-accent: #16A34A;
+}
+
+.tv-status-pill[class] {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 4px 11px;
+  border: 0;
+  border-radius: 999px;
+  box-shadow: none;
+  font-family: var(--trivsel-font-ui, "IBM Plex Sans", system-ui, sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: normal;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  background: var(--tv-status-neutral-bg);
+  color: var(--tv-status-neutral-fg);
+}
+
+.tv-status-pill.tv-status-pill--brand {
+  background: var(--tv-status-brand-bg);
+  color: var(--tv-status-brand-fg);
+}
+
+.tv-status-pill.tv-status-pill--warning {
+  background: var(--tv-status-warning-bg);
+  color: var(--tv-status-warning-fg);
+}
+
+.tv-status-pill.tv-status-pill--critical {
+  background: var(--tv-status-critical-bg);
+  color: var(--tv-status-critical-fg);
+}
+
+.tv-status-pill.tv-status-pill--neutral {
+  background: var(--tv-status-neutral-bg);
+  color: var(--tv-status-neutral-fg);
+}
+
+/* Healthy current states and resolved faults share a green palette but keep
+   distinct semantic classes. Other historical completion remains brand. */
+.tv-status-pill.tv-status-pill--success {
+  background: var(--tv-status-success-bg);
+  color: var(--tv-status-success-fg);
+}
+
+.tv-status-pill.tv-status-pill--resolved {
+  background: var(--tv-status-resolved-bg);
+  color: var(--tv-status-resolved-fg);
+}
+
+.tv-status-pair {
+  min-width: 0;
+  --tv-status-pair-fg: var(--tv-status-neutral-fg);
+  --tv-status-pair-bg: var(--tv-status-neutral-bg);
+  --tv-status-pair-dot: var(--tv-status-pair-fg);
+}
+
+.tv-status-pair--neutral {
+  --tv-status-pair-fg: var(--tv-status-neutral-fg);
+  --tv-status-pair-bg: var(--tv-status-neutral-bg);
+}
+
+.tv-status-pair--brand {
+  --tv-status-pair-fg: var(--tv-status-brand-fg);
+  --tv-status-pair-bg: var(--tv-status-brand-bg);
+}
+
+.tv-status-pair--warning {
+  --tv-status-pair-fg: var(--tv-status-warning-fg);
+  --tv-status-pair-bg: var(--tv-status-warning-bg);
+}
+
+.tv-status-pair--critical {
+  --tv-status-pair-fg: var(--tv-status-critical-fg);
+  --tv-status-pair-bg: var(--tv-status-critical-bg);
+}
+
+.tv-status-pair--success {
+  --tv-status-pair-fg: var(--tv-status-success-fg);
+  --tv-status-pair-bg: var(--tv-status-success-bg);
+  --tv-status-pair-dot: #22c55e;
+}
+
+.tv-status-pair--resolved {
+  --tv-status-pair-fg: var(--tv-status-resolved-fg);
+  --tv-status-pair-bg: var(--tv-status-resolved-bg);
+  --tv-status-pair-dot: var(--tv-status-resolved-accent);
+}
+
+.tv-status-pair .tv-status-dot {
+  background: var(--tv-status-pair-dot);
+  box-shadow: 0 0 0 4px var(--tv-status-pair-bg);
+}
+
+.tv-status-pair .tv-status-pill {
+  background: var(--tv-status-pair-bg);
+  color: var(--tv-status-pair-fg);
+}
+
+/* Remove legacy schedule pseudo-dots only on converted passive labels. */
+.tv-status-pill::before,
+.tv-status-pill::after {
+  content: none;
+}

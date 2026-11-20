@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/static/img/logo-icon.png?v=app-favicon-885f51c574f8">
+  <link rel="shortcut icon" type="image/png" href="/static/img/logo-icon.png?v=app-favicon-885f51c574f8">
+  <link rel="apple-touch-icon" href="/static/img/logo-icon.png?v=app-favicon-885f51c574f8">
+  <meta name="theme-color" content="#2563EB">
+<meta name="description" content="Equipment performance monitoring uses defined indicators to guide investigation and resource planning.">
+  <title>How to measure hospital equipment performance | Trivsel</title>
+  <link rel="canonical" href="https://www.trivsel.uk/knowledge/hospital-performance"><meta name="robots" content="noindex, follow">
+  <link rel="stylesheet" href="/static/marketing/css/site.css?v=marketing-knowledge-web-v3">
+  <link rel="stylesheet" href="/static/css/status-pills.css?v=481dfc2e895a2847">
+  <link rel="stylesheet" href="/static/css/scroll-progress-top.css?v=336646711103269e">
+<link rel="shortcut icon" type="image/png" href="/static/img/logo-icon.png">
+</head>
+<body class="tv-body">
+  <a class="tv-skip" href="#main">Skip to content</a>
+  <header class="tv-header" data-header>
+
+  <div class="tv-shell tv-header__row">
+
+    <a
+      class="tv-brand tv-brand--official"
+      href="/"
+      aria-label="Trivsel Home"
+    >
+      <img
+        class="tv-brand__full-logo"
+        src="/static/img/brand/trivsel-full-logo.png"
+        alt="Trivsel"
+      >
+    </a>
+
+    <button
+      class="tv-menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="tv-primary-nav"
+      data-menu-toggle
+    >
+        <span class="tv-repo-icon tv-repo-icon--menu" style="--tv-repo-icon:url('/static/img/icons/menu.svg')" aria-hidden="true"></span>
+        <span class="sr-only">Open navigation</span>
+    </button>
+
+    <nav
+      class="tv-nav"
+      id="tv-primary-nav"
+      aria-label="Primary navigation"
+      data-nav
+    >
+
+      <a class="tv-nav__home" href="/">Home</a>
+
+      <div class="tv-nav-group">
+        <button
+          class="tv-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          data-dropdown-trigger
+        >
+          Platform
+          <span class="tv-chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="tv-dropdown" data-dropdown>
+          <a href="/platform">
+            <strong>Platform overview</strong>
+            <span>See the complete Trivsel operating model.</span>
+          </a>
+          <a href="/platform/asset-identity">
+            <strong>Asset identity</strong>
+            <span>Persistent identity for every physical asset.</span>
+          </a>
+          <a href="/platform/maintenance">
+            <strong>Maintenance</strong>
+            <span>Connect service activity and asset history.</span>
+          </a>
+          <a href="/platform/calibration">
+            <strong>Calibration</strong>
+            <span>Keep calibration evidence traceable.</span>
+          </a>
+          <a href="/platform/faults-interventions">
+            <strong>Faults & interventions</strong>
+            <span>Record problems, response and resolution.</span>
+          </a>
+          <a href="/platform/readiness">
+            <strong>Readiness</strong>
+            <span>Understand current operational state.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tv-nav-group">
+        <button
+          class="tv-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          data-dropdown-trigger
+        >
+          Industries
+          <span class="tv-chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="tv-dropdown" data-dropdown>
+          <a href="/industries">
+            <strong>Industries overview</strong>
+            <span>One architecture across physical environments.</span>
+          </a>
+          <a href="/industries/healthcare">
+            <strong>Healthcare</strong>
+            <span>Medical equipment and biomedical operations.</span>
+          </a>
+          <a href="/industries/manufacturing">
+            <strong>Manufacturing</strong>
+            <span>Production assets, tooling and service history.</span>
+          </a>
+          <a href="/industries/laboratories">
+            <strong>Laboratories</strong>
+            <span>Scientific instruments and calibration context.</span>
+          </a>
+          <a href="/industries/facilities">
+            <strong>Facilities</strong>
+            <span>Buildings, utilities and critical systems.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tv-nav-group">
+        <button
+          class="tv-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          data-dropdown-trigger
+        >
+          Intelligence
+          <span class="tv-chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="tv-dropdown" data-dropdown>
+          <a href="/intelligence">
+            <strong>Intelligence overview</strong>
+            <span>Structured asset reality before reasoning.</span>
+          </a>
+          <a href="/intelligence/asset-graph">
+            <strong>Asset graph</strong>
+            <span>Connect assets, places, people and events.</span>
+          </a>
+          <a href="/intelligence/operational-intelligence">
+            <strong>Operational intelligence</strong>
+            <span>Turn history and context into useful questions.</span>
+          </a>
+          <a href="/intelligence/human-machine-intelligence">
+            <strong>Human + machine intelligence</strong>
+            <span>Keep expert judgment inside the loop.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tv-nav-group">
+        <button
+          class="tv-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          data-dropdown-trigger
+        >
+          Research
+          <span class="tv-chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="tv-dropdown" data-dropdown>
+          <a href="/research">
+            <strong>Research overview</strong>
+            <span>Research for better physical systems.</span>
+          </a>
+          <a href="/research/asset-intelligence">
+            <strong>Asset intelligence</strong>
+            <span>Study structured operational histories.</span>
+          </a>
+          <a href="/research/reliability-systems">
+            <strong>Reliability systems</strong>
+            <span>Explore lifecycle, interventions and evidence.</span>
+          </a>
+          <a href="/research/applied-ai">
+            <strong>Applied AI</strong>
+            <span>Machine intelligence grounded in evidence.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tv-nav-group">
+        <button
+          class="tv-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          data-dropdown-trigger
+        >
+          Company
+          <span class="tv-chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="tv-dropdown" data-dropdown>
+          <a href="/company/about">
+            <strong>About Trivsel</strong>
+            <span>Building infrastructure for the physical world.</span>
+          </a>
+          <a href="/company/mission-principles">
+            <strong>Mission & principles</strong>
+            <span>People, evidence and connected systems.</span>
+          </a>
+          <a href="/careers">
+            <strong>Careers</strong>
+            <span>Work at the intersection of software and reality.</span>
+          </a>
+          <a href="/contact">
+            <strong>Contact</strong>
+            <span>Start with the problem you are solving.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tv-nav-group">
+        <button
+          class="tv-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          data-dropdown-trigger
+        >
+          Resources
+          <span class="tv-chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="tv-dropdown tv-dropdown--right" data-dropdown>
+          <a href="/resources">
+            <strong>Resources overview</strong>
+            <span>Public pathways into Trivsel.</span>
+          </a>
+          <a href="/research">
+            <strong>Research</strong>
+            <span>Current research directions and principles.</span>
+          </a>
+          <a href="/support">
+            <strong>Support</strong>
+            <span>Product and operational support.</span>
+          </a>
+          <a href="/contact/pilot">
+            <strong>Request a pilot</strong>
+            <span>Explore Trivsel in a real operating environment.</span>
+          </a>
+        </div>
+      </div>
+
+      <button
+        class="tv-nav-search"
+        type="button"
+        aria-label="Search Trivsel"
+        data-search-open
+      >
+        <span class="tv-repo-icon" style="--tv-repo-icon:url('/static/img/icons/search.svg')" aria-hidden="true"></span>
+      </button>
+
+      <a
+        class="tv-button tv-button--open"
+        href="https://trivsel.uk/"
+      >
+        Open Trivsel
+      </a>
+
+      <a
+        class="tv-button tv-button--blue tv-nav__cta"
+        href="/contact/pilot"
+      >
+        Request a pilot
+      </a>
+
+    </nav>
+  </div>
+
+  <div class="tv-search-panel" data-search-panel hidden>
+    <div class="tv-shell tv-search-panel__inner">
+      <label for="tv-site-search">Search Trivsel</label>
+
+      <div class="tv-search-panel__control">
+        <input
+          id="tv-site-search"
+          type="search"
+          placeholder="Search platform, industries, intelligence, research…"
+          autocomplete="off"
+          data-site-search
+        >
+
+        <button
+          type="button"
+          class="tv-search-panel__close"
+          data-search-close
+        >
+          Close
+        </button>
+      </div>
+
+      <div
+        class="tv-search-panel__results"
+        data-search-results
+      ></div>
+    </div>
+  </div>
+
+</header>
+  <main id="main">
+    
+<section class="tv-page-hero"><div class="tv-shell"><p class="tv-eyebrow">TRIVSEL / KNOWLEDGE AND PROFESSIONAL ECOSYSTEM</p><h1>How to measure hospital equipment performance</h1><p class="tv-page-hero__lead">Equipment performance monitoring uses defined indicators to guide investigation and resource planning.</p><p>Development preview. Editorial and legal review pending.</p></div></section>
+<section class="tv-section"><div class="tv-shell"><div class="tv-section-head"><h2>How to apply the concept</h2><p>Combine availability, downtime, response delay, backlog, recurring failures and maintenance/calibration completion. Compare like asset types and report completeness.</p></div><div class="tv-section-head"><h2>Illustrative example</h2><p>A department with high availability but many overdue inspections needs a readiness review, not a congratulatory safety score.</p></div><div class="tv-section-head"><h2>Limitations</h2><p>Use the defined scope and local procedures. This is introductory educational material, not an approved maintenance, clinical, safety or regulatory decision.</p></div><div class="tv-section-head"><h2>Further reading</h2><ul><li><a href="https://www.who.int/publications/b/74278">Reference for further study</a></li><li><a href="/tools">Practical tools</a></li><li><a href="/knowledge/body-of-knowledge">Body of Knowledge</a></li></ul></div><p><a href="/knowledge">Knowledge Center</a> · <a href="/trust">Trust Center</a> · <a href="/privacy">Privacy notice</a></p></div></section>
+
+
+  </main>
+  <footer class="tv-footer">
+  <div class="tv-shell tv-footer__top">
+    <div class="tv-footer__brand-block">
+      <img src="/static/img/brand/trivsel-full-logo.png" alt="Trivsel" class="tv-footer__logo">
+      <p>Intelligence infrastructure for the physical asset world.</p>
+      <a class="tv-button tv-button--white" href="/contact">Start a conversation</a>
+    </div>
+
+    <div class="tv-footer__links">
+      <div>
+        <h2>Platform</h2>
+        <a href="/platform/asset-identity">Asset identity</a>
+        <a href="/platform/maintenance">Maintenance</a>
+        <a href="/platform/calibration">Calibration</a>
+        <a href="/platform/readiness">Readiness</a>
+      </div>
+      <div>
+        <h2>Industries</h2>
+        <a href="/industries/healthcare">Healthcare</a>
+        <a href="/industries/manufacturing">Manufacturing</a>
+        <a href="/industries/laboratories">Laboratories</a>
+        <a href="/industries/facilities">Facilities</a>
+      </div>
+      <div>
+        <h2>Institution</h2>
+        <a href="/intelligence">Intelligence</a>
+        <a href="/research">Research</a>
+        <a href="/company">Company</a>
+        <a href="/knowledge">Knowledge Center</a>
+        <a href="/knowledge/encyclopedia">Encyclopedia</a>
+        <a href="/knowledge/body-of-knowledge">Body of Knowledge</a>
+        <a href="/academy">Academy</a>
+        <a href="/tools">Practical tools</a>
+        <a href="/universities">Universities</a>
+        <a href="/partnerships">Partnerships</a>
+        <a href="/regulatory">Regulatory intelligence</a>
+        <a href="/governance">Institutional governance</a>
+        <a href="/research/programs">Scientific research programs</a>
+        <a href="/research/simulations">Simulation laboratory</a>
+        <a href="/research/library">Research library</a>
+        <a href="/trust">Trust Center</a>
+        <a href="/privacy">Privacy notice</a>
+        <a href="/careers">Careers</a>
+      </div>
+      <div>
+        <h2>Access</h2>
+        <a href="https://trivsel.uk/">Open Trivsel</a>
+        <a href="/contact/pilot">Request a pilot</a>
+        <a href="mailto:nisong@trivsel.uk">nisong@trivsel.uk</a>
+      </div>
+    </div>
+  </div>
+  <div class="tv-shell tv-footer__bottom">
+    <span>© 2026 Trivsel · Accra, Ghana</span>
+    <span>Physical assets. Persistent intelligence.</span>
+  </div>
+</footer>
+  <button type="button" class="trivsel-scroll-top" data-trivsel-scroll-top
+        aria-label="Back to top" aria-hidden="true" tabindex="-1"
+        title="Back to top">
+  <svg class="trivsel-scroll-top__ring" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+    <circle class="trivsel-scroll-top__track" cx="24" cy="24" r="21"></circle>
+    <circle class="trivsel-scroll-top__progress" cx="24" cy="24" r="21"></circle>
+  </svg>
+  <svg class="trivsel-scroll-top__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M12 19V5m0 0-6 6m6-6 6 6"></path>
+  </svg>
+</button>
+<button
+  type="button" class="trivsel-scroll-down" data-trivsel-scroll-down
+  aria-label="Scroll down" aria-hidden="true" tabindex="-1"
+  title="Scroll down">
+  <svg class="trivsel-scroll-down__ring" viewBox="0 0 48 48" aria-hidden="true" focusable='false'>
+    <circle class="trivsel-scroll-down__track" cx="24" cy="24" r='21'></circle>
+    <circle class="trivsel-scroll-down__progress" cx="24" cy="24" r='21'></circle>
+  </svg>
+  <svg class="trivsel-scroll-down__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable='false'>
+    <path d="M12 5v14m0 0-6-6m6 6 6-6"></path>
+  </svg>
+</button>
+  <script src="/static/marketing/js/site.js?v=marketing-knowledge-web-v3" defer></script>
+  <script src="/static/js/scroll-progress-top.js?v=d20e1fc9e9ef1b8f" defer></script>
+</body>
+</html>
